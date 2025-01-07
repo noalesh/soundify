@@ -1,68 +1,83 @@
 import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 
-import { loadCars, addCar, updateCar, removeCar, addCarMsg } from '../store/actions/car.actions'
+import { loadStation, addStation, updateStation, removeStation } from '../store/actions/car.actions'
 
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
-import { carService } from '../services/car/'
+import { stationService } from '../services/station/'
 import { userService } from '../services/user'
 
 import { StationList } from '../cmps/StationList'
 import { SearchBar } from '../cmps/SearchBar'
+//TODO: Manage the service to search by song or station 
+export function StationIndex() {
 
-export function CarIndex() {
-
-    const [ filterBy, setFilterBy ] = useState(carService.getDefaultFilter())
-    const cars = useSelector(storeState => storeState.carModule.cars)
+    const [ filterBy, setFilterBy ] = useState(stationService.getDefaultFilter())
+    const stations = useSelector(storeState => storeState.stationModule.stations)
 
     useEffect(() => {
-        loadCars(filterBy)
+        loadStation(filterBy)
     }, [filterBy])
 
-    async function onRemoveCar(carId) {
+    async function onRemoveStation(stationId) {
         try {
-            await removeCar(carId)
-            showSuccessMsg('Car removed')            
+            await removeStation(stationId)
+            showSuccessMsg('Station removed')            
         } catch (err) {
-            showErrorMsg('Cannot remove car')
+            showErrorMsg('Cannot remove Station')
         }
     }
 
-    async function onAddCar() {
-        const car = carService.getEmptyCar()
-        car.vendor = prompt('Vendor?')
+    async function onRemoveSong(songId) {
         try {
-            const savedCar = await addCar(car)
-            showSuccessMsg(`Car added (id: ${savedCar._id})`)
+            await removeSong(songId)
+            showSuccessMsg('Song removed')            
         } catch (err) {
-            showErrorMsg('Cannot add car')
+            showErrorMsg('Cannot remove Song')
+        }
+    }
+
+    async function onAddSong() {
+        //TODO: Adding the option to add songs to the station 
+        try {
+            const savedSong = await addSong(song)
+            showSuccessMsg(`Song added (id: ${savedSong._id})`)
+        } catch (err) {
+            showErrorMsg('Cannot add song')
+        }        
+    }
+    async function onAddStation() {
+        //TODO: Adding the option to add station 
+        try {
+            const savedStation = await addStation(station)
+            showSuccessMsg(`STation added (id: ${savedStation._id})`)
+        } catch (err) {
+            showErrorMsg('Cannot add Station')
         }        
     }
 
-    async function onUpdateCar(car) {
-        const speed = +prompt('New speed?', car.speed)
-        if(speed === 0 || speed === car.speed) return
 
-        const carToSave = { ...car, speed }
+    async function onEditStationDetails(station) {
+        //TODO: adding the functionality of editing station details
         try {
-            const savedCar = await updateCar(carToSave)
-            showSuccessMsg(`Car updated, new speed: ${savedCar.speed}`)
+            const savedStation = await updateCar(stationToSave)
+            showSuccessMsg(`Station updated`)
         } catch (err) {
-            showErrorMsg('Cannot update car')
+            showErrorMsg('Cannot update Station')
         }        
     }
 
     return (
-        <main className="car-index">
+        <main className="station-index">
             <header>
-                <h2>Cars</h2>
-                {userService.getLoggedinUser() && <button onClick={onAddCar}>Add a Car</button>}
+                <h2>Stations</h2>
+                {userService.getLoggedinUser() && <button onClick={onAddStation}>New Station</button>}
             </header>
             <SearchBar filterBy={filterBy} setFilterBy={setFilterBy} />
-            <CarList 
-                cars={cars}
-                onRemoveCar={onRemoveCar} 
-                onUpdateCar={onUpdateCar}/>
+            <StationList
+                songs={songs}
+                onRemoveSong={onRemoveSong} 
+                onAddSong={onAddSong}/>
         </main>
     )
 }

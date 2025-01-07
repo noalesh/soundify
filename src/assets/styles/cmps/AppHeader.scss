@@ -32,6 +32,15 @@
         }
     }
 
+    
+    //TODO: Fix logo size 
+    .logo-img{
+        width: 12%;
+        height: 12%;
+        border-radius: 50%;
+        object-fit: scale-down;
+    }
+
     .user-info {
         display: flex;
         align-items: center;
