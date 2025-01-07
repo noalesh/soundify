@@ -17,31 +17,21 @@ export function AppHeader() {
 			showErrorMsg('Cannot logout')
 		}
 	}
-
+//TODO:Add search bar in the header 
 	return (
 		<header className="app-header full">
 			<nav>
 				<NavLink to="/" className="logo">
-					E2E Demo
+					Logo
 				</NavLink>
-				<NavLink to="about">About</NavLink>
-				<NavLink to="car">Cars</NavLink>
-				<NavLink to="chat">Chat</NavLink>
-				<NavLink to="review">Review</NavLink>
-
+				
+				
                 {user?.isAdmin && <NavLink to="/admin">Admin</NavLink>}
 
 				{!user && <NavLink to="login" className="login-link">Login</NavLink>}
-				{user && (
-					<div className="user-info">
-						<Link to={`user/${user._id}`}>
-							{/* {user.imgUrl && <img src={user.imgUrl} />} */}
-							{user.fullname}
-						</Link>
-						{/* <span className="score">{user.score?.toLocaleString()}</span> */}
-						<button onClick={onLogout}>logout</button>
-					</div>
-				)}
+				{!user && <NavLink to="login" className="login-link">Sign-Up</NavLink>}
+				
+
 			</nav>
 		</header>
 	)

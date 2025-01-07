@@ -7,8 +7,8 @@ import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
 import { carService } from '../services/car/'
 import { userService } from '../services/user'
 
-import { CarList } from '../cmps/CarList'
-import { CarFilter } from '../cmps/CarFilter'
+import { StationList } from '../cmps/StationList'
+import { SearchBar } from '../cmps/SearchBar'
 
 export function CarIndex() {
 
@@ -58,7 +58,7 @@ export function CarIndex() {
                 <h2>Cars</h2>
                 {userService.getLoggedinUser() && <button onClick={onAddCar}>Add a Car</button>}
             </header>
-            <CarFilter filterBy={filterBy} setFilterBy={setFilterBy} />
+            <SearchBar filterBy={filterBy} setFilterBy={setFilterBy} />
             <CarList 
                 cars={cars}
                 onRemoveCar={onRemoveCar} 

@@ -15,24 +15,13 @@ export const carService = {
 window.cs = carService
 
 
-async function query(filterBy = { txt: '', price: 0 }) {
+async function query(filterBy = { txt: '' }) {
     var cars = await storageService.query(STORAGE_KEY)
     const { txt, minSpeed, maxPrice, sortField, sortDir } = filterBy
 
     if (txt) {
         const regex = new RegExp(filterBy.txt, 'i')
         cars = cars.filter(car => regex.test(car.vendor) || regex.test(car.description))
-    }
-    if (minSpeed) {
-        cars = cars.filter(car => car.speed >= minSpeed)
-    }
-    if(sortField === 'vendor' || sortField === 'owner'){
-        cars.sort((car1, car2) => 
-            car1[sortField].localeCompare(car2[sortField]) * +sortDir)
-    }
-    if(sortField === 'price' || sortField === 'speed'){
-        cars.sort((car1, car2) => 
-            (car1[sortField] - car2[sortField]) * +sortDir)
     }
     
     cars = cars.map(({ _id, vendor, price, speed, owner }) => ({ _id, vendor, price, speed, owner }))
