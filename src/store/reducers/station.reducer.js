@@ -1,39 +1,36 @@
-export const SET_CARS = 'SET_CARS'
-export const SET_CAR = 'SET_CAR'
-export const REMOVE_CAR = 'REMOVE_CAR'
-export const ADD_CAR = 'ADD_CAR'
-export const UPDATE_CAR = 'UPDATE_CAR'
-export const ADD_CAR_MSG = 'ADD_CAR_MSG'
+export const SET_STATIONS = 'SET_STATIONS'
+export const SET_STATION = 'SET_STATION'
+export const REMOVE_STATION = 'REMOVE_STATION'
+export const ADD_STATION = 'ADD_STATION'
+export const UPDATE_STATION = 'UPDATE_STATION'
 
 const initialState = {
-    cars: [],
-    car: null
+    stations: [],
+    cuurentStation: null
 }
 
-export function carReducer(state = initialState, action) {
+export function stationReducer(state = initialState, action) {
     var newState = state
-    var cars
+    var stations
     switch (action.type) {
-        case SET_CARS:
-            newState = { ...state, cars: action.cars }
+        case SET_STATIONS:
+            newState = { ...state, stations: action.stations }
             break
-        case SET_CAR:
-            newState = { ...state, car: action.car }
+        case SET_STATION:
+            newState = { ...state, cuurentStation: action.station }
             break
-        case REMOVE_CAR:
-            const lastRemovedCar = state.cars.find(car => car._id === action.carId)
-            cars = state.cars.filter(car => car._id !== action.carId)
-            newState = { ...state, cars, lastRemovedCar }
+        case REMOVE_STATION:
+        // TODO - removed because we think it's a part of the UNDO implementation. 
+        //   const lastRemovedStation = state.stations.find(station => station._id === action.stationId)
+            stations = state.stations.filter(station => station._id !== action.stationId)
+            newState = { ...state, stations, lastRemovedStation }
             break
-        case ADD_CAR:
-            newState = { ...state, cars: [...state.cars, action.car] }
+        case ADD_STATION:
+            newState = { ...state, stations: [...state.stations, action.station] }
             break
-        case UPDATE_CAR:
-            cars = state.cars.map(car => (car._id === action.car._id) ? action.car : car)
-            newState = { ...state, cars }
-            break
-        case ADD_CAR_MSG:
-            newState = { ...state, car: { ...state.car, msgs: [...state.car.msgs || [], action.msg] } }
+        case UPDATE_STATION:
+            stations = state.stations.map(station => (station._id === action.station._id) ? action.station : station)
+            newState = { ...state, stations }
             break
         default:
     }
@@ -41,7 +38,7 @@ export function carReducer(state = initialState, action) {
 }
 
 // unitTestReducer()
-
+/*
 function unitTestReducer() {
     var state = initialState
     const car1 = { _id: 'b101', vendor: 'Car ' + parseInt(Math.random() * 10), msgs: [] }
@@ -67,3 +64,4 @@ function unitTestReducer() {
     console.log('After REMOVE_CAR:', state)
 }
 
+*/
