@@ -5,12 +5,12 @@ import { userService } from '../user'
 
 const STORAGE_KEY = 'song'
 
-export const carService = {
+export const songService = {
     query,
     getById,
     remove,
 }
-window.cs = carService
+window.cs = songService
 
 
 async function query(filterBy = { txt: '' }) {
