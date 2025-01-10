@@ -22,7 +22,7 @@ async function query(filterBy = { txt: '' }) {
         songs = songs.filter(song => regex.test(song.name) || regex.test(song.artist))
     }
     
-    return cars
+    return songs
 }
 
 function getById(songId) {
