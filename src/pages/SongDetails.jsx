@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
-import { loadSong } from '../store/actions/car.actions'
 
 
 export function SongDetails() {
