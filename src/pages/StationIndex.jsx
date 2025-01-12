@@ -6,7 +6,7 @@ import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
 import { stationService } from '../services/station'
 import { userService } from '../services/user'
 
-import { StationList } from '../cmps/StationList'
+import { SongList } from '../cmps/SongList'
 import { SearchBar } from '../cmps/SearchBar'
 //TODO: Manage the service to search by song or station 
 export function StationIndex() {
@@ -73,7 +73,7 @@ export function StationIndex() {
                 {userService.getLoggedinUser() && <button onClick={onAddStation}>New Station</button>}
             </header>
             <SearchBar filterBy={filterBy} setFilterBy={setFilterBy} />
-            <StationList
+            <SongList
                 songs={songs}
                 onRemoveSong={onRemoveSong} 
                 onAddSong={onAddSong}/>
