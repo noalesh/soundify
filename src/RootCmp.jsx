@@ -19,11 +19,13 @@ export function RootCmp() {
         <div className="main-container">
             <AppHeader />
             <UserMsg />
-
+            <StationIndex />
+            
             <main>
                 <Routes>
-                    <Route path="" element={<HomePage />} />
-                    <Route path="station" element={<StationIndex />} />
+                    <Route path="" element={<HomePage />} >
+                        <Route path="station" element={<StationIndex />} />
+                    </Route>
                     <Route path="song/:songId" element={<SongDetails />} />
                     <Route path="user/:id" element={<UserDetails />} />
                     <Route path="login" element={<LoginSignup />}>
