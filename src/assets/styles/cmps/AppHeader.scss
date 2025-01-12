@@ -1,134 +1,95 @@
 .app-header {
     display: flex;
     min-height: 3.5rem;
-<<<<<<< HEAD
-    background-color: $clr4;
-    padding: rem(10px) 1rem;
+    background-color: $clr4; 
+    padding: rem(10px) 1rem; 
 
-=======
-
-    background-color: $clr4;
-    padding: rem(10px) 1rem;
-    
->>>>>>> 975c58f89f999f64606fb53165bd25fe60892b6e
     nav {
         display: flex;
         width: 100%;
-        align-items: center;
-        gap: 1em;
-<<<<<<< HEAD
-        font-size: 0.8em;
-=======
-        
-        font-size: .8em;
->>>>>>> 975c58f89f999f64606fb53165bd25fe60892b6e
+        align-items: center; 
+        gap: 1em; 
+        font-size: 0.8em; 
 
         .active {
-            color: $clr1;
+            color: $clr1; 
         }
 
         .logo {
             font-size: 1.4em;
-            font-weight: bold;
-            margin-inline-end: 2em;
+            font-weight: bold; 
+            margin-inline-end: 2em; 
         }
 
         .login-link {
-            margin-inline-start: auto;
+            margin-inline-start: auto; 
         }
 
         button {
-            margin-inline-end: 0;
+            margin-inline-end: 0; 
         }
     }
 
-<<<<<<< HEAD
-    // Fixed logo size and added styling for the logo image
     .logo-img {
-        width: 12%; 
-        height: 12%; 
+        width: 50px; 
+        height: 50px; 
         border-radius: 50%; 
-        object-fit: scale-down; 
-=======
-    
-    //TODO: Fix logo size 
-    .logo-img{
-        width: 12%;
-        height: 12%;
-        border-radius: 50%;
-        object-fit: scale-down;
->>>>>>> 975c58f89f999f64606fb53165bd25fe60892b6e
+        object-fit: contain;
     }
 
     .user-info {
         display: flex;
-        align-items: center;
-        margin-inline-start: auto;
-<<<<<<< HEAD
-=======
-
->>>>>>> 975c58f89f999f64606fb53165bd25fe60892b6e
-        color: $clr1;
-
+        align-items: center; 
+        margin-inline-start: auto; 
+        color: $clr1; 
         .score {
-            padding: 8px;
-            background-color: $clr2;
-            border-radius: 50%;
-            margin: 10px;
-<<<<<<< HEAD
-=======
-
->>>>>>> 975c58f89f999f64606fb53165bd25fe60892b6e
-            color: $clr6;
+            padding: 8px; 
+            background-color: $clr2; 
+            border-radius: 50%; 
+            margin: 10px; 
+            color: $clr6; 
         }
 
         img {
-            width: 32px;
+            width: 32px; 
             aspect-ratio: 1;
-            border-radius: 50%;
+            border-radius: 50%; 
         }
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> 975c58f89f999f64606fb53165bd25fe60892b6e
         .btn-link {
-            color: $clr2;
+            color: $clr2; 
         }
     }
-<<<<<<< HEAD
 
-    // Search bar styles: Added for the new search functionality
+    // Search bar styles
     .search-bar {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        margin-inline-start: auto;
+        display: flex; 
+        align-items: center; 
+        gap: 0.5rem; 
+        margin-inline-start: auto; 
 
-        // Styles for the search input
         input {
-            padding: 0.5em;
-            border: 1px solid $clr6; 
+            padding: 0.5em; 
+            border: 1px solid $clr6;
             border-radius: 4px; 
             background-color: $clr3; 
             color: $clr1; 
-            font-size: 0.9em;
+            font-size: 0.9em; 
 
             &:focus {
-                outline: none;
-                border-color: $clr1; // Highlight border on focus
+                outline: none; 
+                border-color: $clr1; 
             }
         }
 
-        // Styles for the search button
         button {
-            padding: 0.5em 1em;
+            padding: 0.5em 1em; 
             background-color: $clr1; 
             color: $clr6; 
             border: none; 
             border-radius: 4px; 
-            cursor: pointer;
-            font-size: 0.9em;
+            cursor: pointer; 
+            font-size: 0.9em; 
             transition: background-color 0.3s; 
 
             &:hover {
@@ -136,6 +97,4 @@
             }
         }
     }
-=======
->>>>>>> 975c58f89f999f64606fb53165bd25fe60892b6e
 }

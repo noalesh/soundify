@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { Link, NavLink } from "react-router-dom";
 import { useNavigate } from "react-router";
 import { useSelector } from "react-redux";
@@ -9,6 +8,7 @@ import { logout } from "../store/actions/user.actions";
 export function AppHeader() {
   const user = useSelector((storeState) => storeState.userModule.user);
   const navigate = useNavigate();
+
   // State for managing the search term input
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -21,6 +21,7 @@ export function AppHeader() {
       showErrorMsg("Cannot logout");
     }
   }
+
   // Function to handle search form submission
   // Navigates to the search results page with the search term as a query parameter
   function onSearch(ev) {
@@ -33,7 +34,11 @@ export function AppHeader() {
     <header className="app-header full">
       <nav>
         <NavLink to="/" className="logo">
-          <img className="logo-img" src="./src/assets/imgs/soundify.jpeg" />
+          <img
+            className="logo-img"
+            src="/src/assets/imgs/soundify.jpeg"
+            alt="Soundify Logo"
+          />
         </NavLink>
 
         {/* Added search bar functionality */}
@@ -62,43 +67,4 @@ export function AppHeader() {
       </nav>
     </header>
   );
-=======
-import { Link, NavLink } from 'react-router-dom'
-import { useNavigate } from 'react-router'
-import { useSelector } from 'react-redux'
-import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
-import { logout } from '../store/actions/user.actions'
-
-export function AppHeader() {
-	const user = useSelector(storeState => storeState.userModule.user)
-	const navigate = useNavigate()
-
-	async function onLogout() {
-		try {
-			await logout()
-			navigate('/')
-			showSuccessMsg(`Bye now`)
-		} catch (err) {
-			showErrorMsg('Cannot logout')
-		}
-	}
-//TODO:Add search bar in the header 
-	return (
-		<header className="app-header full">
-			<nav>
-				<NavLink to="/" className="logo">
-					<img className='logo-img' src='./src/assets/imgs/soundify.jpeg'/>
-				</NavLink>
-				
-				
-                {user?.isAdmin && <NavLink to="/admin">Admin</NavLink>}
-
-				{!user && <NavLink to="login" className="login-link">Login</NavLink>}
-				{!user && <NavLink to="login" className="login-link">Sign-Up</NavLink>}
-				
-
-			</nav>
-		</header>
-	)
->>>>>>> 975c58f89f999f64606fb53165bd25fe60892b6e
 }
