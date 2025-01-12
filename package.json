@@ -33,6 +33,10 @@
     "eslint-plugin-react-refresh": "^0.4.3",
     "sass": "^1.67.0",
     "sass-embedded": "^1.83.1",
+<<<<<<< HEAD
     "vite": "^4.5.5"
+=======
+    "vite": "^4.4.5"
+>>>>>>> 975c58f89f999f64606fb53165bd25fe60892b6e
   }
 }

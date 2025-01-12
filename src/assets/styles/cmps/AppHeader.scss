@@ -1,15 +1,27 @@
 .app-header {
     display: flex;
     min-height: 3.5rem;
+<<<<<<< HEAD
     background-color: $clr4;
     padding: rem(10px) 1rem;
 
+=======
+
+    background-color: $clr4;
+    padding: rem(10px) 1rem;
+    
+>>>>>>> 975c58f89f999f64606fb53165bd25fe60892b6e
     nav {
         display: flex;
         width: 100%;
         align-items: center;
         gap: 1em;
+<<<<<<< HEAD
         font-size: 0.8em;
+=======
+        
+        font-size: .8em;
+>>>>>>> 975c58f89f999f64606fb53165bd25fe60892b6e
 
         .active {
             color: $clr1;
@@ -30,18 +42,32 @@
         }
     }
 
+<<<<<<< HEAD
     // Fixed logo size and added styling for the logo image
     .logo-img {
         width: 12%; 
         height: 12%; 
         border-radius: 50%; 
         object-fit: scale-down; 
+=======
+    
+    //TODO: Fix logo size 
+    .logo-img{
+        width: 12%;
+        height: 12%;
+        border-radius: 50%;
+        object-fit: scale-down;
+>>>>>>> 975c58f89f999f64606fb53165bd25fe60892b6e
     }
 
     .user-info {
         display: flex;
         align-items: center;
         margin-inline-start: auto;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 975c58f89f999f64606fb53165bd25fe60892b6e
         color: $clr1;
 
         .score {
@@ -49,6 +75,10 @@
             background-color: $clr2;
             border-radius: 50%;
             margin: 10px;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 975c58f89f999f64606fb53165bd25fe60892b6e
             color: $clr6;
         }
 
@@ -57,11 +87,16 @@
             aspect-ratio: 1;
             border-radius: 50%;
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 975c58f89f999f64606fb53165bd25fe60892b6e
         .btn-link {
             color: $clr2;
         }
     }
+<<<<<<< HEAD
 
     // Search bar styles: Added for the new search functionality
     .search-bar {
@@ -101,4 +136,6 @@
             }
         }
     }
+=======
+>>>>>>> 975c58f89f999f64606fb53165bd25fe60892b6e
 }
