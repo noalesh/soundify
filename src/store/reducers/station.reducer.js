@@ -1,12 +1,23 @@
+import { stationService } from "../../services/station/station.service.local.js"
+
+
+// TODO - getDefaultFilter should be in local services or remote ? 
+
 export const SET_STATIONS = 'SET_STATIONS'
 export const SET_STATION = 'SET_STATION'
 export const REMOVE_STATION = 'REMOVE_STATION'
 export const ADD_STATION = 'ADD_STATION'
 export const UPDATE_STATION = 'UPDATE_STATION'
 
+export const SET_FILTER_BY = 'SET_FILTER_BY'
+export const SET_IS_LOADING = 'SET_IS_LOADING'
+
+
 const initialState = {
     stations: [],
-    cuurentStation: null
+    cuurentStation: null,
+    isLoading: false,
+    filterBy: stationService.getDefaultFilter()
 }
 
 export function stationReducer(state = initialState, action) {
@@ -23,7 +34,8 @@ export function stationReducer(state = initialState, action) {
         // TODO - removed because we think it's a part of the UNDO implementation. 
         //   const lastRemovedStation = state.stations.find(station => station._id === action.stationId)
             stations = state.stations.filter(station => station._id !== action.stationId)
-            newState = { ...state, stations, lastRemovedStation }
+           // newState = { ...state, stations, lastRemovedStation }
+           newState = { ...state, stations}
             break
         case ADD_STATION:
             newState = { ...state, stations: [...state.stations, action.station] }
@@ -31,6 +43,18 @@ export function stationReducer(state = initialState, action) {
         case UPDATE_STATION:
             stations = state.stations.map(station => (station._id === action.station._id) ? action.station : station)
             newState = { ...state, stations }
+            break
+            case SET_FILTER_BY:
+                newState =  {
+                ...state,
+                filterBy: { ...state.filterBy, ...action.filterBy }
+            }
+            break
+        case SET_IS_LOADING:
+            newState = {
+                ...state,
+                isLoading: action.isLoading
+            }
             break
         default:
     }

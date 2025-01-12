@@ -9,6 +9,7 @@ export const stationService = {
     query,
     getById,
     remove,
+    getDefaultFilter
 }
 window.cs = stationService
 
@@ -32,4 +33,8 @@ function getById(stationId) {
 async function remove(stationId) {
     // throw new Error('Nope')
     await storageService.remove(STORAGE_KEY, stationId)
+}
+
+function getDefaultFilter() {
+    return {  }
 }

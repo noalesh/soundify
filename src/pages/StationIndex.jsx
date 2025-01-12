@@ -3,10 +3,13 @@ import { useSelector } from 'react-redux'
 
 
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
+import { loadStations, removeStation } from '../store/actions/station.actions.js'
+// TODO: removeStation and addStation should be in a DropDown menu. 
+import { SET_FILTER_BY } from '../store/reducers/station.reducer.js'
 import { stationService } from '../services/station'
 import { userService } from '../services/user'
 
-import { SongList } from '../cmps/SongList'
+import { StationList } from '../cmps/StationList'
 import { SearchBar } from '../cmps/SearchBar'
 //TODO: Manage the service to search by song or station 
 export function StationIndex() {
@@ -15,7 +18,7 @@ export function StationIndex() {
     const stations = useSelector(storeState => storeState.stationModule.stations)
 
     useEffect(() => {
-        loadStation(filterBy)
+        loadStations(filterBy)
     }, [filterBy])
 
     async function onRemoveStation(stationId) {
@@ -73,10 +76,9 @@ export function StationIndex() {
                 {userService.getLoggedinUser() && <button onClick={onAddStation}>New Station</button>}
             </header>
             <SearchBar filterBy={filterBy} setFilterBy={setFilterBy} />
-            <SongList
-                songs={songs}
-                onRemoveSong={onRemoveSong} 
-                onAddSong={onAddSong}/>
+            <StationList
+                stations={stations}
+                ></StationList>
         </main>
     )
 }
