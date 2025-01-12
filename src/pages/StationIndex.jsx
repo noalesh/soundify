@@ -5,12 +5,9 @@ import { showSuccessMsg, showErrorMsg } from "../services/event-bus.service";
 import { stationService } from "../services/station";
 import { userService } from "../services/user";
 
-import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
 import { loadStations, removeStation } from '../store/actions/station.actions.js'
 // TODO: removeStation and addStation should be in a DropDown menu. 
 import { SET_FILTER_BY } from '../store/reducers/station.reducer.js'
-import { stationService } from '../services/station'
-import { userService } from '../services/user'
 
 import { StationList } from '../cmps/StationList'
 import { SearchBar } from '../cmps/SearchBar'
@@ -78,7 +75,7 @@ export function StationIndex() {
       {/* Search bar for filtering stations */}
       <SearchBar filterBy={filterBy} setFilterBy={setFilterBy} />
 
-    /*  <section>
+      <section>
         {filteredStations.length ? (
           filteredStations.map((station) => (
             <div key={station._id}>
@@ -89,7 +86,7 @@ export function StationIndex() {
         ) : (
           <p>No stations to display</p>
         )}
-      </section>  */
+      </section>  
 
 
       <StationList
