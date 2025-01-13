@@ -5,6 +5,16 @@ import { userService } from '../user'
 
 const STORAGE_KEY = 'song'
 
+const demoSong = {
+    _id:'1234',
+    title:'Demo Song',
+    artist:'',
+    url:'',
+    imgUrl:'',
+    addedBy:{},
+    addedAt:'time'
+}
+
 export const songService = {
     query,
     getById,

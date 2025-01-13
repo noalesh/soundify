@@ -7,6 +7,18 @@ import { userService } from '../user'
 const STORAGE_KEY = 'stationDemiDb'
 _createStationsFromGivenDemoData()
 
+const demoStation = {
+    _id:'1234',
+    name: "demo station",
+    createdBy: {
+        id: "uId",
+    },
+    songs: [
+        {SongObject1},{Song2}
+    ]
+
+}
+
 
 export const stationService = {
     query,
