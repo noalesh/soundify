@@ -15,6 +15,7 @@ import { SearchBar } from '../cmps/SearchBar'
 
 //TODO: Manage the service to search by song or station 
 export function StationIndex() {
+
   const [filterBy, setFilterBy] = useState(stationService.getDefaultFilter());
  // const [filteredStations, setFilteredStations] = useState([]);
   const stations = useSelector(
@@ -25,14 +26,15 @@ export function StationIndex() {
     loadStations(filterBy);
   }, [filterBy]);
 
-  async function loadStations(filterBy) {
+  // loadStations should come from the actions file
+ /* async function loadStations(filterBy) {
     try {
       const stations = await stationService.query(filterBy);
       setFilteredStations(stations);
     } catch (err) {
       showErrorMsg("Cannot load stations");
     }
-  }
+  }*/
 
   async function onRemoveStation(stationId) {
     try {

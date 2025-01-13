@@ -1,10 +1,10 @@
 import { stationService } from '../../services/station'
 import { store } from '../store'
-import { ADD_STATION, REMOVE_STATION, SET_STATION, UPDATE_STATION } from '../reducers/station.reducer'
+import { SET_STATIONS, ADD_STATION, REMOVE_STATION, SET_STATION, UPDATE_STATION, SET_FILTER_BY,  SET_IS_LOADING} from '../reducers/station.reducer'
 
 export async function loadStations(filterBy) {
     try {
-        const station = await stationService.query(filterBy)
+        const stations = await stationService.query(filterBy)
         store.dispatch(getCmdSetStations(stations))
     } catch (err) {
         console.log('Cannot load stations', err)
@@ -97,13 +97,6 @@ function getCmdUpdateStation(station) {
         station
     }
 }
-function getCmdAddStationMsg(msg) {
-    return {
-        type: ADD_STATION_MSG,
-        msg
-    }
-}
-
 
 /*
 // unitTestActions()

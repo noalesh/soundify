@@ -7,6 +7,7 @@ export const stationService = {
 }
 
 async function query(filterBy = { txt: '' }) {
+    console.log("query from remote service was called.")
     return httpService.get(`station`, filterBy)
 }
 
