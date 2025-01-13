@@ -6,7 +6,7 @@ import { StationIndex } from "./pages/StationIndex.jsx";
 import { SongDetails } from "./pages/SongDetails";
 import { UserDetails } from "./pages/UserDetails";
 import { AppHeader } from "./cmps/AppHeader";
-import { BottomPlayer } from "./cmps/BottomPlayer";
+import { AppFooter } from "./cmps/AppFooter.jsx";
 import { UserMsg } from "./cmps/UserMsg.jsx";
 import { LoginSignup } from "./pages/LoginSignup.jsx";
 import { Login } from "./pages/Login.jsx";
@@ -32,7 +32,7 @@ export function RootCmp() {
                     </Route>
                 </Routes>
             </main>
-            <BottomPlayer />
+            <AppFooter />
         </div>
     )
 }
