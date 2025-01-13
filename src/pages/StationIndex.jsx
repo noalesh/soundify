@@ -11,10 +11,12 @@ import { SET_FILTER_BY } from '../store/reducers/station.reducer.js'
 
 import { StationList } from '../cmps/StationList'
 import { SearchBar } from '../cmps/SearchBar'
+
+
 //TODO: Manage the service to search by song or station 
 export function StationIndex() {
   const [filterBy, setFilterBy] = useState(stationService.getDefaultFilter());
-  const [filteredStations, setFilteredStations] = useState([]);
+ // const [filteredStations, setFilteredStations] = useState([]);
   const stations = useSelector(
     (storeState) => storeState.stationModule.stations
   );
@@ -75,7 +77,7 @@ export function StationIndex() {
       {/* Search bar for filtering stations */}
       <SearchBar filterBy={filterBy} setFilterBy={setFilterBy} />
 
-      <section>
+     {/* <section>
         {filteredStations.length ? (
           filteredStations.map((station) => (
             <div key={station._id}>
@@ -86,12 +88,11 @@ export function StationIndex() {
         ) : (
           <p>No stations to display</p>
         )}
-      </section>  
+      </section>  */} 
 
 
-      <StationList
-                stations={stations}
-                ></StationList>
+      <StationList stations={stations}></StationList>
+
     </main>
   );
 }
