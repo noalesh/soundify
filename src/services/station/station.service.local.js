@@ -62,17 +62,72 @@ function _createStationsFromGivenDemoData() {
         {
             "_id": "OXeMG8wNskc",
             "title": "Demi Playlist #1",
-            "songs": ['song_a', 'song_b']
+            "createdBy": {
+                "_id": "u101",
+                "full Name": "Sheka Teka",
+                "imgUrl": ""
+            },
+            "songs": [{
+                "_id": "ghe6r",
+                "title": "song title a",
+                "url": "",
+                "addedBy": "",
+                "addedAt": 14012025
+            },
+            {
+                "_id": "whegr",
+                "title": "song title b",
+                "url": "",
+                "addedBy": "",
+                "addedAt": 14012025
+            }
+        ]
         },
         {
             "_id": "4XeMfdfNskc",
             "title": "Demi Playlist #2",
-            "songs": ['song_ao', 'song_bo']
+            "createdBy": {
+                "_id": "8y01",
+                "full Name": "Sheka Teka",
+                "imgUrl": ""
+            },
+            "songs": [{
+                "_id": "rhe6r",
+                "title": "song title ao",
+                "url": "",
+                "addedBy": "",
+                "addedAt": 14012025
+            },
+            {
+                "_id": "1hegr",
+                "title": "song title bo",
+                "url": "",
+                "addedBy": "",
+                "addedAt": 14012025
+            }]
         },
         {
             "_id": "11eMG8wNskc",
             "title": "Demi Playlist #3",
-            "songs": ['song_ar', 'song_br']
+            "createdBy": {
+                "_id": "r401",
+                "full Name": "Moshe Siman Tov",
+                "imgUrl": ""
+            },
+            "songs": [{
+                "_id": "tye6r",
+                "title": "song title ai",
+                "url": "",
+                "addedBy": "",
+                "addedAt": 14012025
+            },
+            {
+                "_id": "3hegr",
+                "title": "song title bi",
+                "url": "",
+                "addedBy": "",
+                "addedAt": 14012025
+            }]
         },
         
     ]
