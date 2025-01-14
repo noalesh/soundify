@@ -33,21 +33,21 @@ export function Player(song) {
     <section className="player-container">
         <section className="player-btn">
             <button className="shaf-button">
-                <img src="src/assets/imgs/Soundify-files /Shafle.svg" />
+                <img src="src/assets/imgs/Soundify-files/Shafle.svg" />
             </button>
             
             <button className="prev-button">
-                <img src="src/assets/imgs/Soundify-files /PrevSong.svg" />
+                <img src="src/assets/imgs/Soundify-files/PrevSong.svg" />
             </button>
 
             <PlayButton />
 
             <button className="next-button">
-                <img src="src/assets/imgs/Soundify-files /NextSong.svg" />
+                <img src="src/assets/imgs/Soundify-files/NextSong.svg" />
             </button>
 
             <button className="rep-button">
-                <img src="src/assets/imgs/Soundify-files /Repeat.svg" />
+                <img src="src/assets/imgs/Soundify-files/Repeat.svg" />
             </button>
             </section>
        
