@@ -4,10 +4,13 @@ import { useSelector } from "react-redux";
 import { useState } from "react";
 import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service";
 import { logout } from "../store/actions/user.actions";
+import { SearchBar } from "../cmps/SearchBar";
 
 export function AppHeader() {
+
   const user = useSelector((storeState) => storeState.userModule.user);
   const navigate = useNavigate();
+  const [filterBy, setFilterBy] = useState("");
 
   // State for managing the search term input
   const [searchTerm, setSearchTerm] = useState("");
@@ -51,6 +54,10 @@ export function AppHeader() {
           />
           <button type="submit">Search</button>
         </form>
+        
+        { /* TODO - double search bar */}
+        <SearchBar filterBy={filterBy} setFilterBy={setFilterBy} />
+        
 
         {user?.isAdmin && <NavLink to="/admin">Admin</NavLink>}
 

@@ -5,7 +5,9 @@ import { stationService } from "../services/station";
 import { userService } from "../services/user";
 
 import { StationList } from "../cmps/StationList";
-import { SearchBar } from "../cmps/SearchBar";
+import { SideBar } from "../cmps/SideBar";
+import { AppHeader } from "../cmps/AppHeader";
+import { AppFooter } from "../cmps/AppFooter";
 
 export function StationIndex() {
   const [filterBy, setFilterBy] = useState(stationService.getDefaultFilter());
@@ -43,11 +45,11 @@ export function StationIndex() {
           <button onClick={onAddStation}>New Station</button>
         )}
       </header>
-
-      {/* Search bar for filtering stations */}
-      <SearchBar filterBy={filterBy} setFilterBy={setFilterBy} />
-
+      <AppHeader /> 
+      <SideBar />
       <StationList stations={stations} />
+      <AppFooter />
+
     </main>
   );
 }

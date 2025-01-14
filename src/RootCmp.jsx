@@ -15,7 +15,6 @@ import { Signup } from "./pages/Signup.jsx";
 export function RootCmp() {
     return (
         <div className="main-container">
-            <AppHeader />
             <UserMsg />
             
             <main>
@@ -32,7 +31,6 @@ export function RootCmp() {
                     </Route>
                 </Routes>
             </main>
-            <AppFooter />{/*move to stationIndex */}
         </div>
     )
 }
