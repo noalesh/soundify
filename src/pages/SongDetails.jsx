@@ -12,7 +12,7 @@ export function SongDetails() {
   const song = useSelector(storeState => storeState.songModule.song)
 
   useEffect(() => {
-    loadCar(songId)
+    loadSong(songId)
   }, [songId])
 
 
