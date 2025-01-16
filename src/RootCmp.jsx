@@ -11,26 +11,27 @@ import { UserMsg } from "./cmps/UserMsg.jsx";
 import { LoginSignup } from "./pages/LoginSignup.jsx";
 import { Login } from "./pages/Login.jsx";
 import { Signup } from "./pages/Signup.jsx";
+import { StationDetails } from "./pages/StationDetails";
 
 export function RootCmp() {
-    return (
-        <div className="main-container">
-            <UserMsg />
-            
-            <main>
-                <Routes>
-                    <Route path="" element={<StationIndex />} >
-                        <Route path="home" element={<HomePage />} />
-                        {/* <Route path="station/:id" element{<StationDetails />} */}
-                        <Route path="song/:songId" element={<SongDetails />} />
-                        <Route path="user/:id" element={<UserDetails />} /> 
-                    </Route>
-                    <Route path="login" element={<LoginSignup />}>
-                        <Route index element={<Login />} />
-                        <Route path="signup" element={<Signup />} />
-                    </Route>
-                </Routes>
-            </main>
-        </div>
-    )
+  return (
+    <div className="main-container">
+      <UserMsg />
+
+      <main>
+        <Routes>
+          <Route path="/" element={<StationIndex />}>
+            <Route path="home" element={<HomePage />} />
+            <Route path="station/:id" element={<StationDetails />} />
+            <Route path="song/:songId" element={<SongDetails />} />
+            <Route path="user/:id" element={<UserDetails />} />
+          </Route>
+          <Route path="login" element={<LoginSignup />}>
+            <Route index element={<Login />} />
+            <Route path="signup" element={<Signup />} />
+          </Route>
+        </Routes>
+      </main>
+    </div>
+  );
 }

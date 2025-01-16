@@ -18,6 +18,7 @@
 @import "pages/StationIndex";
 @import "pages/UserDetails";
 @import "pages/LoginSignup";
+@import "pages/StationDetails"; 
 
 // Components
 @import "cmps/list";
@@ -26,6 +27,4 @@
 @import "cmps/AppFooter";
 @import "cmps/UserMsg";
 @import "cmps/StationFilter";
-@import "cmps/SideBar.scss"
-// @import "cmps/StationList";
-// @import "cmps/StationPreview";
+@import "cmps/SideBar";
