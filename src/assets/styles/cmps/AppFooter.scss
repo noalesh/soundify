@@ -125,3 +125,13 @@
     background-color: #1ed760; 
   }
   
+
+  .volume-bar-container{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .volume-bar-container img{
+    width: 20px;
+    height: 20px;
+  }
