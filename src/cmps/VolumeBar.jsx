@@ -11,10 +11,16 @@ export function VolumeBar () {
         setVolume(newVolume)
     }
 
+    function volumeIcon(volume) {
+        if (volume === 0) return 'src/assets/imgs/Soundify-files/mute.svg';
+        if (volume < 50) return 'src/assets/imgs/Soundify-files/LessAudio.svg';
+        return 'src/assets/imgs/Soundify-files/FullAudio.svg';
+    }
+    
 
     return (
         <section className="volume-bar-container">
-            <img src={ volume < 50 ? 'src/assets/imgs/Soundify-files/LessAudio.svg' : 'src/assets/imgs/Soundify-files/FullAudio.svg'} />
+            <img src={volumeIcon(volume)} />
                 <input 
                     className="volume-bar"
                     id="volume-bar"
