@@ -14,6 +14,7 @@ export function StationPreview({ station }) {
     return <article className="preview">
         <header>
             <Link to={`/station/${station._id}`}>{station.name}</Link>
+            <h4>{station.title}</h4>
             <SongList
                 songs={songs}
                 onRemoveSong={onRemoveSong} 

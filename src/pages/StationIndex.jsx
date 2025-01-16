@@ -44,18 +44,21 @@ export function StationIndex() {
     }
   }
 
-  return (
-    <main className="station-index">
-      <AppHeader /> 
-      <SideBar />
-      
-        <h2>Stations</h2>
-        {userService.getLoggedinUser() && (
+
+/*
+{userService.getLoggedinUser() && (
           <button onClick={onAddStation}>New Station</button>
         )}
-      <StationList stations={stations} />
-      <AppFooter />
+*/
 
+  return (
+    <main className="station-index">
+      <div class="grid-container">
+        <div class="grid-item-1"><AppHeader /></div>
+        <div class="grid-item-2"><SideBar /></div>
+        <div class="grid-item-3"><StationList stations={stations} /></div>
+        <div class="grid-item-4"><AppFooter /></div>
+      </div>
     </main>
   );
 }

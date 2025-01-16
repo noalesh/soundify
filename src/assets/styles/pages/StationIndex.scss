@@ -1,4 +1,35 @@
 .station-index {
+
+    margin-bottom: 150px;
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 4fr 1fr;
+        grid-template-rows: minmax(150px, auto);
+        grid-row-gap: 20px;
+        grid-column-gap: 10px;
+        grid-template-areas:
+        "grid-header grid-header grid-header"
+        "sidebar alternate-comp-basic right-side-bar"
+        "footer footer footer"
+    }
+
+    .grid-item-1 {
+        grid-area: grid-header;
+    }
+
+    .grid-item-2 {
+        grid-area: sidebar;
+    }
+
+    .grid-item-3 {
+        grid-area: alternate-comp-basic right-side-bar;
+    }
+
+    .grid-item-4 {
+        grid-area: footer;
+    }
+
     header {
         display: flex;
         align-items: center;
@@ -15,4 +46,5 @@
     button {
         margin-inline-end: 0;
     }
+
 }

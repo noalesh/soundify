@@ -8,11 +8,11 @@ export function StationList({ stations }) {
     <h1>StationList: </h1>
 
     return <section>
+        <h1>This is the stations list:</h1>
         <ul className="list">
             {stations.map(station =>
                 <li key={station._id}>
                     <StationPreview station={station}/>
-                    <div>{station.title}</div>
                 </li>)
             }
         </ul>
