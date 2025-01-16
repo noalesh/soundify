@@ -1,18 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { SearchBar } from "../cmps/SearchBar";
 import { MdLibraryMusic } from "react-icons/md";
 import "@/assets/styles/cmps/SideBar.scss";
+import { stationService } from "../services/station/station.service.local";
 
 export function SideBar() {
   const [filterBy, setFilterBy] = useState("");
+  const [stations, setStations] = useState([]);
 
-  const playlists = [
-    { id: 1, name: "Liked Songs", link: "/liked-songs" },
-    { id: 2, name: "Demi Playlist #1", link: "/playlist/1" },
-    { id: 3, name: "Demi Playlist #2", link: "/playlist/2" },
-    { id: 4, name: "Demi Playlist #3", link: "/playlist/3" },
-  ];
+  useEffect(() => {
+    loadStations();
+  }, []);
+
+  async function loadStations() {
+    try {
+      const stationsFromService = await stationService.query();
+      setStations(stationsFromService);
+    } catch (err) {
+      console.error("Failed to load stations:", err);
+    }
+  }
 
   return (
     <aside className="side-bar">
@@ -27,13 +35,13 @@ export function SideBar() {
       <div className="library-section">
         <h3>Your Library</h3>
         <ul>
-          {playlists.map((playlist) => (
-            <li key={playlist.id}>
+          {stations.map((station) => (
+            <li key={station._id}>
               <NavLink
-                to={playlist.link}
+                to={`/station/${station._id}`}
                 className={({ isActive }) => (isActive ? "active" : "")}
               >
-                {playlist.name}
+                {station.title}
               </NavLink>
             </li>
           ))}
