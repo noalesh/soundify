@@ -2,7 +2,7 @@ import { useState } from "react"
 
 export function VolumeBar () {
 
-    const [volume, setVolume] = useState(0)
+    const [volume, setVolume] = useState(50)
 
 
     

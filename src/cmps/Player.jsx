@@ -8,7 +8,7 @@ export function Player(song) {
 
 
     const [currentTime, setCurrentTime] = useState(0)
-    const [totalDuration, setTotalDuration] = useState(240)
+    const [totalDuration, setTotalDuration] = useState(292)
 
     useEffect(() => {
         const interval = setInterval(() => {
