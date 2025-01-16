@@ -7,13 +7,9 @@ import { logout } from "../store/actions/user.actions";
 import { SearchBar } from "../cmps/SearchBar";
 
 export function AppHeader() {
-
   const user = useSelector((storeState) => storeState.userModule.user);
   const navigate = useNavigate();
   const [filterBy, setFilterBy] = useState("");
-
-  // State for managing the search term input
-  const [searchTerm, setSearchTerm] = useState("");
 
   async function onLogout() {
     try {
@@ -23,14 +19,6 @@ export function AppHeader() {
     } catch (err) {
       showErrorMsg("Cannot logout");
     }
-  }
-
-  // Function to handle search form submission
-  // Navigates to the search results page with the search term as a query parameter
-  function onSearch(ev) {
-    ev.preventDefault();
-    if (!searchTerm.trim()) return;
-    navigate(`/search?term=${searchTerm}`);
   }
 
   return (
@@ -44,20 +32,8 @@ export function AppHeader() {
           />
         </NavLink>
 
-        {/* Added search bar functionality */}
-        <form onSubmit={onSearch} className="search-bar">
-          <input
-            type="text"
-            placeholder="Search songs, stations..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-          <button type="submit">Search</button>
-        </form>
-        
-        { /* TODO - double search bar */}
+        {/* Using SearchBar component */}
         <SearchBar filterBy={filterBy} setFilterBy={setFilterBy} />
-        
 
         {user?.isAdmin && <NavLink to="/admin">Admin</NavLink>}
 
