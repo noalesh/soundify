@@ -8,10 +8,11 @@
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
     position: fixed;
     bottom: 0;
-    width: 100%;
+    width: 100vw;
     height: 90px;
     gap: 1.5rem;
-    grid-column: 1;
+    grid-column: 2;
+    left: 0;
   }
   
   .app-footer img{

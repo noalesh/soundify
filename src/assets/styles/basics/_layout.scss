@@ -1,15 +1,15 @@
 .main-container {
     display: grid;
     grid-template-columns: 1rem 1fr 1rem;
-    width: 100vw; /* Ensure the container spans the entire width of the viewport */
+    width: 100%; /* Ensure the container spans the entire width of the viewport */
     height: 100vh; /* Optional: to ensure the container spans the full height of the viewport */
-    margin: 0;
+    margin: 0 auto;
 
     > * {
         grid-column: 2;
 
         &.full {
-            grid-column: 1 / -1;
+            grid-column: 2;
         }
     }
 
