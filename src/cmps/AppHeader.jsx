@@ -27,7 +27,7 @@ export function AppHeader() {
         <NavLink to="/" className="logo">
           <img
             className="logo-img"
-            src="/src/assets/imgs/soundify.jpeg"
+            src="/src/assets/imgs/logoImg.png"
             alt="Soundify Logo"
           />
         </NavLink>
