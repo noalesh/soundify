@@ -1,4 +1,5 @@
 import { Player } from "./Player.jsx"
+import { VolumeBar } from "./VolumeBar.jsx"
 
 export function AppFooter(song) {
 
@@ -6,9 +7,11 @@ export function AppFooter(song) {
     return (
         <>
         <section className="app-footer">
-            <img src="" />
-            <h1>Song Title</h1>
+            <img src="src/assets/imgs/SongDemoPic.png" />
+            <h1>No Role Modelz</h1>
             <Player />
+            <VolumeBar />
+
         </section>
         </>
     )
