@@ -1,6 +1,5 @@
 .station-preview {
     a {
-        color: $clr4;
         padding: 0;
     }    
 	p {
@@ -8,4 +7,8 @@
         font-size: .85em;
 	}
     overflow: auto;
+
+    .station-preview-container img {
+        border-radius: 10px;
+    }
 }

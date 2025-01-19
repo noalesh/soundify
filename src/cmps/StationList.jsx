@@ -5,11 +5,10 @@ export function StationList({ stations }) {
     
     //TODO: Add options to delete a station, create a new station ...?
 
-    <h1>StationList: </h1>
-
     return <section>
-        <h1>This is the stations list:</h1>
-        <ul className="list">
+        <h1>Your shows</h1>
+        <div className="dev-comments">Development note - TODO - currently all stations of all users are being shown!</div>
+        <ul className="station-list">
             {stations.map(station =>
                 <li key={station._id}>
                     <StationPreview station={station}/>

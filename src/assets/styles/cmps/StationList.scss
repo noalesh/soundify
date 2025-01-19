@@ -7,9 +7,6 @@
         display: grid;
         grid-template-columns: max-content auto;
         padding: .5em;
-        background-color: $clr2;
-
-        color: $clr6;
 
         .actions {
             justify-self: end;
@@ -19,4 +16,13 @@
             }
         }
     }
+}
+
+h1 {
+    color: $bright-fill;
+    font-size: 32px;
+}
+
+.dev-comments {
+    color: palevioletred;
 }
