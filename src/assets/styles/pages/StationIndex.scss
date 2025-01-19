@@ -5,13 +5,19 @@
     .grid-container {
         display: grid;
         grid-template-columns: 1fr 4fr 1fr;
-        grid-template-rows: minmax(150px, auto);
+        grid-template-rows: minmax(50px, auto);
         grid-row-gap: 20px;
         grid-column-gap: 10px;
         grid-template-areas:
         "grid-header grid-header grid-header"
-        "sidebar alternate-comp-basic right-side-bar"
+        "sidebar alternate-comp-basic alternate-comp-basic"
         "footer footer footer"
+    }
+
+    [class*="grid-item"] {
+        color: $text-fill-color;
+        background-color: $icon-sidebar-background;
+        border-radius: 10px;
     }
 
     .grid-item-1 {
@@ -23,7 +29,7 @@
     }
 
     .grid-item-3 {
-        grid-area: alternate-comp-basic right-side-bar;
+        grid-area: alternate-comp-basic;
     }
 
     .grid-item-4 {

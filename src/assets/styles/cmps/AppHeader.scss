@@ -1,7 +1,7 @@
 .app-header {
     display: flex;
     min-height: 3.5rem;
-    background-color: $clr4; 
+    background-color: $main-backgroud-color; 
     padding: rem(10px) 1rem; 
 
     nav {
@@ -12,7 +12,7 @@
         font-size: 0.8em; 
 
         .active {
-            color: $clr1; 
+            color: $text-fill-color; 
         }
 
         .logo {
@@ -22,11 +22,58 @@
         }
 
         .login-link {
-            margin-inline-start: auto; 
+            margin-inline-start: auto;
+            font-weight: bold;
+            color: $icon-sidebar-background; 
+        }
+
+        .signup-link {
+            color: $text-fill-color;
+            font-weight: bold;
         }
 
         button {
             margin-inline-end: 0; 
+        }
+
+        .login-link-container {
+            background-color: $bright-icon-background;
+            max-height: 48px;
+            border-radius: 60px; 
+            padding-left: 10px;
+            padding-right: 10px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.2s;
+        }
+
+        .login-link-container:hover {
+            transform: scale(1.1);
+            text-decoration: none;
+            background-color: $text-fill-color;
+        }
+
+        .login-link:hover {
+            text-decoration: none;
+        }
+
+        .signup-link-container {
+            background-color: transparent;
+            max-height: 48px;
+            border-radius: 60px; 
+            padding-left: 10px;
+            padding-right: 10px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.2s;
+            margin-right: 0px;
+            margin-left: auto;
+        }
+
+        .signup-link:hover {
+            transform: scale(1.1);
+            text-decoration: none;
+            color: $bright-icon-background;
         }
     }
 
@@ -44,7 +91,6 @@
         color: $clr1; 
         .score {
             padding: 8px; 
-            background-color: $clr2; 
             border-radius: 50%; 
             margin: 10px; 
             color: $clr6; 
@@ -56,11 +102,9 @@
             border-radius: 50%; 
         }
 
-        .btn-link {
-            color: $clr2; 
-        }
+        
     }
-
+/*
     // Search bar styles
     .search-bar {
         display: flex; 
@@ -72,8 +116,7 @@
             padding: 0.5em; 
             border: 1px solid $clr6;
             border-radius: 4px; 
-            background-color: $clr3; 
-            color: $clr1; 
+            color: $text-fill-color; 
             font-size: 0.9em; 
 
             &:focus {
@@ -84,7 +127,6 @@
 
         button {
             padding: 0.5em 1em; 
-            background-color: $clr1; 
             color: $clr6; 
             border: none; 
             border-radius: 4px; 
@@ -96,5 +138,5 @@
                 background-color: lighten($clr1, 10%); 
             }
         }
-    }
+    }*/
 }

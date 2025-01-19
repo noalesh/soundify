@@ -32,19 +32,21 @@ export function SearchBar({ filterBy, setFilterBy }) {
   }
 
   return (
-    <section className="search-bar">
-      {/* Search input */}
-      <input
-        type="text"
-        name="txt"
-        value={filterToEdit.txt || ""}
-        placeholder="Search songs or stations..."
-        onChange={handleChange}
-      />
-      {/* Clear button */}
-      <button className="btn-clear" onClick={clearFilter}>
-        Clear
-      </button>
+    <section className="search-bar-container">
+      <section className="search-bar">
+        {/* Search input */}
+        <input
+          type="text"
+          name="txt"
+          value={filterToEdit.txt || ""}
+          placeholder="Search songs or stations..."
+          onChange={handleChange}
+        />
+        {/* Clear button */}
+        <button className="btn-clear" onClick={clearFilter}>
+          Clear
+        </button>
+      </section>
     </section>
   );
 }

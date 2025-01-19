@@ -38,14 +38,18 @@ export function AppHeader() {
         {user?.isAdmin && <NavLink to="/admin">Admin</NavLink>}
 
         {!user && (
-          <NavLink to="login" className="login-link">
-            Login
-          </NavLink>
+          <section className="signup-link-container">
+            <NavLink to="login" className="signup-link">
+              Sign up
+            </NavLink>
+          </section>
         )}
         {!user && (
-          <NavLink to="login" className="login-link">
-            Sign-Up
-          </NavLink>
+          <section className="login-link-container">
+            <NavLink to="login" className="login-link">
+              Log in
+            </NavLink>
+          </section>
         )}
       </nav>
     </header>
