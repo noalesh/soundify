@@ -24,12 +24,14 @@ export function AppHeader() {
   return (
     <header className="app-header full">
       <nav>
-        <NavLink to="/" className="logo">
-          <img
+        <NavLink to="/" className="logo">   
+          <div className="logo-img-contianer">
+            <img
             className="logo-img"
             src="/src/assets/imgs/logoImg.png"
             alt="Soundify Logo"
-          />
+            />
+          </div>
         </NavLink>
 
         {/* Using SearchBar component */}

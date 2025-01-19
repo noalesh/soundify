@@ -7,6 +7,8 @@
         display: grid;
         grid-template-columns: max-content auto;
         padding: .5em;
+        color: $bright-fill;
+        font-size: 15px;
 
         .actions {
             justify-self: end;
@@ -15,6 +17,18 @@
                 padding: .3em .5em;
             }
         }
+    }
+
+    .station-list-item-container {
+        margin: 20px;
+        border-radius: 10px;
+        width: 177px;
+        height: 253px;
+    }
+
+    .station-list-item-container:hover {
+        background-color: $active-secondary-background-color;
+        text-decoration: none;
     }
 }
 
