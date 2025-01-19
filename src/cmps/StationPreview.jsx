@@ -11,14 +11,18 @@ export function StationPreview({ station }) {
     function onAddSong() {}
     /// END OF TODO /////////////////////////////////////
 
-    return <article className="preview">
+    return <article className="station-preview">
         <header>
             <Link to={`/station/${station._id}`}>{station.name}</Link>
-            <h4>{station.title}</h4>
-            <SongList
-                songs={songs}
-                onRemoveSong={onRemoveSong} 
-                onAddSong={onAddSong}/>
+            <div className="station-preview-container">
+                <h3>{station.imgUrl}</h3>
+                <img src={station.img} alt="playlist image" width="90" height="90"/> 
+                <h4>{station.title}</h4>
+                <SongList
+                    songs={songs}
+                    onRemoveSong={onRemoveSong} 
+                    onAddSong={onAddSong}/>
+                </div>
         </header>
 
         
