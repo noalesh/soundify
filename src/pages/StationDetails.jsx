@@ -31,6 +31,7 @@ export function StationDetails() {
 
   return (
     <section className="station-details">
+      <h1>This is the station details:</h1>
       <h1>{station.title}</h1>
       <ul>
         {station.songs.map((song) => (
