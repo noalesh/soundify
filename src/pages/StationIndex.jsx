@@ -10,6 +10,7 @@ import { StationList } from "../cmps/StationList";
 import { SideBar } from "../cmps/SideBar";
 import { AppHeader } from "../cmps/AppHeader";
 import { AppFooter } from "../cmps/AppFooter";
+import { Outlet } from "react-router";
 
 export function StationIndex() {
 
@@ -56,7 +57,7 @@ export function StationIndex() {
       <div class="grid-container">
         <div class="grid-item-1"><AppHeader /></div>
         <div class="grid-item-2"><SideBar /></div>
-        <div class="grid-item-3"><StationList stations={stations} /></div>
+        <div class="grid-item-3"><Outlet /></div>
         <div class="grid-item-4"><AppFooter /></div>
       </div>
     </main>
