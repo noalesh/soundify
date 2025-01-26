@@ -1,4 +1,30 @@
-.song-title {
-    font-weight: bold;
-    color: red;
+.table-row {
+
+    .song-title {
+        font-weight: bold;
+        color: $bright-fill;
+    }
+    
+    .img-title-artist {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    
+    .img-title-artist img {
+        padding-right: 5px;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+    }
+    
+    td {
+        text-align: center;
+        padding-bottom: 0.75em;
+        padding-top: 0.75em;
+    }
+
 }
+

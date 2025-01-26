@@ -7,12 +7,12 @@ export function DataTable({ songs }) {
                 <th>#</th>
                 <th>Title</th>
                 <th>Album</th>
-                <th>Duration</th>
+                <th><img src="/src/assets/imgs/Soundify-files/Duration.svg" alt="Duration"/></th>
             </tr>
         </thead>
         <tbody>
             {songs.map(song =>
-                <DataTableRow key={song._id} song={song}/>)}
+                <DataTableRow className="table-row" key={song._id} song={song}/>)}
         </tbody>
     </table>
 }

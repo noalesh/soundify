@@ -75,6 +75,7 @@ function _createStationsFromGivenDemoData() {
           url: "",
           addedBy: "",
           addedAt: 14012025,
+          imgUrl: "/src/assets/imgs/demiDataImgs/songImg4.png",
         },
         {
           _id: "whegr",
@@ -85,6 +86,7 @@ function _createStationsFromGivenDemoData() {
           url: "",
           addedBy: "",
           addedAt: 14012025,
+          imgUrl: "/src/assets/imgs/demiDataImgs/songImg2.png"
         },
         {
             _id: "olegr",
@@ -95,6 +97,7 @@ function _createStationsFromGivenDemoData() {
             url: "",
             addedBy: "",
             addedAt: 15042025,
+            imgUrl: "/src/assets/imgs/demiDataImgs/songImg3.png"
           },
       ],
     },
@@ -117,6 +120,7 @@ function _createStationsFromGivenDemoData() {
           url: "",
           addedBy: "",
           addedAt: 14012025,
+          imgUrl: "/src/assets/imgs/demiDataImgs/songImg5.png"
         },
         {
             _id: "otjrr",
@@ -127,6 +131,7 @@ function _createStationsFromGivenDemoData() {
             url: "",
             addedBy: "",
             addedAt: 12042025,
+            imgUrl: "/src/assets/imgs/demiDataImgs/songImg2.png"
           },
         {
           _id: "1hegr",
@@ -137,6 +142,7 @@ function _createStationsFromGivenDemoData() {
           url: "",
           addedBy: "",
           addedAt: 14012025,
+          imgUrl: "/src/assets/imgs/demiDataImgs/songImg4.png"
         },
       ],
     },
@@ -159,6 +165,7 @@ function _createStationsFromGivenDemoData() {
           url: "",
           addedBy: "",
           addedAt: 14012025,
+          imgUrl: "/src/assets/imgs/demiDataImgs/songImg4.png"
         },
         {
           _id: "3hegr",
@@ -169,6 +176,7 @@ function _createStationsFromGivenDemoData() {
           url: "",
           addedBy: "",
           addedAt: 14012025,
+          imgUrl: "/src/assets/imgs/demiDataImgs/songImg1.png"
         },
       ],
     },
@@ -191,6 +199,7 @@ function _createStationsFromGivenDemoData() {
             url: "",
             addedBy: "",
             addedAt: 14612025,
+            imgUrl: "/src/assets/imgs/demiDataImgs/songImg1.png"
           },
           {
             _id: "u436r",
@@ -201,6 +210,7 @@ function _createStationsFromGivenDemoData() {
             url: "",
             addedBy: "",
             addedAt: 17012025,
+            imgUrl: "/src/assets/imgs/demiDataImgs/songImg2.png"
           },
         ],
       },
@@ -223,6 +233,7 @@ function _createStationsFromGivenDemoData() {
             url: "",
             addedBy: "",
             addedAt: 14612025,
+            imgUrl: "/src/assets/imgs/demiDataImgs/songImg1.png"
           },
           {
             _id: "u8e6r",
@@ -233,6 +244,7 @@ function _createStationsFromGivenDemoData() {
             url: "",
             addedBy: "",
             addedAt: 12012025,
+            imgUrl: "/src/assets/imgs/demiDataImgs/songImg5.png"
           },
         ],
       },

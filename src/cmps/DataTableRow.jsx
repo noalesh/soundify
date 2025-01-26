@@ -3,10 +3,14 @@ import { Fragment } from "react"
 export function DataTableRow({ song }) {
 
     return <Fragment>
-            <tr>
+            <tr className="table-row">
                 <td></td>  {/* serial number of the song in the station */}
-                <td><span className="song-title">{song.title}</span> 
-                    <br></br> {song.artist}</td>
+                <td> <div className="img-title-artist">
+                <img src={song.imgUrl} alt="song image" width="4em" height="4em"/>                         
+                <div><span className="song-title">{song.title}</span> 
+                    <br></br> {song.artist}
+                    </div>
+                </div></td>
                 <td>{song.album}</td>
                 <td>{song.duration}</td>
             </tr>
