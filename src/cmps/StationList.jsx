@@ -12,7 +12,7 @@ export function StationList({ stations }) {
         <div className="dev-comments">Development note - TODO - currently all stations of all users are being shown!</div>
         <ul className="station-list">
             {stations.map(station =>
-                    <Link class="station-list-item-container" to={`/station/${station._id}`}>{station.name}
+                    <Link className="station-list-item-container" to={`/station/${station._id}`}>{station.name}
                         <li key={station._id}>
                         <StationPreview station={station}/>
                         </li>

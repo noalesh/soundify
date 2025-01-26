@@ -1,0 +1,32 @@
+
+.data-table{
+    
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    color: $text-fill-color;
+    font-size: 12px;
+
+    thead {
+        border-bottom: 1px solid gray;
+
+    }
+
+    table
+    {
+        border-collapse: collapse;
+        text-align: center;
+    }
+    
+    body
+    {
+        counter-reset: Serial;
+    }
+    
+    tr td:first-child:before
+    {
+      counter-increment: Serial;
+      content: counter(Serial);
+    }   
+    
+}

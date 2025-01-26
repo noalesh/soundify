@@ -54,11 +54,14 @@ export function StationIndex() {
 
   return (
     <main className="station-index">
-      <div class="grid-container">
-        <div class="grid-item-1"><AppHeader /></div>
-        <div class="grid-item-2"><SideBar /></div>
-        <div class="grid-item-3"><Outlet /></div>
-        <div class="grid-item-4"><AppFooter /></div>
+      <div className="grid-container">
+        <div className="grid-item-1"><AppHeader /></div>
+        <div className="grid-item-2"><SideBar /></div>
+        <div className="grid-item-3">
+          <h3 className="dev-comments">development note - TODO - This section shows alternating components.</h3>
+          <Outlet />
+        </div>
+        <div className="grid-item-4"><AppFooter /></div>
       </div>
     </main>
   );
