@@ -5,7 +5,7 @@ export function HomePage() {
     return (
         <div>
         <section>
-            <h1>Soundify</h1>
+            <h1 className="dev-comments">TODO - UNDER CONSTRUCTION... <br></br>HomePage</h1>
         </section >
 
          <section>
