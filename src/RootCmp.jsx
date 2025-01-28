@@ -5,8 +5,7 @@ import { HomePage } from "./pages/HomePage";
 import { StationIndex } from "./pages/StationIndex.jsx";
 import { SongDetails } from "./pages/SongDetails";
 import { UserDetails } from "./pages/UserDetails";
-import { AppHeader } from "./cmps/AppHeader";
-import { AppFooter } from "./cmps/AppFooter.jsx";
+import { StationAdd } from "./pages/StationAdd.jsx";
 import { UserMsg } from "./cmps/UserMsg.jsx";
 import { LoginSignup } from "./pages/LoginSignup.jsx";
 import { Login } from "./pages/Login.jsx";
@@ -23,6 +22,7 @@ export function RootCmp() {
           <Route path="/" element={<StationIndex />}>
             <Route path="home" element={<HomePage />} />
             <Route path="station/:id" element={<StationDetails />} />
+            <Route path="newStation" element={<StationAdd />} />
             <Route path="song/:songId" element={<SongDetails />} />
             <Route path="user/:id" element={<UserDetails />} />
           </Route>

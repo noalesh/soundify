@@ -58,7 +58,7 @@ export function StationIndex() {
         <div className="grid-item-1"><AppHeader /></div>
         <div className="grid-item-2"><SideBar /></div>
         <div className="grid-item-3">
-          <h3 className="dev-comments">development note - TODO - This section shows alternating components.</h3>
+         {/* <h3 className="dev-comments">development note - TODO - This section shows alternating components.</h3> */}
           <Outlet />
         </div>
         <div className="grid-item-4"><AppFooter /></div>

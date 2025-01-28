@@ -1,26 +1,61 @@
-$background-color: #181818;
-$text-color: #fff;
-$hover-bg-color: #282828;
-$active-color: #fff;
-$inactive-color: #b3b3b3;
+$hover-bg-color: $hover-dark;
+$inactive-color: $text-fill-color;
 
 .side-bar {
-    background-color: $background-color;
-    color: $text-color;
+    background-color: $icon-sidebar-background;
+    color: $bright-fill;
     width: 240px;
     height: 100vh;
     display: flex;
     flex-direction: column;
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
 
     .logo-section {
         margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        text-decoration: none;
 
-        .side-bar-logo {
+        .bright-hover:hover {
+            color: $bright-fill; 
+        }
+
+        .library-title {
+            display: flex;
             width: 100%;
-            height: auto;
-            object-fit: contain;
+            align-items: center; 
+            gap: 1em; 
+            font-size: 0.8em; 
+            color: $text-fill-color;
+            margin-left: 1em;
+            text-decoration: none;
+
+            
+    }
+
+        img {
+            width: 1.5em;
+            height: 1.5em;
+            background-color: $text-fill-color; 
+        }
+        
+        .library-icon {
+            width: 1.5em;
+            height: 1.5em;
+            background-color: $text-fill-color;
+        }
+
+        h3 {
+            font-size: 13px;
+        }
+
+        .plus-sign {
+            width: 1em;
+            height: 1em;
+            background-color: $text-fill-color;
+
         }
     }
 
@@ -54,12 +89,12 @@ $inactive-color: #b3b3b3;
                     border-radius: 4px;
 
                     &:hover {
-                        color: $active-color;
+                        color: $bright-fill;
                         background-color: $hover-bg-color;
                     }
 
                     &.active {
-                        color: $active-color;
+                        color: $bright-fill;
                         background-color: $hover-bg-color;
                     }
                 }
@@ -68,8 +103,4 @@ $inactive-color: #b3b3b3;
     }
 }
 
-.library-icon {
-    font-size: 3rem;
-    color: #fff;
-    margin-bottom: 20px;
-}
+
