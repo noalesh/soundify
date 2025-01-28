@@ -107,6 +107,13 @@ import { useState,useEffect,useRef } from "react"
             }
         }
 
+  
+      function volumeIcon(volume) {
+          if (volume === 0) return 'src/assets/imgs/Soundify-files/mute.svg';
+          if (volume < 50) return 'src/assets/imgs/Soundify-files/LessAudio.svg';
+          return 'src/assets/imgs/Soundify-files/FullAudio.svg';
+      }
+
     
 
           function formatTime(seconds) {
@@ -163,53 +170,20 @@ import { useState,useEffect,useRef } from "react"
             </div>
             <span className="total-time">{formatTime(totalDuration)}</span>
           </section>
+
+          <section className="volume-bar-container">
+            <img src={volumeIcon(volume)} />
+                <input 
+                    className="volume-bar"
+                    id="volume-bar"
+                    type="range"
+                    min={0}
+                    max={100}
+                    step={1}
+                    value={volume}
+                    onChange={handleVolumeChange}
+                    />
+            </section>
         </section>
       );
-
-//     return (
-//     <section className="player-container player">
-//         <section className="player-btn">
-//             <button className="shaf-button">
-//                 <img src="src/assets/imgs/Soundify-files/Shafle.svg" />
-//             </button>
-            
-//             <button className="prev-button">
-//                 <img src="src/assets/imgs/Soundify-files/PrevSong.svg" />
-//             </button>
-
-//             <button onClick={handlePlayPause} className="play-button">Play</button>
-
-//             <button className="next-button">
-//                 <img src="src/assets/imgs/Soundify-files/NextSong.svg" />
-//             </button>
-
-//             <button className="rep-button">
-//                 <img src="src/assets/imgs/Soundify-files/Repeat.svg" />
-//             </button>
-//             </section>
-       
-        
-            
-       
-//         <section className="time-line">
-//             <span className="song-time">{formatTime(currentTime)}</span>
-//             <div>
-//                 <input
-//                     className="song-bar"
-//                     name="song-bar"
-//                     id="song-bar"
-//                     type="range"
-//                     min={0}
-//                     max={totalDuration}
-//                     value={currentTime}
-//                     onChange={handleProgressBarChange}
-//                  />   
-//             </div>
-//             <span className="total-time">{formatTime(totalDuration)}</span>
-        
-
-//         </section>
-//     </section>
-
-// )
 }
