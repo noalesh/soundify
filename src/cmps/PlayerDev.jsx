@@ -119,7 +119,6 @@ import { useState,useEffect,useRef } from "react"
 
     return (
         <section className="player-container player">
-          {/* Control Buttons */}
           <section className="player-btn">
             <button className="shaf-button">
               <img src="src/assets/imgs/Soundify-files/Shafle.svg" alt="Shuffle" />
@@ -142,10 +141,10 @@ import { useState,useEffect,useRef } from "react"
             </button>
           </section>
       
-          {/* YouTube Player */}
+          
           <div id="player" style={{ display: "none" }}></div>
       
-          {/* Progress Bar */}
+          
           <section className="time-line">
             <span className="song-time">{formatTime(currentTime * 100)}</span>
             <div>
@@ -155,8 +154,8 @@ import { useState,useEffect,useRef } from "react"
                 id="song-bar"
                 type="range"
                 min={0}
-                max={totalDuration || 0} // Ensure max isn't undefined
-                value={currentTime || 0} // Ensure value isn't undefined
+                max={totalDuration || 0} 
+                value={currentTime || 0} 
                 onChange={handleProgressBarChange}
               />
             </div>
