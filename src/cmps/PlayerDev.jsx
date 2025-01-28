@@ -12,7 +12,7 @@ import { useState,useEffect,useRef } from "react"
         useEffect(() => {
 
             window.onYouTubeIframeAPIReady = loadYouTubePlayer;
-            console.log('currentTime:',currentTime)
+            
 
             function loadYouTubePlayer() {
                 if (window.YT && window.YT.Player) {
@@ -107,14 +107,16 @@ import { useState,useEffect,useRef } from "react"
             }
         }
 
-        function formatTime(currentTime) {
-            const minutes = Math.floor(currentTime / 60);
-            const seconds = Math.floor(currentTime % 60);
+    
+
+          function formatTime(seconds) {
             
-            const formattedSeconds = seconds < 10 ? '0' + seconds : seconds;
-          
-            return `${minutes}:${formattedSeconds}`;
-          }
+            seconds = Math.floor(seconds);
+            const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = Math.floor(seconds % 60);
+            const paddedSeconds = remainingSeconds.toString().padStart(2, '0');
+            return `${minutes}:${paddedSeconds}`;      
+        }
 
 
     return (
@@ -146,7 +148,7 @@ import { useState,useEffect,useRef } from "react"
       
           
           <section className="time-line">
-            <span className="song-time">{formatTime(currentTime * 100)}</span>
+            <span className="song-time">{formatTime(currentTime)}</span>
             <div>
               <input
                 className="song-bar"
