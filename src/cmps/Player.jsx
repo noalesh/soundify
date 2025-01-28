@@ -3,10 +3,6 @@ import { useState,useEffect } from "react"
 
 export function Player(song) {
 
-
-   
-
-
     const [currentTime, setCurrentTime] = useState(0)
     const [totalDuration, setTotalDuration] = useState(292)
 
