@@ -107,6 +107,13 @@ import { useState,useEffect,useRef } from "react"
             }
         }
 
+  
+      function volumeIcon(volume) {
+          if (volume === 0) return 'src/assets/imgs/Soundify-files/mute.svg';
+          if (volume < 50) return 'src/assets/imgs/Soundify-files/LessAudio.svg';
+          return 'src/assets/imgs/Soundify-files/FullAudio.svg';
+      }
+
     
 
           function formatTime(seconds) {
@@ -164,7 +171,19 @@ import { useState,useEffect,useRef } from "react"
             <span className="total-time">{formatTime(totalDuration)}</span>
           </section>
 
-          
+          <section className="volume-bar-container">
+            <img src={volumeIcon(volume)} />
+                <input 
+                    className="volume-bar"
+                    id="volume-bar"
+                    type="range"
+                    min={0}
+                    max={100}
+                    step={1}
+                    value={volume}
+                    onChange={handleVolumeChange}
+                    />
+            </section>
         </section>
       );
 }
