@@ -46,19 +46,11 @@ export function StationIndex() {
     }
   }
 
-  async function onUpdateStation(stationId) {
-    try {
-      const station = stations.find((s) => s._id === stationId);
-      if (!station) throw new Error("Station not found");
-      station.name =
-        prompt("Enter new name for the station", station.name) || station.name;
-      const updatedStation = await stationService.save(station);
-      showSuccessMsg(`Station updated (id: ${updatedStation._id})`);
-      loadStations(filterBy);
-    } catch (err) {
-      showErrorMsg("Cannot update station");
-    }
-  }
+  /*
+{userService.getLoggedinUser() && (
+          <button onClick={onAddStation}>New Station</button>
+        )}
+*/
 
   return (
     <main className="station-index">
@@ -67,14 +59,10 @@ export function StationIndex() {
           <AppHeader />
         </div>
         <div className="grid-item-2">
-          <SideBar
-            stations={stations}
-            onAddStation={onAddStation}
-            onUpdateStation={onUpdateStation}
-            onDeleteStation={onRemoveStation}
-          />
+          <SideBar />
         </div>
         <div className="grid-item-3">
+          {/* <h3 className="dev-comments">development note - TODO - This section shows alternating components.</h3> */}
           <Outlet />
         </div>
         <div className="grid-item-4">
