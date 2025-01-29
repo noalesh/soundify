@@ -19,28 +19,27 @@ $inactive-color: $text-fill-color;
         text-decoration: none;
 
         .bright-hover:hover {
-            color: $bright-fill; 
+            color: $bright-fill;
         }
 
         .library-title {
             display: flex;
             width: 100%;
-            align-items: center; 
-            gap: 1em; 
-            font-size: 0.8em; 
+            align-items: center;
+            gap: 1em;
+            font-size: 0.8em;
             color: $text-fill-color;
             margin-left: 1em;
             text-decoration: none;
 
-            
-    }
+        }
 
         img {
             width: 1.5em;
             height: 1.5em;
-            background-color: $text-fill-color; 
+            background-color: $text-fill-color;
         }
-        
+
         .library-icon {
             width: 1.5em;
             height: 1.5em;
@@ -55,7 +54,21 @@ $inactive-color: $text-fill-color;
             width: 1em;
             height: 1em;
             background-color: $text-fill-color;
+        }
 
+        .add-station-btn {
+            // Added styling for the Add Playlist button
+            background-color: $hover-bg-color;
+            color: $bright-fill;
+            border: none;
+            padding: 5px 10px;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: lighten($hover-bg-color, 10%);
+            }
         }
     }
 
@@ -98,9 +111,28 @@ $inactive-color: $text-fill-color;
                         background-color: $hover-bg-color;
                     }
                 }
+
+                .station-actions {
+                    // Added styling for Edit/Delete buttons
+                    display: flex;
+                    gap: 5px;
+                    margin-top: 5px;
+
+                    button {
+                        background-color: $hover-bg-color;
+                        color: $bright-fill;
+                        border: none;
+                        padding: 3px 8px;
+                        font-size: 0.8rem;
+                        border-radius: 4px;
+                        cursor: pointer;
+
+                        &:hover {
+                            background-color: lighten($hover-bg-color, 10%);
+                        }
+                    }
+                }
             }
         }
     }
 }
-
-
