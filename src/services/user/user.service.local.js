@@ -66,6 +66,7 @@ function getLoggedinUser() {
 }
 
 function saveLoggedinUser(user) {
+    console.log("inside saveLoggedinUser, user is: ", user)
 	user = { 
         _id: user._id, 
         fullname: user.fullname, 

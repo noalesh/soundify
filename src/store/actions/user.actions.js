@@ -4,7 +4,7 @@ import { store } from '../store'
 
 import { showErrorMsg } from '../../services/event-bus.service'
 import { LOADING_DONE, LOADING_START } from '../reducers/system.reducer'
-
+import { SET_USER } from "../reducers/user.reducer.js";
 
 export async function loadUsers() {
     try {
