@@ -1,5 +1,6 @@
 
 import { PlayerDev } from "./PlayerDev.jsx"
+import { Player } from "./Player.jsx"
 
 
 export function AppFooter(song) {
@@ -20,7 +21,7 @@ export function AppFooter(song) {
             <h1>{songData.title}</h1>
             </section>
             <section className="player-container-main">
-                <PlayerDev videoId={songData.videoId} />
+                <Player videoId={songData.videoId} />
             </section>
         </section>
         </>

@@ -1,6 +1,6 @@
 import { useState,useEffect,useRef } from "react"
 
-    export function PlayerDev({videoId}) {
+    export function Player({videoId}) {
         const [isPlaying, setIsPlaying] = useState(false)
         const [currentTime, setCurrentTime] = useState(0)
         const [totalDuration, setTotalDuration] = useState(0)
@@ -50,7 +50,6 @@ import { useState,useEffect,useRef } from "react"
                   }
                 };
               }, [videoId]);
-
 
         function handlePlayerReady(event) {
             setTotalDuration(event.target.getDuration())
@@ -109,9 +108,9 @@ import { useState,useEffect,useRef } from "react"
 
   
       function volumeIcon(volume) {
-          if (volume === 0) return 'src/assets/imgs/Soundify-files/mute.svg';
-          if (volume < 50) return 'src/assets/imgs/Soundify-files/LessAudio.svg';
-          return 'src/assets/imgs/Soundify-files/FullAudio.svg';
+          if (volume >= 50) return 'src/assets/imgs/Soundify-files/FullAudio.svg';
+          if (volume < 50 && volume != 0) return 'src/assets/imgs/Soundify-files/LessAudio.svg';
+          return 'src/assets/imgs/Soundify-files/Mute.svg';
       }
 
     
@@ -127,7 +126,7 @@ import { useState,useEffect,useRef } from "react"
 
 
     return (
-        <section className="player-container player">
+        <section className="player-container">
           <section className="player-btn">
             <button className="shaf-button">
               <img src="src/assets/imgs/Soundify-files/Shafle.svg" alt="Shuffle" />
