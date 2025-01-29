@@ -1,19 +1,27 @@
 
-import { VolumeBar } from "./VolumeBar.jsx"
 import { PlayerDev } from "./PlayerDev.jsx"
 
 
 export function AppFooter(song) {
 
 
+    const songData = {
+        videoId: 'ktvTqknDobU',
+        title: 'Radioactive',
+        img: 'src/assets/imgs/imagenDragon.webp'
+    }
+
+
     return (
         <>
         <section className="app-footer">
-            <img src="src/assets/imgs/imagenDragon.webp" />
-            <h1>Radioactive</h1>
-            <PlayerDev videoId={'ktvTqknDobU'} />
-            {/* <VolumeBar /> */}
-
+                <section className="song-data">
+                <img src={songData.img} />
+            <h1>{songData.title}</h1>
+            </section>
+            <section className="player-container-main">
+                <PlayerDev videoId={songData.videoId} />
+            </section>
         </section>
         </>
     )

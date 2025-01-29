@@ -127,7 +127,7 @@ import { useState,useEffect,useRef } from "react"
 
 
     return (
-        <section className="player-container player">
+        <section className="player-container">
           <section className="player-btn">
             <button className="shaf-button">
               <img src="src/assets/imgs/Soundify-files/Shafle.svg" alt="Shuffle" />
