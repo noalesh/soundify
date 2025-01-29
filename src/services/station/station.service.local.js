@@ -19,11 +19,9 @@ const demoStation = {
 };
 
 export const stationService = {
-  save, // Added for CRUD operations
   query,
   getById,
   remove,
-  save,
   getDefaultFilter,
 };
 window.cs = stationService;
@@ -47,22 +45,8 @@ function getById(stationId) {
 }
 
 async function remove(stationId) {
-  // Remove function for deleting a station
+  // throw new Error('Nope')
   await storageService.remove(STORAGE_KEY, stationId);
-}
-
-async function save(station) {
-  // Save function for adding or updating stations
-  const stations = await storageService.query(STORAGE_KEY);
-  if (station._id) {
-    const idx = stations.findIndex((s) => s._id === station._id);
-    stations[idx] = { ...station };
-  } else {
-    station._id = makeId();
-    stations.push(station);
-  }
-  saveToStorage(STORAGE_KEY, stations);
-  return station;
 }
 
 function getDefaultFilter() {
