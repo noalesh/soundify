@@ -1,10 +1,9 @@
-const YOUTUBE_API_KEY = import.meta.env
+const {VITE_YOUTUBE_API_KEY} = import.meta.env
 import axios from "axios";
 
 
-const API_KEY = YOUTUBE_API_KEY
+const API_KEY = VITE_YOUTUBE_API_KEY
 const url = `https://www.googleapis.com/youtube/v3/search`
-
 
 
 export async function getVideoId(query) {

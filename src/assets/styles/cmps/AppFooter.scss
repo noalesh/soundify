@@ -11,25 +11,34 @@
     width: 100vw;
     height: 90px;
     gap: 1.5rem;
-    grid-column: 2;
+    grid-column: 3;
     left: 0;
   }
+
+  .song-data{
+    display: flex;
+    align-items: center;
+    gap: 12px; 
+    max-width: 250px; 
+    overflow: hidden;
+  }
   
-  .app-footer img{
-    width: 60px;
-    height: 60px;
+  .song-data img{
+    width: 56px;
+    height: 56px;
     object-fit: cover;
-    border-radius: 4px;
+    border-radius: 6px;
   }
   
   
-  .app-footer h1{
+  .song-data h1{
     color: white;
     font-size: 1rem;
     margin: 0;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    font-weight: 500;
   }
   
   .player-container{
@@ -38,6 +47,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-left: 0;
   }
   
   .play-button-footer{
@@ -136,6 +146,27 @@
     height: 20px;
   }
 
-  .volume-bar{
-      
+
+  .play-pause-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ffffff; /* Spotify green */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
   }
+  
+  .play-pause-btn img {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .play-pause-btn:hover {
+    background-color: #1ed760; /* Lighter green on hover */
+  }
+  
+  
