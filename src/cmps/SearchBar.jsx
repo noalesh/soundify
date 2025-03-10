@@ -23,7 +23,7 @@ export function SearchBar({ filterBy, setFilterBy }) {
         break;
     }
 
-    setFilterToEdit({ ...filterToEdit, [name]: newValue });
+    setFilterToEdit((filterToEdit) => ({ ...filterToEdit, [name]: newValue }));
   }
 
   // Clear the filter input
@@ -39,7 +39,7 @@ export function SearchBar({ filterBy, setFilterBy }) {
           type="text"
           name="txt"
           value={filterToEdit.txt || ""}
-          placeholder="Search songs or stations..."
+          placeholder="What do you want to play?"
           onChange={handleChange}
         />
         {/* Clear button */}

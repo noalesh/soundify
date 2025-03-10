@@ -1,15 +1,21 @@
 import { Link, NavLink } from "react-router-dom";
 import { useNavigate } from "react-router";
 import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service";
 import { logout } from "../store/actions/user.actions";
 import { SearchBar } from "../cmps/SearchBar";
 
-export function AppHeader() {
+export function AppHeader({ defaultFilter, onSetFilter }) {
   const user = useSelector((storeState) => storeState.userModule.user);
   const navigate = useNavigate();
-  const [filterBy, setFilterBy] = useState("");
+  const [filterByEdit, setFilterByEdit] = useState(defaultFilter);
+
+
+  useEffect(() => {
+    onSetFilter(filterByEdit)
+  }, [filterByEdit])
+
 
   async function onLogout() {
     try {
@@ -20,6 +26,11 @@ export function AppHeader() {
       showErrorMsg("Cannot logout");
     }
   }
+
+  function onSetFilterHeader(filterBy) {
+    onSetFilter(filterBy)
+}
+
 
   return (
     <header className="app-header full">
@@ -35,7 +46,7 @@ export function AppHeader() {
         </NavLink>
 
         {/* Using SearchBar component */}
-        <SearchBar filterBy={filterBy} setFilterBy={setFilterBy} />
+        <SearchBar filterBy={filterByEdit} setFilterBy={onSetFilterHeader} />
 
         {user?.isAdmin && <NavLink to="/admin">Admin</NavLink>}
 

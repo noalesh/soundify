@@ -25,6 +25,11 @@ export function StationIndex() {
     loadStations(filterBy);
   }, [filterBy]);
 
+
+  function onSetFilter(filterBy) {
+    setFilterBy(prevFilter => ({ ...prevFilter, ...filterBy }))
+  }
+
   async function onRemoveStation(stationId) {
     try {
       await stationService.remove(stationId);
@@ -56,7 +61,7 @@ export function StationIndex() {
     <main className="station-index">
       <div className="grid-container">
         <div className="grid-item-1">
-          <AppHeader />
+          <AppHeader  defaultFilter={filterBy} onSetFilter={onSetFilter}/>
         </div>
         <div className="grid-item-2">
           <SideBar />
