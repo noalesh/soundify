@@ -7,12 +7,12 @@ import { useOutletContext } from "react-router-dom"
 export function HomePage() {
     const [stations, setStations] = useState([]);
     
-    const context = useOutletContext();
+    const {filterBy} = useOutletContext();
 
     async function loadStations() {
 
         try {
-           // console.log("calling from HomePage")
+            console.log("calling from HomePage - filterBy is: " , filterBy)
            // TODO - continue from here to connect the filter
          //   const stationsToSet = await stationService.query(context.filterBy);
            const stationsToSet = await stationService.query(); 

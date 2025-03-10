@@ -11,6 +11,7 @@ export function SearchBar({ filterBy, setFilterBy }) {
 
   // Handle input changes dynamically
   function handleChange(ev) {
+    //console.log("handleChange is CALLED .............................. ")
     const { name, value, type } = ev.target;
     let newValue = value;
 
@@ -24,6 +25,7 @@ export function SearchBar({ filterBy, setFilterBy }) {
     }
 
     setFilterToEdit((filterToEdit) => ({ ...filterToEdit, [name]: newValue }));
+
   }
 
   // Clear the filter input

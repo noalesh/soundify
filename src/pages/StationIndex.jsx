@@ -68,7 +68,7 @@ export function StationIndex() {
         </div>
         <div className="grid-item-3">
           {/* <h3 className="dev-comments">development note - TODO - This section shows alternating components.</h3> */}
-          <Outlet />
+          <Outlet context={[filterBy]} />
         </div>
         <div className="grid-item-4">
           <AppFooter />
