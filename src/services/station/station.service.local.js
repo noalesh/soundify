@@ -21,6 +21,7 @@ const demoStation = {
 export const stationService = {
   query,
   getById,
+  save,
   remove,
   getDefaultFilter,
 };
@@ -52,6 +53,31 @@ async function remove(stationId) {
 function getDefaultFilter() {
   return {};
 }
+
+
+async function save(station) {
+  var savedStation
+  if (station._id) {
+      const stationToSave = {
+          _id: station._id,
+          title: station.title,
+          img: station.img,
+          songs: station.songs
+      }
+      savedStation = await storageService.put(STORAGE_KEY, stationToSave)
+  } else {
+      const stationToSave = {
+        title: station.title,
+        img: station.img,
+        songs: station.songs,
+          // Later, owner is set by the backend
+        createdBy: userService.getLoggedinUser()
+      }
+      savedStation = await storageService.post(STORAGE_KEY, stationToSave)
+  }
+  return savedStation
+}
+
 
 function _createStationsFromGivenDemoData() {
   console.log("NOTICE - _createStationsFromGivenDemoData was called!!");
