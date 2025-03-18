@@ -1,5 +1,43 @@
 .station-add {
 
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: $active-secondary-background-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+  }
+
+  .modal-details-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    position : fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vh;
+    opacity: 0;
+    pointer-events: none;
+
+  }
+
+  .modal-details-container.show {
+    pointer-events: auto;
+    opacity: 1;
+  }
+
+  .modal-details {
+    background-color: #fff;
+    max-width: 100%;
+    border-radius: 5px;
+  }
     .grid-item-1 {
         display: flex;
         background-color: $dark-background-opacity;
