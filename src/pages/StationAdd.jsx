@@ -8,7 +8,8 @@ export function StationAdd() {
         const open_station_edit = document.getElementById('open-station-edit')
         const modal_details_container = document.getElementById('modal_details_container')
         const close_station_edit = document.getElementById('save-station-edit')
-    
+        const close_station_edit_X = document.getElementById('close-station-edit')
+
         if (open_station_edit) { 
             open_station_edit.addEventListener('click', () => {
                 modal_details_container.classList.add('show')
@@ -17,6 +18,12 @@ export function StationAdd() {
     
         if (close_station_edit) {
             close_station_edit.addEventListener('click', () => {
+                modal_details_container.classList.remove('show')
+            })
+        } 
+
+        if (close_station_edit_X) {
+            close_station_edit_X.addEventListener('click', () => {
                 modal_details_container.classList.remove('show')
             })
         } 
@@ -54,13 +61,18 @@ export function StationAdd() {
 
       <dialog class="modal_details_container" id="modal_details_container">
         <div class="modal-details">
-            <h3>Edit playlist details</h3>
-            <form>
-                <h4>This is a form... UNDER CONSTRUCTION</h4>
-            </form>
-            <button id="save-station-edit">
-                Save
-            </button>
+        <button id="close-station-edit">
+                X
+        </button>
+        <h3>Edit playlist details</h3>
+        <form>
+            <h6>This is a form... UNDER CONSTRUCTION</h6>
+        </form>
+        <button id="save-station-edit">
+            Save
+        </button>
+
+           
         </div>
       </dialog>
 
