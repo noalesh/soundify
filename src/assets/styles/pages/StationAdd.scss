@@ -13,7 +13,7 @@
     margin: 0;
   }
 
-  .modal-details-container {
+  .modal_details_container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,12 +28,12 @@
 
   }
 
-  .modal-details-container.show {
+  .modal_details_container.show {
     pointer-events: auto;
     opacity: 1;
   }
 
-  .modal-details {
+  .modal_details {
     background-color: #fff;
     max-width: 100%;
     border-radius: 5px;

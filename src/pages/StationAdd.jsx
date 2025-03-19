@@ -1,3 +1,6 @@
+import { useState, useEffect } from "react";
+
+
 
 export function StationAdd() {
     
@@ -8,10 +11,9 @@ export function StationAdd() {
     
         if (open_station_edit) { 
             open_station_edit.addEventListener('click', () => {
-            modal_details_container.classList.add('show')
+                modal_details_container.classList.add('show')
             })
         }
-       
     
         if (close_station_edit) {
             close_station_edit.addEventListener('click', () => {
@@ -19,6 +21,10 @@ export function StationAdd() {
             })
         } 
     }
+
+    useEffect(() => {
+        addListenersDetailsModal () 
+    }, [])    
    
 
     return (
@@ -46,7 +52,7 @@ export function StationAdd() {
         </button>
       </div>
 
-      <div class="modal-details-container" id="modal-details-container">
+      <div class="modal_details_container" id="modal_details_container">
         <div class="modal-details">
             <h3>Edit playlist details</h3>
             <form>
