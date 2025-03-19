@@ -39,15 +39,11 @@ export function StationDetails() {
         </ul>
 
                   <h1>{station.createdBy} * {station.songs.length}</h1>
-
-
   */
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error}</div>;
-  //console.log("llllllllllllllllllllllllllln")
 
-  //console.log(station)
 
   return (
     <section className="station-details">     

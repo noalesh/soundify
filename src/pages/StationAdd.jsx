@@ -52,7 +52,7 @@ export function StationAdd() {
         </button>
       </div>
 
-      <div class="modal_details_container" id="modal_details_container">
+      <dialog class="modal_details_container" id="modal_details_container">
         <div class="modal-details">
             <h3>Edit playlist details</h3>
             <form>
@@ -62,10 +62,9 @@ export function StationAdd() {
                 Save
             </button>
         </div>
-      </div>
+      </dialog>
 
-      {    addListenersDetailsModal()
- }
+ 
       </section>
 
 
