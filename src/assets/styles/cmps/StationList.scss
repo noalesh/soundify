@@ -1,12 +1,13 @@
 .station-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: .5em;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    // gap: .5em;
+    margin-inline: 32px;
 
     li {
-        display: grid;
-        grid-template-columns: max-content auto;
-        padding: .5em;
+        // display: grid;
+        // grid-template-columns: max-content auto;
+        // padding: .5em;
         color: $bright-fill;
         font-size: 15px;
 
@@ -20,10 +21,12 @@
     }
 
     .station-list-item-container {
-        margin: 20px;
+        // margin: 20px;
+        padding: .75em;
+        padding: 8px;
         border-radius: 10px;
-        width: 177px;
-        height: 253px;
+        // width: 177px;
+        // height: 253px;
     }
 
     .station-list-item-container:hover {

@@ -85,7 +85,16 @@
   .time-line{
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 6px;
+    font-size: 12px;
+    div {
+      display: flex;
+      align-items: center;
+    }
+    input {
+      height: 4px;
+    }
   }
   
   button {
@@ -139,17 +148,23 @@
   .volume-bar-container{
     display: flex;
     flex-direction: row;
+    align-items: center;
+    gap: 8px;
+
+    input {
+      height: 4px;
+    }
   }
 
   .volume-bar-container img{
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
   }
 
 
   .play-pause-btn {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     background-color: #ffffff; /* Spotify green */
     display: flex;
@@ -158,6 +173,11 @@
     border: none;
     cursor: pointer;
     transition: background 0.3s ease;
+    
+    svg {
+      width: 22px;
+      height: 22px;
+    }
   }
   
   .play-pause-btn img {
