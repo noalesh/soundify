@@ -30,10 +30,10 @@
     left: 0;
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 20%;
     transform: translate(-50%, -50%);
-    width: 300px;
-    height: 200px;
+    width: 500px;
+    height: 450px;
     padding: 20px;
     opacity: 0;
     pointer-events: none;
@@ -53,9 +53,13 @@
     font-weight: bold;
     margin-left: auto; 
     margin-right: 0;
+    padding: 0.3em 1em;
   }
 
-  
+  #save-station-edit:hover {
+    transform: scale(1.1);
+  }
+ 
   #close-station-edit{
     margin-left: auto; 
     margin-right: 0;

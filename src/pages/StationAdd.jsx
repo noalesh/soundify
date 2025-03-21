@@ -1,9 +1,15 @@
 import { useState, useEffect } from "react";
 
-
-
-export function StationAdd() {
+export function StationAdd({ defaultNewStationDetails }) {
     
+    const [file, setFile] = useState();
+    const [newStationDetails, setNewStationDetails] = useState(defaultNewStationDetails)
+
+    function handleChange(e) {
+        console.log(e.target.files);
+        setFile(URL.createObjectURL(e.target.files[0]));
+    }
+
     function addListenersDetailsModal () {
         const open_station_edit = document.getElementById('open-station-edit')
         const modal_details_container = document.getElementById('modal_details_container')
@@ -33,13 +39,31 @@ export function StationAdd() {
         addListenersDetailsModal () 
     }, [])    
    
+    function onSetNewStationDetails() {
+        // TODOOOOOOOO
+        console.log("DEVELOPMENT NOTE _ TODO onSetNewStationDetails")
+    }
+
+    function onSubmitNewStation(ev) {
+        ev.preventDefault()
+        onSetNewStationDetails(newStationDetails)
+        prompt(
+            "TODO - development note - Save (new station) was clicked."
+          )
+    }
+
+    function handleChange({ target }) {
+        let { value, name: field } = target
+        setNewStationDetails((prevDetails) => ({ ...prevDetails, [field]: value }))
+    }
+
+    const { name, description } = newStationDetails
 
     return (
         
     <section className="station-add">   
     
         <h3 className="dev-comments">This is StationAdd page.</h3>
-        <h3 className="dev-comments">TODO... UNDER CONSTRUCTION.</h3>  
         
         <div className="grid-item-1 station-add-header">
             <div className="flexbox-item-1">
@@ -64,14 +88,29 @@ export function StationAdd() {
         <button id="close-station-edit">
                 X
         </button>
-        <h3>Edit playlist details</h3>
-        <form>
-            <h6>This is a form... UNDER CONSTRUCTION</h6>
-        </form>
-        <button id="save-station-edit">
-            Save
-        </button>
+        <h3>Edit details</h3>
+        <form onSubmit={onSubmitNewStation}>
+    
+        <div className="uploadImg">
+            <h2>Add Image:</h2>
+            <input type="file" onChange={handleChange} />
+            <img src={file} />
+        </div>
 
+        <label htmlFor="name">Name: </label>
+        <input value={name} onChange={handleChange} type="text" name="name" id="name" />
+
+        <label htmlFor="description">description: </label>
+        <input value={description} onChange={handleChange} type="text" name="description" id="description" />
+
+        </form>
+
+
+        <section className="save-station-edit-container">
+            <button id="save-station-edit">
+                Save
+            </button>
+        </section>
            
         </div>
       </dialog>
