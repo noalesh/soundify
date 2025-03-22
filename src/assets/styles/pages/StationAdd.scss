@@ -76,6 +76,31 @@
     opacity: 0.2;
   }
 
+  .modal-grid {
+    display: grid;
+    grid-template-rows: 4; 
+    grid-template-columns: 3; 
+    gap: 20px;
+  }
+
+  .modal-grid-item-1 {
+    grid-row: 1 / 4;
+    grid-column: 1 / 1;
+  }
+
+  .modal-grid-item-2 {
+    grid-row: 1 / 1;
+    grid-column: 2 / 4;
+    background-color: $gray4;
+  }
+
+  .modal-grid-item-3 {
+    grid-row: 2 / 4;
+    grid-column: 2 / 4;
+    background-color: $gray4;
+
+  }
+
   .modal_details {
     background-color: #fff;
     max-width: 100%;

@@ -89,33 +89,39 @@ export function StationAdd({ defaultNewStationDetails }) {
                 X
         </button>
         <h3>Edit details</h3>
-        <form onSubmit={onSubmitNewStation}>
-    
-        <div className="uploadImg">
-            <h2>Add Image:</h2>
-            <input type="file" onChange={handleChange} />
-            <img src={file} />
-        </div>
 
-        <label htmlFor="name">Name: </label>
-        <input value={name} onChange={handleChange} type="text" name="name" id="name" />
+            <form onSubmit={onSubmitNewStation}>
+                <section className="modal-grid">
 
-        <label htmlFor="description">description: </label>
-        <input value={description} onChange={handleChange} type="text" name="description" id="description" />
+                <div className="uploadImg modal-grid-item-1">
+                    <label htmlFor="imgPicker" >
+                    Choose photo
+                    </label>
+                    <input id="imgPicker" type="file" onChange={handleChange} style={{visibility:"hidden"}} />
+                    <img src={file} style={{visibility:"hidden"}} />
+                </div>
 
-        </form>
+                <div className="modal-grid-item-2">
+                    <label htmlFor="name">Name: </label>
+                    <input value={name} onChange={handleChange} type="text" name="name" id="name" />
+                </div>
 
+                <div className="modal-grid-item-3">
+                <label htmlFor="description">description: </label>
+                <input value={description} onChange={handleChange} type="text" name="description" id="description" />
+                </div>
+
+                </section>
+            </form>
 
         <section className="save-station-edit-container">
             <button id="save-station-edit">
                 Save
             </button>
         </section>
-           
-        </div>
+      </div>
       </dialog>
 
- 
       </section>
 
 
