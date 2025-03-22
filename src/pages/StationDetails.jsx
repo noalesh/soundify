@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { stationService } from "../services/station/station.service.local";
 import { DataTable } from "../cmps/DataTable"
+import { SearchFromStation } from "../cmps/SearchFromStation";
 
 export function StationDetails() {
   const { id } = useParams();
@@ -64,6 +65,12 @@ export function StationDetails() {
       <DataTable songs={station.songs} />
     </div>
       </div>
+      <section>
+        <span>
+
+        </span>
+        <SearchFromStation />
+      </section>
     </section>
   );
 }
