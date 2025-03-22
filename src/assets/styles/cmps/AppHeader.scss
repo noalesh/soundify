@@ -1,142 +1,118 @@
-.app-header {
+// 
+
+.app-header-main {
+    background-color: #000000;
     display: flex;
-    min-height: 3.5rem;
-    background-color: $main-backgroud-color; 
-    padding: rem(10px) 1rem; 
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    justify-content: space-between;
+    padding: 0 24px;
+    height: 64px;
+    z-index: 1000;
+    left: 0;
+}
 
-    nav {
-        display: flex;
-        width: 100%;
-        align-items: center; 
-        gap: 1em; 
-        font-size: 0.8em; 
+.app-header-search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
 
-        .active {
-            color: $text-fill-color; 
-        }
+.app-header-search svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
 
-        .logo {
-            font-size: 1.4em;
-            font-weight: bold; 
-            margin-inline-end: 2em; 
-        }
+.app-header-searchbar{
+    display: flex;
+    align-items: center;
+    background-color: #222; 
+    border-radius: 500px; 
+    padding: 0px 16px;
+    width: 100%;
+    max-width: 480px;
+    height: 40px;
+    gap: 10px;
+    
+}
 
-        .login-link {
-            margin-inline-start: auto;
-            font-weight: bold;
-            color: $icon-sidebar-background; 
-        }
+.app-header-searchbar input {
+    flex-grow: 1;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 14px; 
+    outline: none;
+    padding: 0;
+    height: 100%;
+}
 
-        .signup-link {
-            color: $text-fill-color;
-            font-weight: bold;
-        }
+.app-header-searchbar svg {
+    width: 20px; 
+    height: 20px;
+    color: white;
+    flex-shrink: 0;
+    cursor: pointer;
+}
 
-        button {
-            margin-inline-end: 0; 
-        }
+#header-logo{
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+}
 
-        .login-link-container {
-            background-color: $bright-icon-background;
-            max-height: 48px;
-            border-radius: 60px; 
-            padding-left: 10px;
-            padding-right: 10px;
-            display: flex;
-            align-items: center;
-            transition: transform 0.2s;
-        }
+.app-header-user{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+    flex-shrink: 0; 
+    margin-left: auto; 
+    padding-right: 24px; 
+}
 
-        .login-link-container:hover {
-            transform: scale(1.1);
-            text-decoration: none;
-            background-color: $text-fill-color;
-        }
 
-        .login-link:hover {
-            text-decoration: none;
-        }
 
-        .signup-link-container {
-            background-color: transparent;
-            max-height: 48px;
-            border-radius: 60px; 
-            padding-left: 10px;
-            padding-right: 10px;
-            display: flex;
-            align-items: center;
-            transition: transform 0.2s;
-            margin-right: 0px;
-            margin-left: auto;
-        }
+.home-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #1f1f1f;
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    transition: background-color 0.2s ease-in-out;
+    border: none;
+}
 
-        .signup-link:hover {
-            transform: scale(1.1);
-            text-decoration: none;
-            color: $bright-icon-background;
-        }
-    }
+.home-button:hover {
+    background-color: #2a2a2a; 
+}
 
-    .logo-img {
-        width: 50px; 
-        height: 50px; 
-        border-radius: 50%; 
-        object-fit: fill;
-    }
+.home-button svg {
+    width: 24px;
+    height: 24px;
+    fill: #b3b3b3;
+    stroke: none;
+}
 
-    .user-info {
-        display: flex;
-        align-items: center; 
-        margin-inline-start: auto; 
-        color: $clr1; 
-        .score {
-            padding: 8px; 
-            border-radius: 50%; 
-            margin: 10px; 
-            color: $clr6; 
-        }
+.user-section{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
 
-        img {
-            width: 32px; 
-            aspect-ratio: 1;
-            border-radius: 50%; 
-        }
+}
 
-        
-    }
-/*
-    // Search bar styles
-    .search-bar {
-        display: flex; 
-        align-items: center; 
-        gap: 0.5rem; 
-        margin-inline-start: auto; 
 
-        input {
-            padding: 0.5em; 
-            border: 1px solid $clr6;
-            border-radius: 4px; 
-            color: $text-fill-color; 
-            font-size: 0.9em; 
-
-            &:focus {
-                outline: none; 
-                border-color: $clr1; 
-            }
-        }
-
-        button {
-            padding: 0.5em 1em; 
-            color: $clr6; 
-            border: none; 
-            border-radius: 4px; 
-            cursor: pointer; 
-            font-size: 0.9em; 
-            transition: background-color 0.3s; 
-
-            &:hover {
-                background-color: lighten($clr1, 10%); 
-            }
-        }
-    }*/
+#user-icon{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
 }
