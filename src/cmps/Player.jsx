@@ -148,6 +148,7 @@ import { PlayButton }  from "./PlayButton"
                 max={totalDuration || 0} 
                 value={currentTime || 0} 
                 onChange={handleProgressBarChange}
+                style={{ '--fill-percent': `${(currentTime / totalDuration) * 100}%` }}
               />
             </div>
             <span className="total-time">{formatTime(totalDuration)}</span>

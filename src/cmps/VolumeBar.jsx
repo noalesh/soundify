@@ -30,6 +30,7 @@ export function VolumeBar ({volume, onVolumeChange}) {
                     step={1}
                     value={volume}
                     onChange={handleChange}
+                    style={{ '--fill-percent': `${volume}%` }}
                     />
             </section>
     )

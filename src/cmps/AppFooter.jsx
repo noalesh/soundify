@@ -26,9 +26,12 @@ export function AppFooter() {
     return (
         <>
         <section className="app-footer">
-                <section className="song-data">
-                <img src={songData.img} />
-            <h1>{songData.title}</h1>
+            <section className="song-data">
+               <img src={songData.img} />
+               <div className="song-text">
+                    <h1>{songData.title}</h1>
+                    <span>Artist</span>
+                </div>
             </section>
             <section className="player-container-main">
                 <Player videoId={songData.videoId} volume={volume} />
