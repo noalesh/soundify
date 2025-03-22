@@ -1,4 +1,5 @@
 import { useState,useEffect,useRef } from "react"
+import { IconsSvg } from "./IconsSvg"
 import { PlayButton }  from "./PlayButton"
 
     export function Player({videoId , volume}) {
@@ -120,23 +121,15 @@ import { PlayButton }  from "./PlayButton"
     return (
         <section className="player-container">
           <section className="player-btn">
-            <button className="shaf-button">
-              <img src="src/assets/imgs/Soundify-files/Shafle.svg" alt="Shuffle" />
-            </button>
-      
-            <button className="prev-button">
-              <img src="src/assets/imgs/Soundify-files/PrevSong.svg" alt="Previous" />
-            </button>
+            
+            <IconsSvg svgName={'shuffle'} className="shaf-button" />
+            <IconsSvg svgName={'prev'} className="prev-button" />
       
             <PlayButton isPlaying={isPlaying} onTogglePlay={handlePlayPause} />
+
+            <IconsSvg svgName={'next'} className="next-button" />
+            <IconsSvg svgName={'repeat'} className="rep-button" />
       
-            <button className="next-button">
-              <img src="src/assets/imgs/Soundify-files/NextSong.svg" alt="Next" />
-            </button>
-      
-            <button className="rep-button">
-              <img src="src/assets/imgs/Soundify-files/Repeat.svg" alt="Repeat" />
-            </button>
           </section>
       
           

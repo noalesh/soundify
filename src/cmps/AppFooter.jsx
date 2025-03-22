@@ -6,14 +6,14 @@ import { VolumeBar } from "./VolumeBar.jsx"
 
 
 
-export function AppFooter(song) {
+export function AppFooter() {
 
 
     const [volume, setVolume] = useState(50)
 
 
     const songData = {
-        videoId: 'ktvTqknDobU',
+        videoId: 'Iq8h3GEe22o',
         title: 'Radioactive',
         img: 'src/assets/imgs/imagenDragon.webp'
     }
