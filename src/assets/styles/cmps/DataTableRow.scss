@@ -26,5 +26,16 @@
         padding-top: 0.75em;
     }
 
+    td:first-child:before
+    {
+      counter-increment: Serial;
+      content: counter(Serial);
+    } 
+
 }
 
+
+body
+{
+    counter-reset: Serial;
+}

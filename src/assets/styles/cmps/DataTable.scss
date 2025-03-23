@@ -15,18 +15,7 @@
     {
         border-collapse: collapse;
         text-align: center;
-    }
-    
-    body
-    {
-        counter-reset: Serial;
-    }
-    
-    .table-row td:first-child:before
-    {
-      counter-increment: Serial;
-      content: counter(Serial);
-    }   
+    } 
 
     img {
         width: 1.5em;
