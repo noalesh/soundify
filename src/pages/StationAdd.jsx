@@ -107,7 +107,7 @@ export function StationAdd({ defaultNewStationDetails }) {
                 </div>
 
                 <div className="modal-grid-item-3">
-                <label htmlFor="description">description: </label>
+                <label htmlFor="description">Add an optional description </label>
                 <input value={description} onChange={handleChange} type="text" name="description" id="description" />
                 </div>
 

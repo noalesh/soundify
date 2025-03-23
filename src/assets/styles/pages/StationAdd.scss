@@ -86,18 +86,29 @@
   .modal-grid-item-1 {
     grid-row: 1 / 4;
     grid-column: 1 / 1;
+    background-color: $gray4;
   }
 
   .modal-grid-item-2 {
     grid-row: 1 / 1;
     grid-column: 2 / 4;
     background-color: $gray4;
+
+    #name {
+      background-color: $gray4;
+      border: none;
+    }
   }
 
   .modal-grid-item-3 {
     grid-row: 2 / 4;
     grid-column: 2 / 4;
     background-color: $gray4;
+
+    #description {
+      background-color: $gray4;
+      border: none;
+    }
 
   }
 
