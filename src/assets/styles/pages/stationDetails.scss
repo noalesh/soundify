@@ -1,6 +1,4 @@
 .station-details {
-  padding: 20px;
-
   /*table
   {
       border-collapse: collapse;
@@ -32,9 +30,9 @@
 
 .grid-item-1 {
   display: flex;
-  background-color: #5038a0;
+  background-color: $default-background-color-station-preview-light-2;
   align-items: flex-end;
-
+  border-radius: 10px 10px 0px 0px;
 }
 
   .grid-item-1 img {
@@ -60,5 +58,11 @@
       font-size: 1.2rem;
       margin-bottom: 10px;
     }
+  }
+
+  .grid-item-2 {
+    border-radius: 0px;
+    background-color: $default-background-color-station-preview-2;
+    background-image: linear-gradient($default-background-color-station-preview-2, $icon-sidebar-background);
   }
 }
