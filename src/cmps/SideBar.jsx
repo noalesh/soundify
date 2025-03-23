@@ -3,6 +3,9 @@ import { NavLink } from "react-router-dom";
 import { SearchBar } from "../cmps/SearchBar";
 import { stationService } from "../services/station/station.service.local";
 import { storageService } from "../services/async-storage.service";
+import { MdAdd, MdArrowForwardIos } from "react-icons/md";
+import { RiListSettingsLine } from "react-icons/ri";
+import LibraryIcon from "../assets/icons/libraryIconSpotify.svg?react";
 
 export function SideBar() {
   const [filterBy, setFilterBy] = useState("");
@@ -21,6 +24,12 @@ export function SideBar() {
     }
   }
 
+  const filteredStations = stations.filter((station) =>
+    station.title
+      .toLowerCase()
+      .includes((typeof filterBy === "string" ? filterBy : "").toLowerCase())
+  );
+
   return (
     <aside className="side-bar">
       <div className="logo-section">
@@ -32,33 +41,36 @@ export function SideBar() {
             )
           }
         >
-          <img
-            className="library-icon"
-            src="/src/assets/imgs/Soundify-files/libraryIcon.svg"
-            alt="library icon"
-          />
+          <LibraryIcon className="library-icon" />
           Your Library
         </NavLink>
-        {/* TODO - the 'Your Library" link should cause the side bar to collapse.  */}
-        <NavLink to={`/newStation`}>
-          <img
-            className="plus-sign bright-hover"
-            src="/src/assets/imgs/Soundify-files/plusSign.svg"
-            alt="plus sign"
-          />
-          {/* TODO - for now, the + sign redirects automatically to the StationEdit page to
-        allow a new station to be created, but clicking the + icon should open a dropdown menu
-         that allows the user to choose between adding a new station or folder.*/}
-        </NavLink>
+        <div className="actions">
+          <NavLink to={`/station/add`} className="plus-create-btn">
+            <MdAdd size={16} />
+            <span>Create</span>
+          </NavLink>
+          <button
+            className="expand-btn"
+            type="button"
+            aria-label="Expand Sidebar"
+          >
+            <MdArrowForwardIos size={16} />
+          </button>
+        </div>
       </div>
 
       <div className="search-section">
         <SearchBar filterBy={filterBy} setFilterBy={setFilterBy} />
       </div>
 
+      <div className="recents-section">
+        <span>Recents</span>
+        <RiListSettingsLine size={20} className="recents-icon" />
+      </div>
+
       <div className="library-section">
         <ul>
-          {stations.map((station) => (
+          {filteredStations.map((station) => (
             <li key={station._id}>
               <NavLink
                 to={`/station/${station._id}`}

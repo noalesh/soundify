@@ -21,13 +21,14 @@ export function StationIndex() {
     (storeState) => storeState.stationModule.stations
   );
 
+  console.log("stations from StationIndex:", stations);
+
   useEffect(() => {
     loadStations(filterBy);
   }, [filterBy]);
 
-
   function onSetFilter(filterBy) {
-    setFilterBy(prevFilter => ({ ...prevFilter, ...filterBy }))
+    setFilterBy((prevFilter) => ({ ...prevFilter, ...filterBy }));
   }
 
   async function onRemoveStation(stationId) {
@@ -61,10 +62,10 @@ export function StationIndex() {
     <main className="station-index">
       <div className="grid-container">
         <div className="grid-item-1">
-          <AppHeader  defaultFilter={filterBy} onSetFilter={onSetFilter}/>
+          <AppHeader defaultFilter={filterBy} onSetFilter={onSetFilter} />
         </div>
         <div className="grid-item-2">
-          <SideBar />
+          <SideBar stations={stations} />
         </div>
         <div className="grid-item-3">
           {/* <h3 className="dev-comments">development note - TODO - This section shows alternating components.</h3> */}

@@ -4,7 +4,7 @@ $inactive-color: $text-fill-color;
 .side-bar {
     background-color: $icon-sidebar-background;
     color: $bright-fill;
-    width: 240px;
+    width: 300px;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -15,47 +15,67 @@ $inactive-color: $text-fill-color;
     .logo-section {
         margin-bottom: 20px;
         display: flex;
+        align-items: center;
         justify-content: space-between;
         text-decoration: none;
-
-        .bright-hover:hover {
-            color: $bright-fill; 
-        }
+        gap: 2em;
 
         .library-title {
             display: flex;
-            width: 100%;
-            align-items: center; 
-            gap: 1em; 
-            font-size: 0.8em; 
+            align-items: center;
+            gap: 0.7em;
+            font-size: 0.9em;
             color: $text-fill-color;
-            margin-left: 1em;
             text-decoration: none;
+            transition: color 0.3s;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
 
-            
-    }
+            svg {
+                width: 1.6em;
+                height: 1.6em;
+                fill: $text-fill-color;
+                transition: fill 0.3s;
+                flex-shrink: 0;
+            }
 
-        img {
-            width: 1.5em;
-            height: 1.5em;
-            background-color: $text-fill-color; 
+            &:hover {
+                color: $bright-fill;
+
+                svg {
+                    fill: $bright-fill;
+                }
+            }
         }
-        
-        .library-icon {
-            width: 1.5em;
-            height: 1.5em;
-            background-color: $text-fill-color;
-        }
 
-        h3 {
-            font-size: 13px;
-        }
+        .plus-create-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 6px 16px;
+            border-radius: 999px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-left: 1em;
 
-        .plus-sign {
-            width: 1em;
-            height: 1em;
-            background-color: $text-fill-color;
+            svg {
+                width: 1.2em;
+                height: 1.2em;
+                color: $text-fill-color;
+            }
 
+            span {
+                color: $bright-fill;
+                font-weight: bold;
+                font-size: 0.9em;
+            }
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.2);
+                transform: scale(1.05);
+            }
         }
     }
 
@@ -63,14 +83,26 @@ $inactive-color: $text-fill-color;
         margin-bottom: 20px;
     }
 
+    .recents-section {
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        margin-bottom: 10px;
+
+        span:first-child {
+            font-weight: bold;
+            color: $bright-fill;
+        }
+
+        .recents-icon {
+            color: $text-fill-color;
+            font-size: 1.1em;
+        }
+    }
+
     .library-section {
         flex-grow: 1;
         overflow-y: auto;
-
-        h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
 
         ul {
             list-style: none;
@@ -84,9 +116,33 @@ $inactive-color: $text-fill-color;
                     text-decoration: none;
                     color: $inactive-color;
                     font-size: 0.9rem;
-                    display: block;
-                    padding: 5px;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5em;
+                    padding: 6px 8px;
                     border-radius: 4px;
+                    transition: background-color 0.3s, color 0.3s;
+
+                    img {
+                        width: 32px;
+                        height: 32px;
+                        border-radius: 4px;
+                    }
+
+                    .station-info {
+                        display: flex;
+                        flex-direction: column;
+
+                        .station-title {
+                            font-size: 0.95em;
+                            color: $bright-fill;
+                        }
+
+                        .station-description {
+                            font-size: 0.75em;
+                            color: $inactive-color;
+                        }
+                    }
 
                     &:hover {
                         color: $bright-fill;
@@ -102,5 +158,3 @@ $inactive-color: $text-fill-color;
         }
     }
 }
-
-
