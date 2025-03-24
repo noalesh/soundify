@@ -4,6 +4,15 @@ export function StationAdd({ defaultNewStationDetails }) {
     
     const [file, setFile] = useState();
     const [newStationDetails, setNewStationDetails] = useState(defaultNewStationDetails)
+    const [currentActiveDiv, setCurrentActiveDiv] = useState(0);
+
+    function activate2Grid() {
+        setCurrentActiveDiv(2);
+    }
+
+    function activate3Grid() {
+        setCurrentActiveDiv(3);
+    }
 
     function handleChange(e) {
         console.log(e.target.files);
@@ -101,14 +110,13 @@ export function StationAdd({ defaultNewStationDetails }) {
                     <img src={file} style={{visibility:"hidden"}} />
                 </div>
 
-                <div className="modal-grid-item-2">
+                <div className={currentActiveDiv==2 ? "chosen modal-grid-item-2" : "modal-grid-item-2"} onClick={activate2Grid} >
                     <label htmlFor="name">Name: </label>
                     <input value={name} onChange={handleChange} type="text" name="name" id="name" />
                 </div>
 
-                <div className="modal-grid-item-3">
-                <label htmlFor="description">Add an optional description </label>
-                <input value={description} onChange={handleChange} type="text" name="description" id="description" />
+                <div className={currentActiveDiv==3 ? "chosen modal-grid-item-3" : "modal-grid-item-3"} onClick={activate3Grid} >
+                <input value={description} onChange={handleChange} type="text" name="description" id="description" placeholder={"Add an optional description"}  />
                 </div>
 
                 </section>
