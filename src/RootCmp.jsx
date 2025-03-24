@@ -1,3 +1,7 @@
+import { Provider } from "react-redux"
+import { store } from "./store/store.js"
+
+
 import React from "react";
 import { Routes, Route } from "react-router";
 
@@ -14,6 +18,7 @@ import { StationDetails } from "./pages/StationDetails";
 
 export function RootCmp() {
   return (
+    <Provider store={store}>
     <div className="main-container">
       <UserMsg />
 
@@ -34,5 +39,6 @@ export function RootCmp() {
         </Routes>
       </main>
     </div>
+    </Provider>
   );
 }

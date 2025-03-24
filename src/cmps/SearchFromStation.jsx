@@ -5,9 +5,23 @@ import songsData from "../Data/Newdata.json"
 import { stationService } from "../services/station/station.service.local.js";
 
 
+import  { useSelector, useDispatch } from 'react-redux'
+
+
+
 export function SearchFromStation() {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
+
+  const currentSong = useSelector((storeState) => storeState.currentSong)
+  const dispatch = useDispatch()
+
+
+  function setSong(song) {
+    dispatch({ type: 'SET_SONG', song})
+    console.log('The song has been changed ');
+    
+  }
 
 
 
@@ -74,7 +88,7 @@ function filterSongs(searchTerm, setResults) {
       {results.length > 0 && (
         <div className="results">
           {results.map((song) => (
-            <SongPreview key={song.id} song={song} onAdd={addSongToPlaylist}  />
+            <SongPreview key={song.id} song={song} onAdd={addSongToPlaylist} />
           ))}
         </div>
       )}

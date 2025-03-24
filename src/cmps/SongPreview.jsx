@@ -1,7 +1,7 @@
 
 
 
-export function SongPreview({ song, onAdd }) {
+export function SongPreview({ song, onAdd}) {
  
 
 

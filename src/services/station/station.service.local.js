@@ -5,7 +5,7 @@ import { userService } from "../user";
 
 //const STORAGE_KEY = 'station'
 const STORAGE_KEY = "stationDemiDb";
-_createStationsFromGivenDemoData();
+// _createStationsFromGivenDemoData();
 
 const demoStation = {
   _id: "1234",

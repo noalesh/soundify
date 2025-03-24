@@ -6,7 +6,7 @@ export function DataTableRow({ song }) {
             <tr className="table-row">
                 <td></td>  {/* serial number of the song in the station */}
                 <td> <div className="img-title-artist">
-                <img src={song.imgUrl} alt="song image" width="4em" height="4em"/>                         
+                <img src={song.imgUrl || song.imageUrl} alt="song image" width="4em" height="4em"/>                         
                 <div><span className="song-title">{song.title}</span> 
                     <br></br> {song.artist}
                     </div>
