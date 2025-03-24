@@ -24,6 +24,7 @@ export const stationService = {
   save,
   remove,
   getDefaultFilter,
+  addSongToStation,
 };
 window.cs = stationService;
 
@@ -42,7 +43,8 @@ async function query(filterBy = { txt: "" }) {
 
 function getById(stationId) {
   const stations = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-  return stations.find((station) => station._id === stationId);
+  const station = stations.find((station) => station._id === stationId);
+  return station
 }
 
 async function remove(stationId) {
@@ -76,6 +78,13 @@ async function save(station) {
       savedStation = await storageService.post(STORAGE_KEY, stationToSave)
   }
   return savedStation
+}
+
+function addSongToStation (stationId,song) {
+  const station = getById(stationId)
+  const updatedStation = [...station.songs, song]
+  save(updatedStation)
+  
 }
 
 

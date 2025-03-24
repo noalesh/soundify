@@ -1,9 +1,28 @@
 import { useState, useEffect, useCallback } from "react"
+import { useParams } from "react-router-dom";
 import { SongPreview } from "./SongPreview.jsx"
 import songsData from "../Data/Newdata.json"
+import { stationService } from "../services/station/station.service.local.js";
 
 
-// Regular function for debounce
+export function SearchFromStation() {
+  const [query, setQuery] = useState('');
+  const [results, setResults] = useState([]);
+
+
+
+function addSongToPlaylist (song) {
+    const stationId = useParams()    
+    const station = stationService.getById(stationId.id)
+    station.songs.push(song)
+
+    stationService.save(station)
+
+    console.log('song added', song)
+  
+}
+
+
 function debounce(func, delay) {
   let timeout;
   return (...args) => {
@@ -12,7 +31,7 @@ function debounce(func, delay) {
   };
 }
 
-// Regular function for filtering songs
+
 function filterSongs(searchTerm, setResults) {
   if (!searchTerm) {
     setResults([]);
@@ -25,11 +44,6 @@ function filterSongs(searchTerm, setResults) {
 
   setResults(filtered);
 }
-
-// Main component
-export function SearchFromStation() {
-  const [query, setQuery] = useState('');
-  const [results, setResults] = useState([]);
 
   const handleSearch = useCallback(
     debounce((searchTerm) => filterSongs(searchTerm, setResults), 300),
@@ -60,7 +74,7 @@ export function SearchFromStation() {
       {results.length > 0 && (
         <div className="results">
           {results.map((song) => (
-            <SongPreview key={song.id} song={song} />
+            <SongPreview key={song.id} song={song} onAdd={addSongToPlaylist}  />
           ))}
         </div>
       )}
