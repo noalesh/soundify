@@ -43,11 +43,9 @@ export function SideBar() {
       <div className="logo-section">
         <NavLink
           className="library-title bright-hover"
-          onClick={() =>
-            prompt(
-              "TODO - development note - clicking 'Your Library' should collapse the side bar."
-            )
-          }
+          onClick={() => {
+              // TODO - clicking 'Your Library' should collapse the side bar.
+          } }
         >
           <IconsSvg svgName="library" />
           Your Library
