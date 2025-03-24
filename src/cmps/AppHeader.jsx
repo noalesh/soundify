@@ -19,7 +19,9 @@ export function AppHeader(){
           </NavLink>
             
             <div className="app-header-search">
+                <NavLink to="/">
                 <button className="home-button"><IconsSvg svgName={'home'} /></button>   
+                </NavLink>
                 <form className="app-header-searchbar">
                     <IconsSvg svgName={'search'} />
                     <input type="text" placeholder="What do you want to play?" />
