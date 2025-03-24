@@ -4,6 +4,7 @@ import { stationService } from "../services/station/station.service.local";
 import { DataTable } from "../cmps/DataTable"
 import { SearchFromStation } from "../cmps/SearchFromStation";
 
+
 export function StationDetails() {
   const { id } = useParams();
   const [station, setStation] = useState(null);

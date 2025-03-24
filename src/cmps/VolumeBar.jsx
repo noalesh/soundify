@@ -4,7 +4,6 @@ import { IconsSvg } from "./IconsSvg";
 export function VolumeBar ({volume, onVolumeChange}) {
 
 
-    console.log('volume:', volume, 'icon:', volumeIcon(volume));
 
     function volumeIcon(volume) {
         if (volume >= 50) return 'highVol';
