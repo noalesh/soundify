@@ -5,7 +5,7 @@ import { stationService } from "../services/station/station.service.local";
 import { storageService } from "../services/async-storage.service";
 import { MdAdd, MdArrowForwardIos } from "react-icons/md";
 import { RiListSettingsLine } from "react-icons/ri";
-import LibraryIcon from "../assets/icons/libraryIconSpotify.svg?react";
+import { IconsSvg } from "../cmps/IconsSvg";
 
 export function SideBar() {
   const [filterBy, setFilterBy] = useState("");
@@ -41,7 +41,7 @@ export function SideBar() {
             )
           }
         >
-          <LibraryIcon className="library-icon" />
+          <IconsSvg svgName="library" />
           Your Library
         </NavLink>
         <div className="actions">
