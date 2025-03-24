@@ -1,6 +1,7 @@
 import { Fragment } from "react"
 import { useDispatch } from "react-redux"
 import { SET_SONG } from "../store/reducers/song.reducer"
+import { IconsSvg } from "./IconsSvg"
 
 export function DataTableRow({ song }) {
     
@@ -24,6 +25,7 @@ export function DataTableRow({ song }) {
                 </div></td>
                 <td>{song.album}</td>
                 <td>{song.duration}</td>
+                <td><IconsSvg svgName={'remove'} /></td>
             </tr>
         </Fragment>
 }
