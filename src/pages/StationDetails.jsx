@@ -17,7 +17,7 @@ export function StationDetails() {
 
   useEffect(() => {
     loadStation();
-  }, [id], DataTable);
+  }, [id]);
 
   async function loadStation() {
     try {
@@ -60,6 +60,11 @@ export function StationDetails() {
     setIsModalOpen(false)
   }
 
+  function handleSongAdded() {
+    console.log("Song added, reloading station...");
+    loadStation(); 
+  }
+
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error}</div>;
 
@@ -86,7 +91,7 @@ export function StationDetails() {
         <span>
 
         </span>
-        <SearchFromStation />
+        <SearchFromStation onSongAdded={handleSongAdded}  />
       </section>
       {isModalOpen && <EditModal station ={station} onCloseModal={onCloseModal}/>}
     </section>

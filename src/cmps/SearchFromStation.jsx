@@ -5,27 +5,31 @@ import songsData from "../Data/Newdata.json"
 import { stationService } from "../services/station/station.service.local.js";
 
 
+
 import  { useSelector, useDispatch } from 'react-redux'
 
 
 
-export function SearchFromStation() {
+export function SearchFromStation(props) {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
+  const {id: stationId} = useParams()
 
 
 
-
-function addSongToPlaylist (song) {
-    const stationId = useParams()    
-    const station = stationService.getById(stationId.id)
-    station.songs.push(song)
-
-    stationService.save(station)
-
-    console.log('song added', song)
+  async function addSongToPlaylist(song) {
+    const station = await stationService.getById(stationId);
+    if (!station || !station.songs) {
+      console.error("Station or station.songs not found");
+      return;
+    }
   
-}
+    station.songs.push(song);
+    await stationService.save(station); 
+  
+    console.log('song added', song);
+    props.onSongAdded?.();
+  }
 
 
 function debounce(func, delay) {

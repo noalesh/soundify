@@ -12,7 +12,7 @@ export function SongPreview({ song, onAdd}) {
                 <div className="song-name">{song.title}</div>
                 <div className="song-artist">{song?.artists?.[0].name ?? 'Unknown Artist'}</div>
             </div>
-            <button className='add-btn' onClick={onAdd(song)}>Add</button>
+            <button className='add-btn' onClick={() => onAdd(song)}>Add</button>
         </section>
     )
 }
