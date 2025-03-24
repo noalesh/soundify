@@ -47,15 +47,10 @@ export function StationAdd({ defaultNewStationDetails }) {
     useEffect(() => {
         addListenersDetailsModal () 
     }, [])    
-   
-    function onSetNewStationDetails() {
-        // TODOOOOOOOO
-        console.log("DEVELOPMENT NOTE _ TODO onSetNewStationDetails")
-    }
 
     function onSubmitNewStation(ev) {
         ev.preventDefault()
-        onSetNewStationDetails(newStationDetails)
+        stationService.save(newStationDetails)
         prompt(
             "TODO - development note - Save (new station) was clicked."
           )
@@ -120,13 +115,15 @@ export function StationAdd({ defaultNewStationDetails }) {
                 </div>
 
                 </section>
+
+                <section className="save-station-edit-container">
+                <button id="save-station-edit">
+                    Save
+                </button>
+        </section>
             </form>
 
-        <section className="save-station-edit-container">
-            <button id="save-station-edit">
-                Save
-            </button>
-        </section>
+      
       </div>
       </dialog>
 
