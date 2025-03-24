@@ -1,0 +1,50 @@
+.playlist-search-container {
+    background-color: #121212;
+    color: white;
+    padding: 24px;
+    font-family: sans-serif;
+    position: relative;
+  }
+  
+  .divider {
+    border: 0;
+    border-top: 1px solid #333;
+    margin-bottom: 16px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .search-bar-play {
+    display: flex;
+    align-items: center;
+    background-color: #2a2a2a;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin-top: 16px;
+    gap: 8px;
+  }
+  
+  .search-bar-play input {
+    background: none;
+    border: none;
+    color: white;
+    flex-grow: 1;
+    font-size: 14px;
+    outline: none;
+  }
+  
+  .results {
+    margin-top: 24px;
+  }
