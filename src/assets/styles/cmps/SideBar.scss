@@ -4,8 +4,8 @@ $inactive-color: $text-fill-color;
 .side-bar {
     background-color: $icon-sidebar-background;
     color: $bright-fill;
-    width: 550px;
-    height: 100vh;
+    width: 592px;
+    height: 807px;
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -17,27 +17,22 @@ $inactive-color: $text-fill-color;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        text-decoration: none;
-        gap: 2em;
+        gap: 1.2em;
+        width: 100%;
+        white-space: nowrap;
 
         .library-title {
             display: flex;
             align-items: center;
-            gap: 0.7em;
-            font-size: 0.9em;
+            gap: 0.5em;
+            font-size: 1em;
             color: $text-fill-color;
             text-decoration: none;
-            transition: color 0.3s;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
 
             svg {
                 width: 1.6em;
                 height: 1.6em;
                 fill: $text-fill-color;
-                transition: fill 0.3s;
-                flex-shrink: 0;
             }
 
             &:hover {
@@ -49,55 +44,146 @@ $inactive-color: $text-fill-color;
             }
         }
 
-        .plus-create-btn {
+        .actions {
             display: flex;
             align-items: center;
-            gap: 0.5em;
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 6px 16px;
-            border-radius: 999px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            margin-left: 1em;
+            gap: 0.6em;
+            margin-left: auto;
 
-            svg {
-                width: 1.2em;
-                height: 1.2em;
+            .plus-create-btn {
+                display: flex;
+                align-items: center;
+                gap: 0.4em;
+                background-color: rgba(255, 255, 255, 0.1);
+                padding: 5px 14px;
+                border-radius: 999px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+
+                svg {
+                    width: 1.1em;
+                    height: 1.1em;
+                    color: $text-fill-color;
+                }
+
+                span {
+                    color: $bright-fill;
+                    font-weight: 400;
+                    font-size: 14px;
+                    font-family: 'SpotifyMixUI', 'CircularSp-Arab', 'CircularSp', sans-serif;
+                    letter-spacing: normal;
+                }
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.2);
+                    transform: scale(1.05);
+                }
+            }
+
+            .expand-btn {
+                background: none;
+                border: none;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                padding: 4px;
+                margin-left: auto;
+            }
+
+            .arrow-icon {
+                width: 25px;
+                height: 23px;
                 color: $text-fill-color;
-            }
-
-            span {
-                color: $bright-fill;
-                font-weight: bold;
-                font-size: 0.9em;
-            }
-
-            &:hover {
-                background-color: rgba(255, 255, 255, 0.2);
-                transform: scale(1.05);
+                transition: transform 0.3s;
             }
         }
     }
 
-    .search-section {
-        margin-bottom: 20px;
-    }
-
-    .recents-section {
+    .search-recent-container {
         display: flex;
         align-items: center;
-        gap: 0.5em;
-        margin-bottom: 10px;
+        justify-content: space-between;
+        margin-bottom: 20px;
 
-        span:first-child {
+        .search-input-container {
+            display: flex;
+            align-items: center;
+            background-color: #2a2a2a;
+            border-radius: 500px;
+            padding: 4px 10px;
+            flex: 1;
+            margin-right: 12px;
+
+            .search-icon {
+                color: $inactive-color;
+                margin-right: 8px;
+            }
+
+            .search-input {
+                flex: 1;
+                background: transparent;
+                border: none;
+                outline: none;
+                color: $bright-fill;
+                font-size: 0.9em;
+
+                &::placeholder {
+                    color: $inactive-color;
+                }
+            }
+        }
+
+        .recents-section {
+            display: flex;
+            align-items: center;
+            gap: 0.4em;
+
+            span {
+                color: #b3b3b3;
+                font-weight: 400;
+                font-size: 14px;
+                font-family: 'SpotifyMixUI', 'CircularSp-Arab', 'CircularSp', sans-serif;
+            }
+
+            .recents-icon {
+                width: 16px;
+                height: 16px;
+                color: $text-fill-color;
+            }
+        }
+    }
+
+    .library-header-row {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 8px;
+        font-family: 'SpotifyMixUI', 'CircularSp-Arab', 'CircularSp', sans-serif;
+
+        .header-title {
+            color: #b3b3b3;
             font-weight: bold;
-            color: $bright-fill;
+            font-size: 12px;
+            margin-right: 275px;
         }
 
-        .recents-icon {
-            color: $text-fill-color;
-            font-size: 1.1em;
+        .header-date-added {
+            color: #b3b3b3;
+            font-weight: bold;
+            font-size: 12px;
+            margin-right: 130px;
         }
+
+        .header-played {
+            color: #b3b3b3;
+            font-weight: bold;
+            font-size: 12px;
+        }
+    }
+
+    .library-header-line {
+        border-bottom: 1px solid rgba(179, 179, 179, 0.2);
+        margin-bottom: 12px;
     }
 
     .library-section {
@@ -110,38 +196,51 @@ $inactive-color: $text-fill-color;
             margin: 0;
 
             li {
-                margin-bottom: 10px;
+                margin-bottom: 14px;
 
                 a {
                     text-decoration: none;
                     color: $inactive-color;
                     font-size: 0.9rem;
-                    display: flex;
+                    display: grid;
+                    grid-template-columns: 40px 1fr 130px 80px;
                     align-items: center;
-                    gap: 0.5em;
-                    padding: 6px 8px;
+                    gap: 1em;
+                    padding: 8px 8px;
                     border-radius: 4px;
                     transition: background-color 0.3s, color 0.3s;
 
                     img {
-                        width: 32px;
-                        height: 32px;
+                        width: 40px;
+                        height: 40px;
                         border-radius: 4px;
+                        object-fit: cover;
                     }
 
                     .station-info {
                         display: flex;
                         flex-direction: column;
+                        overflow: hidden;
 
                         .station-title {
                             font-size: 0.95em;
                             color: $bright-fill;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
                         }
 
                         .station-description {
                             font-size: 0.75em;
                             color: $inactive-color;
                         }
+                    }
+
+                    .date-added,
+                    .last-played {
+                        color: $inactive-color;
+                        font-size: 0.75em;
+                        text-align: right;
                     }
 
                     &:hover {

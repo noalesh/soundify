@@ -176,22 +176,30 @@ export function IconsSvg({ svgName }) {
         <path d="M3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zM15.5 2.134A1 1 0 0 0 14 3v18a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6.464a1 1 0 0 0-.5-.866l-6-3.464zM9 2a1 1 0 0 0-1 1v18a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1z"></path>
       </svg>
     ),
-    remove: (
+    arrow: (
       <svg
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 16 16"
-  role="img"
-  aria-hidden="true"
-  className="e-9640-icon"
-  style={{
-    fill: "var(--text-subdued, #656565)",
-    height: "20px",
-    width: "20px"
-  }}
->
-  <path d="M5.25 3v-.917C5.25.933 6.183 0 7.333 0h1.334c1.15 0 2.083.933 2.083 2.083V3h4.75v1.5h-.972l-1.257 9.544A2.25 2.25 0 0 1 11.041 16H4.96a2.25 2.25 0 0 1-2.23-1.956L1.472 4.5H.5V3h4.75zm1.5-.917V3h2.5v-.917a.583.583 0 0 0-.583-.583H7.333a.583.583 0 0 0-.583.583zM2.986 4.5l1.23 9.348a.75.75 0 0 0 .744.652h6.08a.75.75 0 0 0 .744-.652L13.015 4.5H2.985z" />
-</svg>
-
+        xmlns="http://www.w3.org/2000/svg"
+        fill="#b3b3b3"
+        data-encore-id="icon"
+        role="img"
+        viewBox="0 0 16 16"
+        className="arrow-icon"
+      >
+        <path d="M3.3 1a.7.7 0 0 1 .7.7v5.15l9.95-5.74a.7.7 0 0 1 1.05.6v12.57a.7.7 0 0 1-1.05.61l-9.95-5.75v5.15a.7.7 0 0 1-.7.7H1.7a.7.7 0 0 1-.7-.7V1.7a.7.7 0 0 1 .7-.7h1.6z" />
+      </svg>
+    ),
+    recents: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        data-encore-id="icon"
+        role="img"
+        aria-hidden="true"
+        viewBox="0 0 16 16"
+        className="recents-icon"
+        fill="currentColor"
+      >
+        <path d="M15 14.5H5V13h10v1.5zm0-5.75H5v-1.5h10v1.5zM15 3H5V1.5h10V3zM3 3H1V1.5h2V3zm0 11.5H1V13h2v1.5zm0-5.75H1v-1.5h2v1.5z"></path>
+      </svg>
     ),
   };
 
