@@ -17,7 +17,7 @@ export function StationDetails() {
 
   useEffect(() => {
     loadStation();
-  }, [id]);
+  }, [id], DataTable);
 
   async function loadStation() {
     try {

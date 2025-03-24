@@ -13,15 +13,6 @@ export function SearchFromStation() {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
 
-  const currentSong = useSelector((storeState) => storeState.currentSong)
-  const dispatch = useDispatch()
-
-
-  function setSong(song) {
-    dispatch({ type: 'SET_SONG', song})
-    console.log('The song has been changed ');
-    
-  }
 
 
 
@@ -66,7 +57,7 @@ function filterSongs(searchTerm, setResults) {
 
   useEffect(() => {
     handleSearch(query);
-  }, [query, handleSearch]);
+  }, [query, handleSearch, ]);
 
   return (
     <div className="playlist-search-container">

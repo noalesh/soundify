@@ -16,17 +16,11 @@ const initialState = {
 }
 
 
-export function songReducer (state = initialState, action ) {
-
-    var newState = state 
-    var song
-    switch(action.type) {
+export function songReducer(state = initialState, action) {
+    switch (action.type) {
         case SET_SONG:
-            newState = {...state, currentSong: action.song}
-        break
+            return { ...state, currentSong: action.song }
+        default:
+            return state
     }
-
-
-    return newState
-
 }

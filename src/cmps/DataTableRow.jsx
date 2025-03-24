@@ -1,9 +1,20 @@
 import { Fragment } from "react"
+import { useDispatch } from "react-redux"
+import { SET_SONG } from "../store/reducers/song.reducer"
 
 export function DataTableRow({ song }) {
+    
+    
+    const dispatch = useDispatch()
+
+    function onSelectSong() {
+        dispatch({ type: SET_SONG, song })
+    }
+
+    
 
     return <Fragment>
-            <tr className="table-row">
+            <tr className="table-row" onClick={onSelectSong}>
                 <td></td>  {/* serial number of the song in the station */}
                 <td> <div className="img-title-artist">
                 <img src={song.imgUrl || song.imageUrl} alt="song image" width="4em" height="4em"/>                         
