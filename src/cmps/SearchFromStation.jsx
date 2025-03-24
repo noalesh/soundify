@@ -45,7 +45,6 @@ export function SearchFromStation() {
       <hr className="divider" />
       <div className="header">
         <h2>Let's find something for your playlist</h2>
-        <button className="close-btn" aria-label="Close">&times;</button>
       </div>
 
       <div className="search-bar">
