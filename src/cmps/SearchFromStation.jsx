@@ -47,7 +47,7 @@ export function SearchFromStation() {
         <h2>Let's find something for your playlist</h2>
       </div>
 
-      <div className="search-bar">
+      <div className="search-bar-play">
         <span className="search-icon">🔍</span>
         <input
           type="text"
