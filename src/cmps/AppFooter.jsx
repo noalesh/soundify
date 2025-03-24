@@ -1,6 +1,7 @@
 import { useState } from "react"
+import { useSelector } from "react-redux"
 
-import { PlayerDev } from "./PlayerDev.jsx"
+
 import { Player } from "./Player.jsx"
 import { VolumeBar } from "./VolumeBar.jsx"
 
@@ -8,33 +9,33 @@ import { VolumeBar } from "./VolumeBar.jsx"
 
 export function AppFooter() {
 
+    const currentSong = useSelector((storeState) => storeState.songModule.currentSong)
+
+    console.log(currentSong);
+    
+
 
     const [volume, setVolume] = useState(50)
 
 
-    const songData = {
-        videoId: 'Iq8h3GEe22o',
-        title: 'Radioactive',
-        img: 'src/assets/imgs/imagenDragon.webp'
-    }
 
     function handleVolumeChange(newVolume) {
         setVolume(newVolume)
     }
-
+    console.log()
 
     return (
         <>
         <section className="app-footer">
             <section className="song-data">
-               <img src={songData.img} />
+               <img src={currentSong.imageUrl} />
                <div className="song-text">
-                    <h1>{songData.title}</h1>
-                    <span>Artist</span>
+                    <h1>{currentSong.title}</h1>
+                    <span>{currentSong.artists[0].name}</span>
                 </div>
             </section>
             <section className="player-container-main">
-                <Player videoId={songData.videoId} volume={volume} />
+                <Player videoId={currentSong.videoId} volume={volume} />
             </section>
             <section className="volume-bar-container">
                 <VolumeBar volume={volume} onVolumeChange={handleVolumeChange} />
