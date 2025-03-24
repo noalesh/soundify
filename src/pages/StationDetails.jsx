@@ -77,7 +77,7 @@ export function StationDetails() {
         <div className="flexbox-item-2">
           <h5>Playlist</h5>
           <h1>{station.title}</h1> 
-          <h5>{station.createdBy.fullName} | {station.songs.length} songs</h5>
+          <h5>{station.createdBy.fullName} <span>• {station.songs.length} songs</span> </h5>
         </div>
         
       </div>

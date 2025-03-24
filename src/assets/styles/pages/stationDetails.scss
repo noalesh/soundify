@@ -33,6 +33,10 @@
   background-color: $default-background-color-station-preview-light-2;
   align-items: flex-end;
   border-radius: 10px 10px 0px 0px;
+
+  .flexbox-item-2 {
+    margin-block-end:18px ;
+  }
 }
 
   .grid-item-1 img {
@@ -43,11 +47,19 @@
   }
 
   h5 {
-    font-size: 13px;
+    font-size: 14px;
+    color: #fff;
+    margin: 0;
+    span {
+      color: #ffffffb3;
+
+    }
+
   }
 
   h1 {
-    font-size: 16px;
+    font-size: 32px;
+    margin-block-end: 8px;
   }
 
   ul {
@@ -64,5 +76,6 @@
     border-radius: 0px;
     background-color: $default-background-color-station-preview-2;
     background-image: linear-gradient($default-background-color-station-preview-2, $icon-sidebar-background);
+    padding-inline: 24px;
   }
 }

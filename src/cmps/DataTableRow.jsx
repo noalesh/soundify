@@ -16,12 +16,16 @@ export function DataTableRow({ song }) {
     return <Fragment>
             <tr className="table-row" onClick={onSelectSong}>
                 <td></td>  {/* serial number of the song in the station */}
-                <td> <div className="img-title-artist">
-                <img src={song.imgUrl || song.imageUrl} alt="song image" width="4em" height="4em"/>                         
-                <div><span className="song-title">{song.title}</span> 
-                    <br></br> {song.artist}
+                <td> 
+                    <div className="img-title-artist">
+                        <img src={song.imgUrl || song.imageUrl} alt="song image" width="4em" height="4em"/>                         
+                        {/* <div> */}
+                            <span className="song-title">{song.title}</span> 
+                            <span >{song.artist}</span> 
+                            {/* <br></br> {song.artist} */}
+                        {/* </div> */}
                     </div>
-                </div></td>
+                </td>
                 <td>{song.album}</td>
                 <td>{song.duration}</td>
             </tr>
