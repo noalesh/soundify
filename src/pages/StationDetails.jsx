@@ -4,6 +4,7 @@ import { stationService } from "../services/station/station.service.local";
 import { DataTable } from "../cmps/DataTable"
 import { SearchFromStation } from "../cmps/SearchFromStation";
 import { EditModal } from "../cmps/EditModal";
+import { updateStation } from "../store/actions/station.actions";
 
 
 export function StationDetails() {
@@ -32,6 +33,7 @@ export function StationDetails() {
     }
   }
 
+
   /*
         <h5 style="font-weight:bold">{station.createdBy}</h5>
         <h5>{station.songs.length() + " songs"}</h5>
@@ -46,13 +48,18 @@ export function StationDetails() {
                   <h1>{station.createdBy} * {station.songs.length}</h1>
   */
 
-                  function toggleModal(){
-                    setIsModalOpen(prevState => !prevState)
-                  }
+  function toggleModal(){
+    setIsModalOpen(prevState => !prevState)
+  }
+
+  function onCloseModal(station){
+    updateStation(station)
+    setStation(station)
+    setIsModalOpen(false)
+  }
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error}</div>;
-
 
   return (
     <section className="station-details">     
@@ -79,7 +86,7 @@ export function StationDetails() {
         </span>
         <SearchFromStation />
       </section>
-      {isModalOpen && <EditModal station ={station}/>}
+      {isModalOpen && <EditModal station ={station} onCloseModal={onCloseModal}/>}
     </section>
   );
 }

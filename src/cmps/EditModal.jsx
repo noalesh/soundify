@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 
-export function EditModal({ station }) {
+export function EditModal({ station , onCloseModal }) {
+    console.log('hi i am modal i am active')
     
     const [file, setFile] = useState();
-    // const [newStationDetails, setNewStationDetails] = useState(defaultNewStationDetails)
+    const [newStationDetails, setNewStationDetails] = useState(station)
     const [currentActiveDiv, setCurrentActiveDiv] = useState(0);
-    const { title , img } = station
+   // const { title , img } = station
 
-    const [stationToEdit, setStationToEdit] = useState({img,title})
+    //const [stationToEdit, setStationToEdit] = useState({img,title})
 
     function activate2Grid() {
         setCurrentActiveDiv(2);
@@ -48,15 +49,13 @@ export function EditModal({ station }) {
     }
 
     useEffect(() => {
-        addListenersDetailsModal () 
+        // addListenersDetailsModal () 
     }, [])    
 
     function onSubmitNewStation(ev) {
         ev.preventDefault()
-        stationService.save(newStationDetails)
-        prompt(
-            "TODO - development note - Save (new station) was clicked."
-          )
+        onCloseModal(newStationDetails)
+        // stationService.save(newStationDetails)
     }
 
     function handleChange({ target }) {
@@ -64,16 +63,14 @@ export function EditModal({ station }) {
         setNewStationDetails((prevDetails) => ({ ...prevDetails, [field]: value }))
     }
 
-    // const { name, description } = newStationDetails
+    const { name: title, description } = station
 
     return (
-        
-   
 
-      <dialog class="modal_details_container" id="modal_details_container">
+      <dialog class="modal_details_container show" id="modal_details_container">
         <div class="modal-details">
         <button id="close-station-edit">
-                X
+            X
         </button>
         <h3>Edit details</h3>
 
@@ -82,7 +79,7 @@ export function EditModal({ station }) {
 
                 <div className="uploadImg modal-grid-item-1">
                     <label htmlFor="imgPicker" >
-                    Choose photo
+                        Choose photo
                     </label>
                     <input id="imgPicker" type="file" onChange={handleChange} style={{visibility:"hidden"}} />
                     <img src={file} style={{visibility:"hidden"}} />
@@ -93,9 +90,9 @@ export function EditModal({ station }) {
                     <input value={title} onChange={handleChange} type="text" name="title" id="title" />
                 </div>
 
-                {/* <div className={currentActiveDiv==3 ? "chosen modal-grid-item-3" : "modal-grid-item-3"} onClick={activate3Grid} >
+                { <div className={currentActiveDiv==3 ? "chosen modal-grid-item-3" : "modal-grid-item-3"} onClick={activate3Grid} >
                 <input value={description} onChange={handleChange} type="text" name="description" id="description" placeholder={"Add an optional description"}  />
-                </div> */}
+                </div> }
 
                 </section>
 
@@ -104,9 +101,8 @@ export function EditModal({ station }) {
                     Save
                 </button>
         </section>
-            </form>
-
-      
+        </form>
+   
       </div>
       </dialog>
 

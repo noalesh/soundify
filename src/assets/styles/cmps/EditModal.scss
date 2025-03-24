@@ -1,0 +1,122 @@
+.modal_details_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #171616;
+    color: $text-fill-color;
+    top: 0;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 450px;
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 10px;
+  }
+
+  #save-station-edit{
+    background-color: $bright-icon-background;
+    max-height: 48px;
+    border-radius: 60px; 
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s;
+    color: $hover-dark;
+    font-weight: bold;
+    margin-left: auto; 
+    margin-right: 0;
+    padding: 0.3em 1em;
+  }
+
+  #save-station-edit:hover {
+    transform: scale(1.1);
+  }
+ 
+  #close-station-edit{
+    margin-left: auto; 
+    margin-right: 0;
+  }
+  
+
+  .modal_details_container.show {
+    pointer-events: auto;
+    opacity: 1;
+  }
+
+  .modal_details_container::backdrop {
+    background: purple;
+    opacity: 0.2;
+  }
+
+  .modal-grid {
+    display: grid;
+    grid-template-rows: 4; 
+    grid-template-columns: 3; 
+    gap: 20px;
+  }
+
+  .modal-grid-item-1 {
+    grid-row: 1 / 4;
+    grid-column: 1 / 1;
+    background-color: $gray4;
+  }
+
+  .modal-grid-item-2 {
+    grid-row: 1 / 1;
+    grid-column: 2 / 4;
+    background-color: $gray4;
+
+    #name {
+      background-color: $gray4;
+      border: none;
+      outline: none;
+      color: $bright-fill;
+    }
+
+  }
+
+  .chosen {
+    outline: 1px solid $gray3;
+    border-color: $gray3;
+    border: solid;
+  } 
+  
+  .modal-grid-item-3 {
+    grid-row: 2 / 4;
+    grid-column: 2 / 4;
+    background-color: $gray4;
+
+    #description {
+      background-color: $gray4;
+      border: none;
+      outline: none;
+      color: $bright-fill;
+    }
+
+  }
+
+  .modal_details {
+    background-color: #fff;
+    max-width: 100%;
+    border-radius: 5px;
+  }
+    
+  .grid-item-1 {
+    display: flex;
+    background-color: $dark-background-opacity;
+    align-items: flex-end;  
+  }      
+      
+  h5 {
+    font-size: 13px;
+  }
+      
+  h1 {
+    font-size: 16px;
+  }

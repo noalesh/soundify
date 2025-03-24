@@ -40,6 +40,7 @@ const demoUser = {
 function getEmptyStation(){
   return {
     title: "My Playlist",
+    description: '',
     img: "/src/assets/imgs/Soundify-files/defaultPlaylistIcon.png",
   
     songs: [
@@ -82,6 +83,7 @@ async function save(station) {
       const stationToSave = {
           _id: station._id,
           title: station.title,
+          description: station.description,
           img: station.img,
           songs: station.songs
       }
