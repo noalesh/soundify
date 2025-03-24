@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { stationService } from "../services/station/station.service.local";
 import { DataTable } from "../cmps/DataTable"
 import { SearchFromStation } from "../cmps/SearchFromStation";
+import { EditModal } from "../cmps/EditModal";
 
 
 export function StationDetails() {
@@ -10,6 +11,8 @@ export function StationDetails() {
   const [station, setStation] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   useEffect(() => {
     loadStation();
@@ -43,13 +46,17 @@ export function StationDetails() {
                   <h1>{station.createdBy} * {station.songs.length}</h1>
   */
 
+                  function toggleModal(){
+                    setIsModalOpen(prevState => !prevState)
+                  }
+
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error}</div>;
 
 
   return (
     <section className="station-details">     
-      <div className="grid-item-1 station-details-header">
+      <div className="grid-item-1 station-details-header" onClick={toggleModal}>
         <div className="flexbox-item-1">
           <img  src={station.img} alt={station.img}></img>
         </div>
@@ -72,6 +79,7 @@ export function StationDetails() {
         </span>
         <SearchFromStation />
       </section>
+      {isModalOpen && <EditModal station ={station}/>}
     </section>
   );
 }

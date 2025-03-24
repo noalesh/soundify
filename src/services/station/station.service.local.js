@@ -2,6 +2,7 @@ import { saveToStorage } from "../util.service.js";
 import { storageService } from "../async-storage.service";
 import { makeId } from "../util.service";
 import { userService } from "../user";
+import { utilService } from "../../../../../גרסאות סופיות של תרגילים (לא כולם גמורים)/MissBooksApp/services/util.service.js";
 
 //const STORAGE_KEY = 'station'
 const STORAGE_KEY = "stationDemiDb";
@@ -24,8 +25,28 @@ export const stationService = {
   save,
   remove,
   getDefaultFilter,
+  getEmptyStation
 };
 window.cs = stationService;
+
+const demoUser = {
+
+
+  _id: utilService.makeId(6),
+  fullName: "Guest",
+  imgUrl: ""
+}
+
+function getEmptyStation(){
+  return {
+    title: "My Playlist",
+    img: "/src/assets/imgs/Soundify-files/defaultPlaylistIcon.png",
+  
+    songs: [
+       
+    ]
+}
+}
 
 async function query(filterBy = { txt: "" }) {
   console.log("query from local service was called.");
@@ -71,7 +92,7 @@ async function save(station) {
         img: station.img,
         songs: station.songs,
           // Later, owner is set by the backend
-        createdBy: userService.getLoggedinUser()
+        createdBy: userService.getLoggedinUser() || demoUser
       }
       savedStation = await storageService.post(STORAGE_KEY, stationToSave)
   }

@@ -1,15 +1,17 @@
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { SearchBar } from "../cmps/SearchBar";
 import { stationService } from "../services/station/station.service.local";
 import { storageService } from "../services/async-storage.service";
 import { MdAdd, MdArrowForwardIos } from "react-icons/md";
 import { RiListSettingsLine } from "react-icons/ri";
 import { IconsSvg } from "../cmps/IconsSvg";
+import { addStation } from "../store/actions/station.actions";
 
 export function SideBar() {
   const [filterBy, setFilterBy] = useState("");
   const [stations, setStations] = useState([]);
+  const navigate = useNavigate()
 
   useEffect(() => {
     loadStations();
@@ -30,6 +32,12 @@ export function SideBar() {
       .includes((typeof filterBy === "string" ? filterBy : "").toLowerCase())
   );
 
+  async function onCreateStation(){
+    const newStation =stationService.getEmptyStation()
+    const addedStation = await addStation(newStation)
+   navigate(`/station/${addedStation._id}`)
+  }
+
   return (
     <aside className="side-bar">
       <div className="logo-section">
@@ -45,10 +53,14 @@ export function SideBar() {
           Your Library
         </NavLink>
         <div className="actions">
-          <NavLink to={`/station/add`} className="plus-create-btn">
+          {/* <NavLink to={`/station/add`} className="plus-create-btn">
             <MdAdd size={16} />
             <span>Create</span>
-          </NavLink>
+          </NavLink> */}
+          <div onClick={onCreateStation} className="plus-create-btn">
+            <MdAdd size={16} />
+            <span>Create</span>
+          </div>
           <button
             className="expand-btn"
             type="button"
