@@ -26,7 +26,7 @@ export function HomePage() {
     }, []);
     
     return (
-        <div>
+        <div className="homepage">
         <section>
             <h3>Your Playlists</h3>
             <StationList stations={stations}/>
