@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 
 export function EditModal({ station , onCloseModal }) {
-    console.log('hi i am modal i am active')
     
     const [file, setFile] = useState();
     const [newStationDetails, setNewStationDetails] = useState(station)
@@ -63,7 +62,7 @@ export function EditModal({ station , onCloseModal }) {
         setNewStationDetails((prevDetails) => ({ ...prevDetails, [field]: value }))
     }
 
-    const { name: title, description , img } = station
+    const { title, description , img } = station
 
     return (
 
@@ -91,9 +90,9 @@ export function EditModal({ station , onCloseModal }) {
 
                 <div className={currentActiveDiv==2 ? "chosen modal-grid-item-2" : "modal-grid-item-2"} onClick={activate2Grid} >
                     {/* <label htmlFor="name">Name: </label> */}
-                    <input value={title} onChange={handleChange} type="text" name="title" id="title" />
+                    <input defaultValue={title} onChange={handleChange} type="text" name="title" id="title" />
                 </div>
-
+  
                 { <div className={currentActiveDiv==3 ? "chosen modal-grid-item-3" : "modal-grid-item-3"} onClick={activate3Grid} >
                 <input value={description} onChange={handleChange} type="text" name="description" id="description" placeholder={"Add an optional description"}  />
                 </div> }
