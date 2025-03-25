@@ -72,7 +72,7 @@ export function StationDetails() {
     <section className="station-details">     
       <div className="grid-item-1 station-details-header" onClick={toggleModal}>
         <div className="flexbox-item-1">
-          <img  src={station.img} alt={station.img}></img>
+          <img  src={station.songs[0]?.imageUrl ? station.songs[0].imageUrl : station.img} alt={station.img}></img>
         </div>
         <div className="flexbox-item-2">
           <h5>Playlist</h5>
