@@ -17,10 +17,6 @@ export function SongList({ songs, onRemoveSong, onAddSong }) {//TODO: Add the op
             {songs.map(song =>
                 <li key={song._id}>
                     <SongPreview song={song}/>
-                    {shouldShowActionBtns(song) && <div className="actions">
-                        <button onClick={() => onRemoveSong(song._id)}>x</button>
-                        <button onClick={() => onAddSong(song._id)}>+</button>
-                    </div>}
                 </li>)
             }
         </ul>
