@@ -113,6 +113,7 @@ $inactive-color: $text-fill-color;
             padding: 4px 10px;
             flex: 1;
             margin-right: 12px;
+            height: 42px;
 
             .search-icon {
                 color: $inactive-color;
@@ -126,6 +127,11 @@ $inactive-color: $text-fill-color;
                 outline: none;
                 color: $bright-fill;
                 font-size: 0.9em;
+                padding: 0;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                line-height: 36px;
 
                 &::placeholder {
                     color: $inactive-color;
