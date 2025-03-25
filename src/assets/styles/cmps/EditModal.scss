@@ -134,6 +134,13 @@ button#save-station-edit {
 
   }
 
+  input::placeholder {
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    top: 8px;
+  }
+
   .modal_details {
     background-color: #fff;
     max-width: 100%;
