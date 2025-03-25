@@ -12,7 +12,6 @@ export function HomePage() {
     async function loadStations() {
 
         try {
-            console.log("calling from HomePage - filterBy is: " , filterBy)
            // TODO - continue from here to connect the filter
          //   const stationsToSet = await stationService.query(context.filterBy);
            const stationsToSet = await stationService.query(); 
@@ -29,8 +28,6 @@ export function HomePage() {
     return (
         <div>
         <section>
-            <h6 className="dev-comments">TODO - UNDER CONSTRUCTION... <br></br>HomePage</h6>
-
             <h3>Your Playlists</h3>
             <StationList stations={stations}/>
         </section >

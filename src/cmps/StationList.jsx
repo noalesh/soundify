@@ -10,7 +10,6 @@ export function StationList({ stations }) {
     return <section>
        {/* <h1>Your shows</h1>  */}
        {console.log(stations)}
-        <div className="dev-comments">Development note - TODO - currently all stations of all users are being shown!</div>
        <ul className="station-list">
             {stations.map(station =>
                 <Link className="station-list-item-container" to={`/station/${station._id}`}>{station.name}
