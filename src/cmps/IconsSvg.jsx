@@ -201,6 +201,23 @@ export function IconsSvg({ svgName }) {
         <path d="M15 14.5H5V13h10v1.5zm0-5.75H5v-1.5h10v1.5zM15 3H5V1.5h10V3zM3 3H1V1.5h2V3zm0 11.5H1V13h2v1.5zm0-5.75H1v-1.5h2v1.5z"></path>
       </svg>
     ),
+    remove: (
+      <svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 16 16"
+  role="img"
+  aria-hidden="true"
+  className="e-9640-icon"
+  style={{
+    fill: "var(--text-subdued, #656565)",
+    height: "var(--encore-graphic-size-decorative-smaller)",
+    width: "var(--encore-graphic-size-decorative-smaller)"
+  }}
+>
+  <path d="M5.25 3v-.917C5.25.933 6.183 0 7.333 0h1.334c1.15 0 2.083.933 2.083 2.083V3h4.75v1.5h-.972l-1.257 9.544A2.25 2.25 0 0 1 11.041 16H4.96a2.25 2.25 0 0 1-2.23-1.956L1.472 4.5H.5V3h4.75zm1.5-.917V3h2.5v-.917a.583.583 0 0 0-.583-.583H7.333a.583.583 0 0 0-.583.583zM2.986 4.5l1.23 9.348a.75.75 0 0 0 .744.652h6.08a.75.75 0 0 0 .744-.652L13.015 4.5H2.985z" />
+</svg>
+
+    )
   };
 
   const Icon = svgs[svgName];
