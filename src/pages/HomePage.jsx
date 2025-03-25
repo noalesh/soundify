@@ -6,6 +6,68 @@ import { useOutletContext } from "react-router-dom"
 
 export function HomePage() {
     const [stations, setStations] = useState([]);
+
+    const recommendedForYou = [
+        {
+          _id: "OXeMG8wNskc",
+          title: "Best of 2024",
+          img: "/src/assets/imgs/demiDataImgs/2024.png",
+          createdBy: {
+            _id: "u101",
+            fullName: "Lior Cohen",
+            imgUrl: "",
+          },
+          songs: [
+          ],
+        },
+        {
+          _id: "4XeMfdfNskc",
+          title: "Lady Gaga",
+          img: "/src/assets/imgs/demiDataImgs/gaga.png",
+          createdBy: {
+            _id: "u101",
+            fullName: "Lior Cohen",
+            imgUrl: "",
+          },
+          songs: []
+        },
+        {
+          _id: "11eMG8wNskc",
+          title: "90's Hits",
+          img: "/src/assets/imgs/demiDataImgs/90.png",
+          createdBy: {
+            _id: "r401",
+            fullName: "Moshe Siman Tov",
+            imgUrl: "",
+          },
+          songs: []
+        },
+        {
+          _id: "9tr9rG8wNskc",
+          title: "GLGLTZ",
+          img: "/src/assets/imgs/demiDataImgs/glgltz.png",
+          createdBy: {
+            _id: "r401",
+            fullName: "Moshe Siman Tov",
+            imgUrl: "",
+          },
+          songs: [
+           
+          ],
+        },
+        {
+          _id: "7tyMG8wNskc",
+          title: "Divas",
+          img: "/src/assets/imgs/demiDataImgs/divas.png",
+          createdBy: {
+            _id: "r401",
+            fullName: "Moshe Siman Tov",
+            imgUrl: "",
+          },
+          songs: [
+          ],
+        },
+      ];
     
     const {filterBy} = useOutletContext();
 
@@ -30,6 +92,11 @@ export function HomePage() {
         <section>
             <h3>Your Playlists</h3>
             <StationList stations={stations}/>
+        </section >
+
+        <section>
+            <h3>Recommended for you</h3>
+            <StationList stations={recommendedForYou}/>
         </section >
 
          <section>
