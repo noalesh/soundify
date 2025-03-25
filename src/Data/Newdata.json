@@ -4,7 +4,9 @@
     "title": "(I Can't Get No) Satisfaction - Mono Version",
     "artists": [{ "name": "The Rolling Stones", "spotifyId": "22bE4uQ6baNwSHPVcDxLCe" }],
     "imageUrl": "https://i.scdn.co/image/ab67616d0000b27305c5be85b64eaff732f7cb0b",
-    "videoId": "MSSxnv1_J2g"
+    "videoId": "MSSxnv1_J2g",
+    "album": "(I Can't Get No) Satisfaction - Mono Version",
+    "duration": "03:44"
   },
   {
     "_id": "D4E5F6",
@@ -14,35 +16,45 @@
       { "name": "Juice WRLD", "spotifyId": "4MCBfE4596Uoi2O4DtmEMz" }
     ],
     "imageUrl": "https://i.scdn.co/image/ab67616d0000b2732f44aec83b20e40f3baef73c",
-    "videoId": "r_0JjYUe5jo"
+    "videoId": "r_0JjYUe5jo",
+    "album": "Godzilla (feat. Juice WRLD)",
+    "duration": "03:30"
   },
   {
     "_id": "G7H8I9",
     "title": "Biggest Part of Me",
     "artists": [{ "name": "Ambrosia", "spotifyId": "0J2Ej2rMQyqaUX3G6MUISw" }],
     "imageUrl": "https://i.scdn.co/image/ab67616d0000b2730736c6f7e55f0bbe4b5f8497",
-    "videoId": "RuMnXi7L7wE"
+    "videoId": "RuMnXi7L7wE",
+    "album": "Biggest Part of Me",
+    "duration": "04:12"
   },
   {
     "_id": "J1K2L3",
     "title": "Lovin On Me",
     "artists": [{ "name": "Jack Harlow", "spotifyId": "2LIk90788K0zvyj2JJVwkJ" }],
     "imageUrl": "https://i.scdn.co/image/ab67616d0000b273fcf4adae77baba5d0169e8e8",
-    "videoId": "Iq8h3GEe22o"
+    "videoId": "Iq8h3GEe22o",
+    "album": "Lovin On Me",
+    "duration": "02:37"
   },
   {
     "_id": "M4N5O6",
     "title": "No More Goodbyes",
     "artists": [{ "name": "The Groove Trio", "spotifyId": "4vmN5DgVFk2GDBHDu1ZJeb" }],
     "imageUrl": "https://i.scdn.co/image/ab67616d0000b273f5f0a819197f9706755530aa",
-    "videoId": "bWM-Q8k2Fo8"
+    "videoId": "bWM-Q8k2Fo8",
+    "album": "No More Goodbyes",
+    "duration": "03:08"
   },
   {
     "_id": "P7Q8R9",
     "title": "Best Time",
     "artists": [{ "name": "Brent Faiyaz", "spotifyId": "3tlXnStJ1fFhdScmQeLpuG" }],
     "imageUrl": "https://i.scdn.co/image/ab67616d0000b273180c0d19e7dedffa7f7cb4b9",
-    "videoId": "SF8wxV4mbIg"
+    "videoId": "SF8wxV4mbIg",
+    "album": "Best Time",
+    "duration": "03:21"
   },
   {
     "_id": "S1T2U3",
@@ -53,28 +65,36 @@
       { "name": "Baby Tate", "spotifyId": "3IJ21966TwNZI24MwZHMu4" }
     ],
     "imageUrl": "https://i.scdn.co/image/ab67616d0000b273cae6e44dcc84e2035c3ad092",
-    "videoId": "Y19q-7VN2WI"
+    "videoId": "Y19q-7VN2WI",
+    "album": "Surround Sound (feat. 21 Savage & Baby Tate)",
+    "duration": "04:05"
   },
   {
     "_id": "V4W5X6",
     "title": "redrum",
     "artists": [{ "name": "21 Savage", "spotifyId": "1URnnhqYAYcrqrcwql10ft" }],
     "imageUrl": "https://i.scdn.co/image/ab67616d0000b273bbdceba2bf1867d4966d0347",
-    "videoId": "U4mADkt6o-M"
+    "videoId": "U4mADkt6o-M",
+    "album": "redrum",
+    "duration": "03:18"
   },
   {
     "_id": "Y7Z8A9",
     "title": "20 (בלעדייך)",
     "artists": [{ "name": "Lihi Toledano", "spotifyId": "1zFuOvKD7y6cnjH5RJ0Prx" }],
     "imageUrl": "https://i.scdn.co/image/ab67616d0000b273bac95bb71e4a23a818355f19",
-    "videoId": "JE74tWzWTzk"
+    "videoId": "JE74tWzWTzk",
+    "album": "20 (בלעדייך)",
+    "duration": "02:53"
   },
   {
     "_id": "B1C2D3",
     "title": "You Oughta Know",
     "artists": [{ "name": "Alanis Morissette", "spotifyId": "6ogn9necmbUdCppmNnGOdi" }],
     "imageUrl": "https://i.scdn.co/image/ab67616d0000b27392c885317fbe4bfa680109b4",
-    "videoId": "NPcyTyilmYY"
+    "videoId": "NPcyTyilmYY",
+    "album": "You Oughta Know",
+    "duration": "04:09"
   },
   {
     "_id": "69AZB2TEh2qFXAKs1R3H9B",
@@ -83,7 +103,9 @@
       { "name": "The Groove Trio", "spotifyId": "4vmN5DgVFk2GDBHDu1ZJeb" }
     ],
     "imageUrl": "https://i.scdn.co/image/ab67616d0000b273f5f0a819197f9706755530aa",
-    "videoId": "bWM-Q8k2Fo8"
+    "videoId": "bWM-Q8k2Fo8",
+    "album": "No More Goodbyes",
+    "duration": "03:08"
   },
   {
     "_id": "1zgHn1EqUyA0HqNYMdJ5ia",
@@ -92,7 +114,9 @@
       { "name": "Brent Faiyaz", "spotifyId": "3tlXnStJ1fFhdScmQeLpuG" }
     ],
     "imageUrl": "https://i.scdn.co/image/ab67616d0000b273180c0d19e7dedffa7f7cb4b9",
-    "videoId": "SF8wxV4mbIg"
+    "videoId": "SF8wxV4mbIg",
+    "album": "Best Time",
+    "duration": "03:21"
   },
   {
     "_id": "2wy29RBixBECDOsXuBs7md",
@@ -102,7 +126,9 @@
       { "name": "Vini Vici", "spotifyId": "29zsVzEH33dD5QqxeL8dvy" }
     ],
     "imageUrl": "https://i.scdn.co/image/ab67616d0000b2734581d67fda9def0d22ef4fe1",
-    "videoId": "0lBjcaMokvo"
+    "videoId": "0lBjcaMokvo",
+    "album": "Free Tibet - Vini Vici Remix",
+    "duration": "07:01"
   },
   {
     "_id": "1udwFobQ1JoOdWPQrp2b6u",
@@ -113,7 +139,9 @@
       { "name": "Baby Tate", "spotifyId": "3IJ21966TwNZI24MwZHMu4" }
     ],
     "imageUrl": "https://i.scdn.co/image/ab67616d0000b273cae6e44dcc84e2035c3ad092",
-    "videoId": "Y19q-7VN2WI"
+    "videoId": "Y19q-7VN2WI",
+    "album": "Surround Sound (feat. 21 Savage & Baby Tate)",
+    "duration": "04:05"
   },
   {
     "_id": "55ZNNY6D8FkNFAlVceAwIZ",
@@ -122,7 +150,9 @@
       { "name": "Juice WRLD", "spotifyId": "4MCBfE4596Uoi2O4DtmEMz" }
     ],
     "imageUrl": "https://i.scdn.co/image/ab67616d0000b2737459992b444de38842b9bee7",
-    "videoId": "BU3RzEbSiW4"
+    "videoId": "BU3RzEbSiW4",
+    "album": "Not Enough",
+    "duration": "03:50"
   },
   {
     "_id": "34aKXUhVdHGTzWOt85RjGq",
@@ -131,6 +161,8 @@
       { "name": "Osher Cohen", "spotifyId": "2LUB7PhWK2j2obgSTeD3GN" }
     ],
     "imageUrl": "https://i.scdn.co/image/ab67616d0000b273d3a7fd4d957030f16d2b557f",
-    "videoId": "K1nQX_hdop0"
+    "videoId": "K1nQX_hdop0",
+    "album": "אהבה",
+    "duration": "03:33"
   }
 ]
