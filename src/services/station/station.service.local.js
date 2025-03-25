@@ -6,7 +6,7 @@ import { userService } from "../user";
 
 //const STORAGE_KEY = 'station'
 const STORAGE_KEY = "stationDemiDb";
-// _createStationsFromGivenDemoData();
+ _createStationsFromGivenDemoData();
 
 const demoStation = {
   _id: "1234",
@@ -127,8 +127,8 @@ function _createStationsFromGivenDemoData() {
   const stations = [
     {
       _id: "OXeMG8wNskc",
-      title: "Demi Playlist Lior #1",
-      img: "/src/assets/imgs/Soundify-files/defaultPlaylistIcon.png",
+      title: "Study Playlist #1",
+      img: "/src/assets/imgs/demiDataImgs/study1.png",
       createdBy: {
         _id: "u101",
         fullName: "Lior Cohen",
@@ -172,8 +172,8 @@ function _createStationsFromGivenDemoData() {
     },
     {
       _id: "4XeMfdfNskc",
-      title: "Demi Playlist Lior #2",
-      img: "/src/assets/imgs/demiDataImgs/demiPlaylistImg4.png",
+      title: "Study Playlist #2",
+      img: "/src/assets/imgs/demiDataImgs/study2.png",
       createdBy: {
         _id: "u101",
         fullName: "Lior Cohen",
@@ -217,8 +217,8 @@ function _createStationsFromGivenDemoData() {
     },
     {
       _id: "11eMG8wNskc",
-      title: "Demi Playlist Moshe #1",
-      img: "/src/assets/imgs/demiDataImgs/demiPlaylistImg2.png",
+      title: "Workout - slow",
+      img: "/src/assets/imgs/demiDataImgs/workout1.png",
       createdBy: {
         _id: "r401",
         fullName: "Moshe Siman Tov",
@@ -251,8 +251,8 @@ function _createStationsFromGivenDemoData() {
     },
     {
       _id: "9tr9rG8wNskc",
-      title: "Demi Playlist Moshe #2",
-      img: "/src/assets/imgs/demiDataImgs/demiPlaylistImg3.png",
+      title: "Workout - high energy",
+      img: "/src/assets/imgs/demiDataImgs/workout2.png",
       createdBy: {
         _id: "r401",
         fullName: "Moshe Siman Tov",
@@ -285,8 +285,8 @@ function _createStationsFromGivenDemoData() {
     },
     {
       _id: "7tyMG8wNskc",
-      title: "Demi Playlist Moshe #3",
-      img: "/src/assets/imgs/Soundify-files/defaultPlaylistIcon.png",
+      title: "relax",
+      img: "/src/assets/imgs/demiDataImgs/relax.png",
       createdBy: {
         _id: "r401",
         fullName: "Moshe Siman Tov",

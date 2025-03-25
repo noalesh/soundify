@@ -54,7 +54,6 @@ export function StationAdd({ defaultNewStationDetails }) {
   function onSubmitNewStation(ev) {
     ev.preventDefault();
     stationService.save(newStationDetails);
-    prompt("TODO - development note - Save (new station) was clicked.");
   }
 
   function handleChange({ target }) {

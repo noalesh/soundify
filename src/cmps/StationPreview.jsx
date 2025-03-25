@@ -17,8 +17,10 @@ export function StationPreview({ station }) {
         <header>
             <Link to={`/station/${station._id}`}>{station.name}</Link>
             <div className="station-preview-container">
-                <h3>{station.imgUrl}</h3>
+               {/* <h3>{station.imgUrl}</h3>
                 <img src={station.songs?.length ? station.songs[0]?.imageUrl : station.img} alt="playlist image" width="90" height="90"/> 
+                */}
+                <img src={station.img} alt="playlist image" width="90" height="90"/> 
                 <h4>{station.title}</h4>
                 <SongList
                     songs={songs}

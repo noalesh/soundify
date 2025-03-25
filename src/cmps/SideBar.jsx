@@ -94,7 +94,7 @@ export function SideBar() {
                 className={({ isActive }) => (isActive ? "active" : "")}
               >
                 <img
-                  src={station.songs?.[0]?.imgUrl || station.img}
+                  src={station.img || station.songs?.[0]?.imgUrl }
                   alt={station.title}
                 />
                 <div className="station-info">
