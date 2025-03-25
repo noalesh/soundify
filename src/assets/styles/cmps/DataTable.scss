@@ -5,14 +5,32 @@
     border-collapse: collapse;
     text-align: center;
     color: $text-fill-color;
-    font-size: 12px;
+    font-size: 14px;
 
+    
+    
     thead {
-        border-bottom: 1px solid gray;
+        // border-bottom: 1px solid gray;
+        border-bottom: 1px solid hsla(0, 0%, 100%, .1);
+        tr {
+            padding-block: 8px;
+            svg {
+                width: 16px;
+                height: 16px;
+            }
+            
+        }
     }
+    tbody {
+        tr:first-child {
 
+            padding-block-start: 16px;
+        }
+    }
+    
     table
     {
+        padding-inline: 24px;
         border-collapse: collapse;
         text-align: center;
     } 
@@ -22,5 +40,44 @@
         height: 1.5em;
         background-color: $text-fill-color;
     }
-    
+    tr {
+        display: grid;
+        grid-template-columns: 48px minmax(120px , 5fr) minmax(120px , 3fr) minmax(120px , 1fr);
+        
+        td , th {
+
+            display: flex;
+            align-items: center;
+            padding-inline: 1em;
+
+            justify-self: start;
+
+            &:first-child{
+                justify-self: center;
+            }
+            &:last-child {
+                justify-self: end;
+            }
+        }
+
+        .img-title-artist {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            grid-template-rows: 1fr 1fr;
+
+            img {
+                grid-row: 1/-1;
+                margin-inline-end: 12px;
+            }
+            span {
+                justify-self: start;
+            }
+            span.song-title {
+                font-size: 16px;
+            }
+          
+        }
+
+        
+    }
 }
