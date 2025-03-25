@@ -236,7 +236,14 @@ $inactive-color: $text-fill-color;
                         }
                     }
 
-                    .date-added,
+                                        .date-added {
+                                            color: $inactive-color;
+                                            font-size: 0.75em;
+                                            display: block;
+                                            position: relative;
+                                            left: -16px;  
+                                        }
+
                     .last-played {
                         color: $inactive-color;
                         font-size: 0.75em;

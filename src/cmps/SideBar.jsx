@@ -9,8 +9,7 @@ import { addStation } from "../store/actions/station.actions";
 export function SideBar() {
   const [filterBy, setFilterBy] = useState("");
   const [stations, setStations] = useState([]);
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
     loadStations();
@@ -24,6 +23,10 @@ export function SideBar() {
         addedAt: station.addedAt || getRandomDate(),
         lastPlayed: station.lastPlayed || "",
       }));
+
+      stationsWithDates.sort(
+        (a, b) => new Date(a.addedAt) - new Date(b.addedAt)
+      );
       setStations(stationsWithDates);
     } catch (err) {
       console.error("Failed to load stations:", err);
@@ -32,17 +35,27 @@ export function SideBar() {
 
   function getRandomDate() {
     const day = Math.floor(Math.random() * 28) + 1;
-    return `03.${day < 10 ? "0" + day : day}.2025`;
+    return `2025-03-${day < 10 ? "0" + day : day}`;
+  }
+
+  function formatDate(dateStr) {
+    if (!dateStr) return null;
+    const date = new Date(dateStr);
+    return date.toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    });
   }
 
   const filteredStations = stations.filter((station) =>
     station.title.toLowerCase().includes(filterBy.toLowerCase())
   );
 
-  async function onCreateStation(){
-    const newStation =stationService.getEmptyStation()
-    const addedStation = await addStation(newStation)
-   navigate(`/station/${addedStation._id}`)
+  async function onCreateStation() {
+    const newStation = stationService.getEmptyStation();
+    const addedStation = await addStation(newStation);
+    navigate(`/station/${addedStation._id}`);
   }
 
   return (
@@ -60,10 +73,6 @@ export function SideBar() {
           Your Library
         </NavLink>
         <div className="actions">
-          {/* <NavLink to={`/newStation`} className="plus-create-btn">
-            <MdAdd size={16} />
-            <span>Create</span>
-          </NavLink> */}
           <div onClick={onCreateStation} className="plus-create-btn">
             <MdAdd size={16} />
             <span>Create</span>
@@ -107,7 +116,7 @@ export function SideBar() {
                 className={({ isActive }) => (isActive ? "active" : "")}
               >
                 <img
-                  src={station.img || station.songs?.[0]?.imgUrl }
+                  src={station.img || station.songs?.[0]?.imgUrl}
                   alt={station.title}
                 />
                 <div className="station-info">
@@ -116,8 +125,12 @@ export function SideBar() {
                     Playlist • {station.songs.length} songs
                   </span>
                 </div>
-                <span className="date-added">{station.addedAt}</span>
-                <span className="last-played">{station.lastPlayed || "—"}</span>
+                <span className="date-added">
+                  {formatDate(station.addedAt)}
+                </span>
+                <span className="last-played">
+                  {formatDate(station.lastPlayed)}
+                </span>
               </NavLink>
             </li>
           ))}
