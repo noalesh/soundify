@@ -85,7 +85,7 @@ export function EditModal({ station , onCloseModal }) {
                     </label> */}
                     {/* <input id="imgPicker" type="file" onChange={handleChange} style={{visibility:"hidden"}} />
                     <img src={file} style={{visibility:"hidden"}} /> */}
-                    <img src={img}  /> 
+                    <img src={station.songs[0]?.imageUrl ? station.songs[0].imageUrl : img}  /> 
                 </div>
 
                 <div className={currentActiveDiv==2 ? "chosen modal-grid-item-2" : "modal-grid-item-2"} onClick={activate2Grid} >

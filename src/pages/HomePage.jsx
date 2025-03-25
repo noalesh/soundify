@@ -3,8 +3,35 @@ import { Outlet } from "react-router-dom"
 import { StationList } from "../cmps/StationList"
 import { stationService } from "../services/station/station.service.local";
 import { useOutletContext } from "react-router-dom"
+import { SongList } from "../cmps/SongList";
 
 export function HomePage() {
+
+
+    const songs = [
+        {
+            "_id": "P7Q8R9",
+            "title": "Best Time",
+            "artists": [{ "name": "Brent Faiyaz", "spotifyId": "3tlXnStJ1fFhdScmQeLpuG" }],
+            "imageUrl": "https://i.scdn.co/image/ab67616d0000b273180c0d19e7dedffa7f7cb4b9",
+            "videoId": "SF8wxV4mbIg",
+            "album": "Best Time",
+            "duration": "03:21"
+          },
+          {
+            "_id": "S1T2U3",
+            "title": "Surround Sound (feat. 21 Savage & Baby Tate)",
+            "artists": [
+              { "name": "JID", "spotifyId": "6U3ybJ9UHNKEdsH7ktGBZ7" },
+              { "name": "21 Savage", "spotifyId": "1URnnhqYAYcrqrcwql10ft" },
+              { "name": "Baby Tate", "spotifyId": "3IJ21966TwNZI24MwZHMu4" }
+            ],
+            "imageUrl": "https://i.scdn.co/image/ab67616d0000b273cae6e44dcc84e2035c3ad092",
+            "videoId": "Y19q-7VN2WI",
+            "album": "Surround Sound (feat. 21 Savage & Baby Tate)",
+            "duration": "04:05"
+          }
+    ]
     const [stations, setStations] = useState([]);
 
     const recommendedForYou = [
