@@ -49,13 +49,13 @@ export function EditModal({ station , onCloseModal }) {
     }
 
     useEffect(() => {
-        // addListenersDetailsModal () 
+         addListenersDetailsModal () 
     }, [])    
 
     function onSubmitNewStation(ev) {
         ev.preventDefault()
         onCloseModal(newStationDetails)
-        // stationService.save(newStationDetails)
+        //stationService.save(newStationDetails)
     }
 
     function handleChange({ target }) {
@@ -63,30 +63,34 @@ export function EditModal({ station , onCloseModal }) {
         setNewStationDetails((prevDetails) => ({ ...prevDetails, [field]: value }))
     }
 
-    const { name: title, description } = station
+    const { name: title, description , img } = station
 
     return (
 
       <dialog class="modal_details_container show" id="modal_details_container">
         <div class="modal-details">
-        <button id="close-station-edit">
-            X
-        </button>
-        <h3>Edit details</h3>
+            <div className="modal-header" >
+
+                <h3>Edit details</h3>
+                <button id="close-station-edit">
+                    X
+                </button>
+            </div>
 
             <form onSubmit={onSubmitNewStation}>
                 <section className="modal-grid">
 
                 <div className="uploadImg modal-grid-item-1">
-                    <label htmlFor="imgPicker" >
+                    {/* <label htmlFor="imgPicker" >
                         Choose photo
-                    </label>
-                    <input id="imgPicker" type="file" onChange={handleChange} style={{visibility:"hidden"}} />
-                    <img src={file} style={{visibility:"hidden"}} />
+                    </label> */}
+                    {/* <input id="imgPicker" type="file" onChange={handleChange} style={{visibility:"hidden"}} />
+                    <img src={file} style={{visibility:"hidden"}} /> */}
+                    <img src={img}  /> 
                 </div>
 
                 <div className={currentActiveDiv==2 ? "chosen modal-grid-item-2" : "modal-grid-item-2"} onClick={activate2Grid} >
-                    <label htmlFor="name">Name: </label>
+                    {/* <label htmlFor="name">Name: </label> */}
                     <input value={title} onChange={handleChange} type="text" name="title" id="title" />
                 </div>
 
@@ -97,10 +101,10 @@ export function EditModal({ station , onCloseModal }) {
                 </section>
 
                 <section className="save-station-edit-container">
+        </section>
                 <button id="save-station-edit">
                     Save
                 </button>
-        </section>
         </form>
    
       </div>
