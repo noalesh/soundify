@@ -29,7 +29,6 @@ export function DataTableRow({ song }) {
                 </td>
                 <td>{song.album}</td>
                 <td>{song.duration}</td>
-                <td><IconsSvg svgName={'remove'} /></td>
             </tr>
         </Fragment>
 }
