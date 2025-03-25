@@ -1,17 +1,13 @@
 import { useState, useEffect } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
-import { SearchBar } from "../cmps/SearchBar";
+import { NavLink } from "react-router-dom";
 import { stationService } from "../services/station/station.service.local";
-import { storageService } from "../services/async-storage.service";
-import { MdAdd, MdArrowForwardIos } from "react-icons/md";
-import { RiListSettingsLine } from "react-icons/ri";
+import { MdAdd } from "react-icons/md";
+import { FiArrowLeft, FiSearch } from "react-icons/fi";
 import { IconsSvg } from "../cmps/IconsSvg";
-import { addStation } from "../store/actions/station.actions";
 
 export function SideBar() {
   const [filterBy, setFilterBy] = useState("");
   const [stations, setStations] = useState([]);
-  const navigate = useNavigate()
 
   useEffect(() => {
     loadStations();
@@ -20,63 +16,74 @@ export function SideBar() {
   async function loadStations() {
     try {
       const stationsFromService = await stationService.query();
-      setStations(stationsFromService);
+      const stationsWithDates = stationsFromService.map((station) => ({
+        ...station,
+        addedAt: station.addedAt || getRandomDate(),
+        lastPlayed: station.lastPlayed || "",
+      }));
+      setStations(stationsWithDates);
     } catch (err) {
       console.error("Failed to load stations:", err);
     }
   }
 
-  const filteredStations = stations.filter((station) =>
-    station.title
-      .toLowerCase()
-      .includes((typeof filterBy === "string" ? filterBy : "").toLowerCase())
-  );
-
-  async function onCreateStation(){
-    const newStation =stationService.getEmptyStation()
-    const addedStation = await addStation(newStation)
-   navigate(`/station/${addedStation._id}`)
+  function getRandomDate() {
+    const day = Math.floor(Math.random() * 28) + 1;
+    return `03.${day < 10 ? "0" + day : day}.2025`;
   }
+
+  const filteredStations = stations.filter((station) =>
+    station.title.toLowerCase().includes(filterBy.toLowerCase())
+  );
 
   return (
     <aside className="side-bar">
       <div className="logo-section">
         <NavLink
           className="library-title bright-hover"
-          onClick={() => {
-              // TODO - clicking 'Your Library' should collapse the side bar.
-          } }
+          onClick={() =>
+            prompt(
+              "TODO - clicking 'Your Library' should collapse the sidebar."
+            )
+          }
         >
           <IconsSvg svgName="library" />
           Your Library
         </NavLink>
         <div className="actions">
-          {/* <NavLink to={`/station/add`} className="plus-create-btn">
+          <NavLink to={`/newStation`} className="plus-create-btn">
             <MdAdd size={16} />
             <span>Create</span>
-          </NavLink> */}
-          <div onClick={onCreateStation} className="plus-create-btn">
-            <MdAdd size={16} />
-            <span>Create</span>
-          </div>
-          <button
-            className="expand-btn"
-            type="button"
-            aria-label="Expand Sidebar"
-          >
-            <MdArrowForwardIos size={16} />
+          </NavLink>
+          <button className="expand-btn" type="button" aria-label="Expand">
+            <FiArrowLeft size={20} className="arrow-icon" />
           </button>
         </div>
       </div>
 
-      <div className="search-section">
-        <SearchBar filterBy={filterBy} setFilterBy={setFilterBy} />
+      <div className="search-recent-container">
+        <div className="search-input-container">
+          <FiSearch size={18} className="search-icon" />
+          <input
+            type="text"
+            className="search-input"
+            placeholder="Search in Your Library"
+            value={filterBy}
+            onChange={(e) => setFilterBy(e.target.value)}
+          />
+        </div>
+        <div className="recents-section">
+          <span>Recents</span>
+          <IconsSvg svgName="recents" className="recents-icon" />
+        </div>
       </div>
 
-      <div className="recents-section">
-        <span>Recents</span>
-        <RiListSettingsLine size={20} className="recents-icon" />
+      <div className="library-header-row">
+        <span className="header-title">Title</span>
+        <span className="header-date-added">Date Added</span>
+        <span className="header-played">Played</span>
       </div>
+      <div className="library-header-line"></div>
 
       <div className="library-section">
         <ul>
@@ -86,7 +93,18 @@ export function SideBar() {
                 to={`/station/${station._id}`}
                 className={({ isActive }) => (isActive ? "active" : "")}
               >
-                {station.title}
+                <img
+                  src={station.songs?.[0]?.imgUrl || station.img}
+                  alt={station.title}
+                />
+                <div className="station-info">
+                  <span className="station-title">{station.title}</span>
+                  <span className="station-description">
+                    Playlist • {station.songs.length} songs
+                  </span>
+                </div>
+                <span className="date-added">{station.addedAt}</span>
+                <span className="last-played">{station.lastPlayed || "—"}</span>
               </NavLink>
             </li>
           ))}

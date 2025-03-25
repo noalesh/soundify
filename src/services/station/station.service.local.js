@@ -27,6 +27,7 @@ export const stationService = {
   getDefaultFilter,
   getEmptyStation,
   addSongToStation,
+  removeSongFromStation,
 };
 window.cs = stationService;
 
@@ -108,6 +109,16 @@ function addSongToStation (stationId,song) {
   const updatedStation = [...station.songs, song]
   save(updatedStation)
   
+}
+
+async function removeSongFromStation(stationId, songId) {
+  const station = await getById(stationId)
+  if (!station || !station.songs) return
+
+  const updatedSongs = station.songs.filter(song => song._id !== songId)
+  const updatedStation = { ...station, songs: updatedSongs }
+
+  await save(updatedStation)
 }
 
 

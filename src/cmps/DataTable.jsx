@@ -1,6 +1,13 @@
 import { DataTableRow } from "./DataTableRow.jsx"
+import { stationService } from "../services/station/station.service.local.js"
+import { useParams } from "react-router-dom";
 
 export function DataTable({ songs }) {
+
+
+    function removeSong () {
+
+    }
     return <table className="data-table">
         <thead>
             <tr>
