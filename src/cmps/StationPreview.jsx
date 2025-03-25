@@ -20,7 +20,7 @@ export function StationPreview({ station }) {
                {/* <h3>{station.imgUrl}</h3>
                 <img src={station.songs?.length ? station.songs[0]?.imageUrl : station.img} alt="playlist image" width="90" height="90"/> 
                 */}
-                <img src={station.img} alt="playlist image" width="90" height="90"/> 
+                <img src={station.songs[0]?.imageUrl ? station.songs[0].imageUrl : station.img} alt="playlist image" width="90" height="90"/> 
                 <h4>{station.title}</h4>
                 <SongList
                     songs={songs}

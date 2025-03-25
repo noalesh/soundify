@@ -17,6 +17,7 @@
     align-items: center;
     justify-content: center;
     flex-grow: 1;
+    
 }
 
 .app-header-search svg {
@@ -34,18 +35,20 @@
     width: 100%;
     max-width: 30rem; /* 480px */
     height: 2.5rem; /* 40px */
-    gap: 0.625rem; /* 10px */
+    gap: 0.625rem; /* 10px */   
 }
+
 
 .app-header-searchbar input {
     flex-grow: 1;
     border: none;
     background: transparent;
     color: white;
-    font-size: 0.875rem; /* 14px */
+    font-size: 1.1rem; /* 14px */
     outline: none;
     padding: 0;
     height: 100%;
+    
 }
 
 .app-header-searchbar svg {
