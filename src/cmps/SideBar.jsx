@@ -9,11 +9,15 @@ import { addStation } from "../store/actions/station.actions";
 export function SideBar() {
   const [filterBy, setFilterBy] = useState("");
   const [stations, setStations] = useState([]);
+  const [refreshTrigger, setRefreshTrigger] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
     loadStations();
-  }, []);
+  },[refreshTrigger]);
+
+  console.log(stations.length);
+  
 
   async function loadStations() {
     try {
@@ -55,6 +59,7 @@ export function SideBar() {
   async function onCreateStation() {
     const newStation = stationService.getEmptyStation();
     const addedStation = await addStation(newStation);
+    setRefreshTrigger(prev => !prev);
     navigate(`/station/${addedStation._id}`);
   }
 
@@ -63,11 +68,11 @@ export function SideBar() {
       <div className="logo-section">
         <NavLink
           className="library-title bright-hover"
-          onClick={() =>
-            prompt(
-              "TODO - clicking 'Your Library' should collapse the sidebar."
-            )
-          }
+          // onClick={() =>
+          //   prompt(
+          //     "TODO - clicking 'Your Library' should collapse the sidebar."
+          //   )
+          // }
         >
           <IconsSvg svgName="library" />
           Your Library
@@ -116,7 +121,7 @@ export function SideBar() {
                 className={({ isActive }) => (isActive ? "active" : "")}
               >
                 <img
-                  src={station.img || station.songs?.[0]?.imgUrl}
+                  src={station.songs[0]?.imageUrl ? station.songs[0].imageUrl : station.img}
                   alt={station.title}
                 />
                 <div className="station-info">
