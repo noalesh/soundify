@@ -242,13 +242,13 @@ $inactive-color: $text-fill-color;
                         }
                     }
 
-                                        .date-added {
-                                            color: $inactive-color;
-                                            font-size: 0.75em;
-                                            display: block;
-                                            position: relative;
-                                            left: -16px;  
-                                        }
+                    .date-added {
+                        color: $inactive-color;
+                        font-size: 0.75em;
+                        display: block;
+                        position: relative;
+                        left: -16px;
+                    }
 
                     .last-played {
                         color: $inactive-color;
@@ -264,6 +264,110 @@ $inactive-color: $text-fill-color;
                     &.active {
                         color: $bright-fill;
                         background-color: $hover-bg-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.side-bar.collapsed {
+    width: 100px;
+    padding: 80px 10px 20px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 10;
+
+    .logo-section {
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 25px;
+
+        .library-title {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            gap: 0.4em;
+
+            span {
+                display: inline;
+                font-size: 14px;
+                color: $inactive-color;
+            }
+
+            svg {
+                width: 1.2em;
+                height: 1.2em;
+                fill: $inactive-color;
+            }
+
+            &:hover {
+                span {
+                    color: $bright-fill;
+                }
+
+                svg {
+                    fill: $bright-fill;
+                }
+            }
+        }
+
+        .actions {
+            flex-direction: row;
+            display: flex;
+            justify-content: center;
+            gap: 0.4em;
+
+            .plus-create-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: rgba(255, 255, 255, 0.1);
+                padding: 8px;
+                border-radius: 999px;
+                width: 36px;
+                height: 36px;
+
+                span {
+                    display: none;
+                }
+
+                svg {
+                    color: $bright-fill;
+                    width: 1.1em;
+                    height: 1.1em;
+                }
+            }
+
+            .expand-btn {
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+
+    .search-recent-container,
+    .library-header-row,
+    .library-header-line {
+        display: none;
+    }
+
+    .library-section {
+        ul {
+            li {
+                a {
+                    grid-template-columns: 40px;
+                    justify-content: center;
+
+                    .station-info,
+                    .date-added,
+                    .last-played {
+                        display: none;
                     }
                 }
             }

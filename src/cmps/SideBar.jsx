@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { stationService } from "../services/station/station.service.local";
 import { MdAdd } from "react-icons/md";
-import { FiArrowLeft, FiSearch } from "react-icons/fi";
+import { FiArrowLeft, FiArrowRight, FiSearch } from "react-icons/fi";
 import { IconsSvg } from "../cmps/IconsSvg";
 import { addStation } from "../store/actions/station.actions";
 
@@ -10,14 +10,12 @@ export function SideBar() {
   const [filterBy, setFilterBy] = useState("");
   const [stations, setStations] = useState([]);
   const [refreshTrigger, setRefreshTrigger] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
     loadStations();
-  },[refreshTrigger]);
-
-  console.log(stations.length);
-  
+  }, [refreshTrigger]);
 
   async function loadStations() {
     try {
@@ -59,58 +57,68 @@ export function SideBar() {
   async function onCreateStation() {
     const newStation = stationService.getEmptyStation();
     const addedStation = await addStation(newStation);
-    setRefreshTrigger(prev => !prev);
+    setRefreshTrigger((prev) => !prev);
     navigate(`/station/${addedStation._id}`);
   }
 
   return (
-    <aside className="side-bar">
+    <aside className={`side-bar ${isCollapsed ? "collapsed" : ""}`}>
       <div className="logo-section">
-        <NavLink
-          className="library-title bright-hover"
-          // onClick={() =>
-          //   prompt(
-          //     "TODO - clicking 'Your Library' should collapse the sidebar."
-          //   )
-          // }
-        >
+        <NavLink className="library-title bright-hover">
           <IconsSvg svgName="library" />
-          Your Library
+          <span>Your Library</span>
         </NavLink>
+
         <div className="actions">
           <div onClick={onCreateStation} className="plus-create-btn">
             <MdAdd size={16} />
-            <span>Create</span>
+            {!isCollapsed && <span>Create</span>}
           </div>
-          <button className="expand-btn" type="button" aria-label="Expand">
-            <FiArrowLeft size={20} className="arrow-icon" />
+
+          <button
+            className="expand-btn"
+            type="button"
+            aria-label="Expand"
+            onClick={() => setIsCollapsed((prev) => !prev)}
+          >
+            {isCollapsed ? (
+              <FiArrowRight size={20} className="arrow-icon" />
+            ) : (
+              <FiArrowLeft size={20} className="arrow-icon" />
+            )}
           </button>
         </div>
       </div>
 
-      <div className="search-recent-container">
-        <div className="search-input-container">
-          <FiSearch size={18} className="search-icon" />
-          <input
-            type="text"
-            className="search-input"
-            placeholder="Search in Your Library"
-            value={filterBy}
-            onChange={(e) => setFilterBy(e.target.value)}
-          />
+      {!isCollapsed && (
+        <div className="search-recent-container">
+          <div className="search-input-container">
+            <FiSearch size={18} className="search-icon" />
+            <input
+              type="text"
+              className="search-input"
+              placeholder="Search in Your Library"
+              value={filterBy}
+              onChange={(e) => setFilterBy(e.target.value)}
+            />
+          </div>
+          <div className="recents-section">
+            <span>Recents</span>
+            <IconsSvg svgName="recents" className="recents-icon" />
+          </div>
         </div>
-        <div className="recents-section">
-          <span>Recents</span>
-          <IconsSvg svgName="recents" className="recents-icon" />
-        </div>
-      </div>
+      )}
 
-      <div className="library-header-row">
-        <span className="header-title">Title</span>
-        <span className="header-date-added">Date Added</span>
-        <span className="header-played">Played</span>
-      </div>
-      <div className="library-header-line"></div>
+      {!isCollapsed && (
+        <>
+          <div className="library-header-row">
+            <span className="header-title">Title</span>
+            <span className="header-date-added">Date Added</span>
+            <span className="header-played">Played</span>
+          </div>
+          <div className="library-header-line"></div>
+        </>
+      )}
 
       <div className="library-section">
         <ul>
@@ -121,21 +129,29 @@ export function SideBar() {
                 className={({ isActive }) => (isActive ? "active" : "")}
               >
                 <img
-                  src={station.songs[0]?.imageUrl ? station.songs[0].imageUrl : station.img}
+                  src={
+                    station.songs[0]?.imageUrl
+                      ? station.songs[0].imageUrl
+                      : station.img
+                  }
                   alt={station.title}
                 />
-                <div className="station-info">
-                  <span className="station-title">{station.title}</span>
-                  <span className="station-description">
-                    Playlist • {station.songs.length} songs
-                  </span>
-                </div>
-                <span className="date-added">
-                  {formatDate(station.addedAt)}
-                </span>
-                <span className="last-played">
-                  {formatDate(station.lastPlayed)}
-                </span>
+                {!isCollapsed && (
+                  <>
+                    <div className="station-info">
+                      <span className="station-title">{station.title}</span>
+                      <span className="station-description">
+                        Playlist • {station.songs.length} songs
+                      </span>
+                    </div>
+                    <span className="date-added">
+                      {formatDate(station.addedAt)}
+                    </span>
+                    <span className="last-played">
+                      {formatDate(station.lastPlayed)}
+                    </span>
+                  </>
+                )}
               </NavLink>
             </li>
           ))}
